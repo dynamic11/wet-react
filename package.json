@@ -4,6 +4,7 @@
   "description": "React component library for GCWeb canada.ca theme",
   "scripts": {
     "rollup": "rollup -c",
+    "test": "jest",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },
@@ -11,6 +12,9 @@
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.16.0",
+    "@babel/preset-env": "^7.16.4",
+    "@babel/preset-react": "^7.16.0",
+    "@babel/preset-typescript": "^7.16.0",
     "@rollup/plugin-commonjs": "^21.0.1",
     "@rollup/plugin-node-resolve": "^13.0.6",
     "@rollup/plugin-typescript": "^8.3.0",
@@ -18,8 +22,13 @@
     "@storybook/addon-essentials": "^6.4.3",
     "@storybook/addon-links": "^6.4.3",
     "@storybook/react": "^6.4.3",
+    "@testing-library/react": "^12.1.2",
+    "@types/jest": "^27.0.3",
     "@types/react": "^17.0.37",
+    "babel-jest": "^27.4.2",
     "babel-loader": "^8.2.3",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^27.4.3",
     "rollup": "^2.60.2",
     "rollup-plugin-dts": "^4.0.1",
     "rollup-plugin-peer-deps-external": "^2.2.4",
