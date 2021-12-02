@@ -45,5 +45,8 @@
   "files": [
     "dist"
   ],
-  "types": "dist/index.d.ts"
+  "types": "dist/index.d.ts",
+  "dependencies": {
+    "react-bootstrap": "^2.0.3"
+  }
 }

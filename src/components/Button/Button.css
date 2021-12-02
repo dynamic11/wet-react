@@ -491,7 +491,6 @@ input[type="button"].btn-block {
 	 * Bootstrap as a fix for button wrapping (see wet-boew/wet-boew#4454)
 	 */
   height: auto;
-  min-height: 36px;
   min-width: 36px;
   white-space: normal;
 }
@@ -574,4 +573,39 @@ fieldset[disabled] .btn-call-to-action.focus {
 
 input.btn.btn-call-to-action {
   padding-bottom: 2em;
+}
+
+a.btn.disabled,
+fieldset[disabled] a.btn {
+  pointer-events: none;
+}
+
+a {
+  text-decoration: underline;
+}
+a:visited {
+  color: #7834bc;
+}
+a:not([href]) {
+  color: inherit;
+  text-decoration: none;
+}
+a:not([href]):hover,
+a:not([href]):focus {
+  color: inherit;
+  outline: none;
+  text-decoration: none;
+}
+
+a.label:hover,
+a.label:focus {
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+a.thumbnail:hover,
+a.thumbnail:focus,
+a.thumbnail.active {
+  border-color: #295376;
 }
