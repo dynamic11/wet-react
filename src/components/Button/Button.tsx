@@ -1,7 +1,6 @@
 import React from "react";
 import { default as ButtonRB } from "react-bootstrap/Button";
 import "./Button.css";
-// import "../../style.css";
 
 type varientTypes =
   | "primary"

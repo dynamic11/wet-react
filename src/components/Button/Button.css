@@ -580,8 +580,35 @@ fieldset[disabled] a.btn {
   pointer-events: none;
 }
 
+@media print {
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
+  a[href]:after {
+    content: " (" attr(href) ")";
+  }
+  abbr[title]:after {
+    content: " (" attr(title) ")";
+  }
+  a[href^="#"]:after,
+  a[href^="javascript:"]:after {
+    content: "";
+  }
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
+}
+
 a {
   text-decoration: underline;
+  color: #284162;
 }
 a:visited {
   color: #7834bc;
