@@ -3,11 +3,7 @@ import { ComponentStory, ComponentMeta } from "@storybook/react";
 import { Button } from "../components";
 
 export default {
-  /* 👇 The title prop is optional.
-   * See https://storybook.js.org/docs/react/configure/overview#configure-story-loading
-   * to learn how to generate automatic titles
-   */
-  title: "Test/Button",
+  title: "Components/buttonsv2",
   component: Button,
   argTypes: {
     onClick: { action: "clicked" },

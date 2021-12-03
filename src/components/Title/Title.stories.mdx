@@ -1,0 +1,57 @@
+import { ArgsTable, Canvas, Meta, Story } from "@storybook/addon-docs";
+
+import Title from "./Title";
+
+<Meta title="Components/Typography" component={Title} />
+
+export const Template = (args) => <Title {...args} />;
+
+# Title
+
+This is a title
+
+<Story name="Title" args={{ level: 1, children: "Title Example" }}>
+  {Template.bind({})}
+</Story>
+
+<ArgsTable story="Title" />
+
+## Other Title levels
+
+You can choose form `1-6` levels of headings. The default is level `1`.
+
+### Level 1
+
+<Canvas>
+  <Title level={1}>h1. Heading 1</Title>
+</Canvas>
+
+### Level 2
+
+<Canvas>
+  <Title level={2}>h2. Heading 2</Title>
+</Canvas>
+
+### Level 3
+
+<Canvas>
+  <Title level={3}>h3. Heading 3</Title>
+</Canvas>
+
+### Level 3
+
+<Canvas>
+  <Title level={4}>h4. Heading 4</Title>
+</Canvas>
+
+### Level 4
+
+<Canvas>
+  <Title level={5}>h5. Heading 5</Title>
+</Canvas>
+
+### Level 5
+
+<Canvas>
+  <Title level={6}>h6. Heading 6</Title>
+</Canvas>

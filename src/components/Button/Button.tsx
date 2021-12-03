@@ -25,7 +25,7 @@ export interface ButtonProps {
   variant?: variantType;
   /** The custom 'non-default' button size that you would like */
   size?: sizingType;
-  /** Addiitonal cutom classNames */
+  /** Additional custom classNames */
   className?: string;
   /** Is button in Active state */
   active?: boolean;
@@ -42,7 +42,6 @@ export interface ButtonProps {
   onClick?: React.MouseEventHandler;
 }
 
-/** This is a buttonssss */
 const Button = ({
   children,
   variant = "primary",

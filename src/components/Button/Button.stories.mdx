@@ -1,0 +1,84 @@
+import { ArgsTable, Canvas, Meta, Story } from "@storybook/addon-docs";
+
+import Button from "./Button";
+
+<Meta title="Components" component={Button} />
+
+export const Template = (args) => <Button {...args} />;
+
+# Button
+
+This is a buttonss
+
+<Story name="Button" args={{ children: "Button" }}>
+  {Template.bind({})}
+</Story>
+
+<ArgsTable story="Button" />
+
+## Button styling variants
+
+<Canvas>
+  <Button variant="primary">Default</Button>
+  <Button variant="secondary">Secondary</Button>
+  <Button variant="danger">Danger</Button>
+  <Button variant="light">Light</Button> <Button variant="link">Link</Button>
+  <Button variant="success">Success</Button>
+  <Button variant="warning">Warning</Button>
+  <Button variant="info">Info</Button> <Button variant="dark">Dark</Button>
+</Canvas>
+
+## Button Sizing Variants
+
+<Canvas>
+  <Button variant="primary" size="lg">
+    Large
+  </Button>
+  <Button variant="primary" size="sm">
+    Small
+  </Button>
+</Canvas>
+
+## Disabled Button
+
+<Canvas>
+  <Button variant="primary" disabled>
+    Disabled primary button
+  </Button>
+  <Button variant="secondary" disabled>
+    Disabled secondary button
+  </Button>
+</Canvas>
+
+## Active State
+
+<Canvas>
+  <Button variant="primary" active>
+    Active primary button
+  </Button>
+  <Button variant="secondary" active>
+    Disabled secondary button
+  </Button>
+</Canvas>
+
+## Button Tags
+
+Normally components will render a HTML `<Button>` element.
+However you can render whatever you'd like.
+
+_For example:_
+
+- Adding a href prop will automatically render an `<a>` element.
+- You can use the `as` prop to render whatever your heart desires.
+
+React Bootstrap will take care of the proper ARIA roles for you.
+
+<Canvas>
+  <Button variant="primary" href="#">
+    Link
+  </Button>
+  <Button type="submit">Submit</Button>
+  <Button as="input" type="button" value="Input" />
+  <Button as="input" type="submit" value="Submit"></Button>
+  <Button as="input" type="reset" value="Reset" />
+</Canvas>
