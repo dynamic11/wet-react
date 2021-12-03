@@ -1,5 +1,5 @@
 import React from "react";
-import "./Title.css";
+import "../../style.css";
 
 type levelType = 1 | 2 | 3 | 4 | 5 | 6;
 
