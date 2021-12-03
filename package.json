@@ -6,7 +6,8 @@
     "rollup": "rollup -c",
     "test": "jest",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "chromatic": "npx chromatic --project-token=2401d7d904ad"
   },
   "author": "",
   "license": "ISC",
@@ -29,6 +30,7 @@
     "@types/react": "^17.0.37",
     "babel-jest": "^27.4.2",
     "babel-loader": "^8.2.3",
+    "chromatic": "^6.1.0",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^27.4.3",
     "rollup": "^2.60.2",
