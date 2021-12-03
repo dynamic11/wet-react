@@ -2,7 +2,7 @@ import React from "react";
 import { default as ButtonRB } from "react-bootstrap/Button";
 import "../../style.css";
 
-type varientTypes =
+type variantType =
   | "primary"
   | "secondary"
   | "success"
@@ -11,36 +11,50 @@ type varientTypes =
   | "light"
   | "link"
   | "info"
-  | "dark"
-  | "outline-primary"
-  | "outline-secondary"
-  | "outline-success"
-  | "outline-warning"
-  | "outline-danger"
-  | "outline-info"
-  | "outline-light"
-  | "outline-dark";
+  | "dark";
 
-type sizingTypes = "lg" | "sm";
+type sizingType = "lg" | "sm";
 
-type typeTypes = "submit" | "button" | "reset";
-type asTypes = "input";
+type typeType = "submit" | "button" | "reset";
+type asType = "input";
 
 export interface ButtonProps {
+  /** Content of button */
   children?: React.ReactNode;
-  variant?: varientTypes;
-  size?: sizingTypes;
+  /** The styling variant that you would like to use */
+  variant?: variantType;
+  /** The custom 'non-default' button size that you would like */
+  size?: sizingType;
+  /** Addiitonal cutom classNames */
   className?: string;
+  /** Is button in Active state */
   active?: boolean;
+  /** Is button in Disabled state */
   disabled?: boolean;
+  /** Link for button. It will render as `<a>` but with button styling */
   href?: string;
-  type?: typeTypes;
+  /** Type of button */
+  type?: typeType;
+  /** Value associated to the button */
   value?: string;
-  as?: asTypes;
+  as?: asType;
+  /** Onclick action */
+  onClick?: React.MouseEventHandler;
 }
 
-const Button = ({ children, ...rest }: ButtonProps) => {
-  return <ButtonRB {...rest}>{children}</ButtonRB>;
+/** This is a buttonssss */
+const Button = ({
+  children,
+  variant = "primary",
+  active = false,
+  disabled = false,
+  ...rest
+}: ButtonProps) => {
+  return (
+    <ButtonRB variant={variant} active={active} disabled={disabled} {...rest}>
+      {children}
+    </ButtonRB>
+  );
 };
 
 export default Button;
