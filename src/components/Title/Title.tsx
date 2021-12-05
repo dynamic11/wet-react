@@ -1,9 +1,10 @@
 import React from "react";
 import "../../style.css";
 
-type levelType = "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
+/** Types */
+type levelType = "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | undefined;
 
-export interface ButtonProps {
+export interface TitleProps {
   /** Content of heading */
   children?: React.ReactNode;
   /** Heading level */
@@ -12,9 +13,8 @@ export interface ButtonProps {
   className?: string;
 }
 
-const Title = ({ children, level = "h1", className }: ButtonProps) => {
+const Title = ({ children, level = "h1", className }: TitleProps) => {
   let titleHtml: React.ReactNode;
-  console.log(typeof level);
   switch (level) {
     case "h2": {
       titleHtml = <h2 className={className}>{children}</h2>;
@@ -41,7 +41,6 @@ const Title = ({ children, level = "h1", className }: ButtonProps) => {
       break;
     }
   }
-  console.log(titleHtml);
   return titleHtml;
 };
 

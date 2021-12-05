@@ -8,50 +8,29 @@ export const Template = (args) => <Title {...args} />;
 
 # Title
 
-This is a title
+Generate headings to structure a webpage. You can select the heading levels `h1-h6` by using the `level` prop. It will auto generate html tags `<h1>`to`<h6>`.
 
-<Story name="Title" args={{ level: 1, children: "Title Example" }}>
+## Available Props
+
+### Sample:
+
+<Story name="Title" args={{ level: "h1", children: "Title Example" }}>
   {Template.bind({})}
 </Story>
 
 <ArgsTable story="Title" />
 
-## Other Title levels
+## Heading Levels
 
 You can choose form `1-6` levels of headings. The default is level `1`.
 
-### Level 1
-
 <Canvas>
-  <Title level={1}>h1. Heading 1</Title>
-</Canvas>
-
-### Level 2
-
-<Canvas>
-  <Title level={2}>h2. Heading 2</Title>
-</Canvas>
-
-### Level 3
-
-<Canvas>
-  <Title level={3}>h3. Heading 3</Title>
-</Canvas>
-
-### Level 3
-
-<Canvas>
-  <Title level={4}>h4. Heading 4</Title>
-</Canvas>
-
-### Level 4
-
-<Canvas>
-  <Title level={5}>h5. Heading 5</Title>
-</Canvas>
-
-### Level 5
-
-<Canvas>
-  <Title level={6}>h6. Heading 6</Title>
+  <div>
+    <Title level="h1">h1. Heading 1</Title>
+    <Title level="h2">h2. Heading 2</Title>
+    <Title level="h3">h3. Heading 3</Title>
+    <Title level="h4">h4. Heading 4</Title>
+    <Title level="h5">h5. Heading 5</Title>
+    <Title level="h6">h6. Heading 6</Title>
+  </div>
 </Canvas>
