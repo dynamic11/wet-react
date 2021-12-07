@@ -15,8 +15,8 @@ export interface LinkProps {
   className?: string;
 }
 
-const Link = ({ children, href = "#", target, rel, className }: LinkProps) => (
-  <a href={href} target={target} className={className} rel={rel}>
+const Link = ({ children, href = "#", target, rel, ...rest }: LinkProps) => (
+  <a href={href} target={target} rel={rel} {...rest}>
     {children}
   </a>
 );

@@ -27,8 +27,6 @@ export interface ButtonProps {
   variant?: variantType;
   /** The custom 'non-default' button size that you would like */
   size?: sizingType;
-  /** Additional custom classNames */
-  className?: string;
   /** Is button in Active state */
   active?: boolean;
   /** Option to fit button width to its parent width */
@@ -42,6 +40,8 @@ export interface ButtonProps {
   /** Value associated to the button */
   value?: string;
   as?: asType;
+  /** Additional custom classNames */
+  className?: string;
   /** Onclick action */
   onClick?: React.MouseEventHandler;
 }

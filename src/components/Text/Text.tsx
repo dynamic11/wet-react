@@ -28,10 +28,6 @@ export interface TextProps {
   color?: colorType;
   /** Background color */
   backgroundColor?: backgroundType;
-  /** Additional custom classNames */
-  className?: string;
-  /** Custom styling */
-  style?: object;
   /** Is text highlighted */
   mark?: boolean;
   /** Is text code styled */
@@ -52,6 +48,8 @@ export interface TextProps {
   small?: boolean;
   /** use lead styling */
   lead?: boolean;
+  /** Additional custom classNames */
+  className?: string;
 }
 
 /** Helper Functions */
@@ -94,7 +92,7 @@ const getStylingClasses = (
   const backgroundColorClass = getBackgroundColorClass(backgroundColor);
   return `${colorClass} ${backgroundColorClass} ${size ? size : ""} ${
     lead ? "lead" : ""
-  } ${className ? className : ""}`;
+  } ${className}`;
 };
 
 const Text = ({
@@ -111,8 +109,8 @@ const Text = ({
   size,
   small = false,
   lead = false,
-  className,
-  style,
+  className = "",
+  ...rest
 }: TextProps) => {
   let text: React.ReactNode = children;
 
@@ -156,7 +154,7 @@ const Text = ({
   );
 
   return (
-    <span style={style} className={stylingClasses}>
+    <span className={stylingClasses} {...rest}>
       {text}
     </span>
   );

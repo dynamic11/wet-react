@@ -13,27 +13,27 @@ export interface TitleProps {
   className?: string;
 }
 
-const Title = ({ children, level = "h1", className }: TitleProps) => {
+const Title = ({ children, level = "h1", ...rest }: TitleProps) => {
   let titleHtml: React.ReactNode;
   switch (level) {
     case "h2": {
-      titleHtml = <h2 className={className}>{children}</h2>;
+      titleHtml = <h2 {...rest}>{children}</h2>;
       break;
     }
     case "h3": {
-      titleHtml = <h3 className={className}>{children}</h3>;
+      titleHtml = <h3 {...rest}>{children}</h3>;
       break;
     }
     case "h4": {
-      titleHtml = <h4 className={className}>{children}</h4>;
+      titleHtml = <h4 {...rest}>{children}</h4>;
       break;
     }
     case "h5": {
-      titleHtml = <h5 className={className}>{children}</h5>;
+      titleHtml = <h5 {...rest}>{children}</h5>;
       break;
     }
     case "h6": {
-      titleHtml = <h6 className={className}>{children}</h6>;
+      titleHtml = <h6 {...rest}>{children}</h6>;
       break;
     }
     default: {
