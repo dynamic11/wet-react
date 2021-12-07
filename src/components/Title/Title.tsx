@@ -37,7 +37,7 @@ const Title = ({ children, level = "h1", ...rest }: TitleProps) => {
       break;
     }
     default: {
-      titleHtml = <h1 className={className}>{children}</h1>;
+      titleHtml = <h1 {...rest}>{children}</h1>;
       break;
     }
   }
