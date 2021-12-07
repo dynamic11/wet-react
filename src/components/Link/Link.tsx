@@ -1,6 +1,7 @@
 import React from "react";
 import "../../style.css";
 
+/** Types */
 export interface LinkProps {
   /** Content of heading */
   children?: React.ReactNode;

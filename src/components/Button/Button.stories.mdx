@@ -8,7 +8,11 @@ export const Template = (args) => <Button {...args} />;
 
 # Button
 
-This is a buttonss
+Use buttons to create a call to action that entices the user to submit content from a form. Also, use buttons also take users to a webpage that provides additional information.
+
+## Available Props
+
+### Sample:
 
 <Story name="Button" args={{ children: "Button" }}>
   {Template.bind({})}
@@ -28,7 +32,7 @@ This is a buttonss
   <Button variant="info">Info</Button> <Button variant="dark">Dark</Button>
 </Canvas>
 
-## Button Sizing Variants
+## Button sizing variants
 
 <Canvas>
   <Button variant="primary" size="lg">
@@ -37,9 +41,12 @@ This is a buttonss
   <Button variant="primary" size="sm">
     Small
   </Button>
+  <Button variant="primary" size="xs">
+    Extra Small
+  </Button>
 </Canvas>
 
-## Disabled Button
+## Disabled button
 
 <Canvas>
   <Button variant="primary" disabled>
@@ -50,7 +57,7 @@ This is a buttonss
   </Button>
 </Canvas>
 
-## Active State
+## Active state
 
 <Canvas>
   <Button variant="primary" active>
@@ -61,7 +68,7 @@ This is a buttonss
   </Button>
 </Canvas>
 
-## Button Tags
+## Button tags
 
 Normally components will render a HTML `<Button>` element.
 However you can render whatever you'd like.
@@ -81,4 +88,19 @@ React Bootstrap will take care of the proper ARIA roles for you.
   <Button as="input" type="button" value="Input" />
   <Button as="input" type="submit" value="Submit"></Button>
   <Button as="input" type="reset" value="Reset" />
+</Canvas>
+
+## Button blocks
+
+Use to create block level buttons (those that span the full width of a parent).
+
+<Canvas>
+  <div>
+    <Button variant="primary" block>
+      Block primary button
+    </Button>
+    <Button variant="secondary" block>
+      Block secondary button
+    </Button>
+  </div>
 </Canvas>

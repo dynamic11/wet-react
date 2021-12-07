@@ -2,6 +2,7 @@ import React from "react";
 import { default as ButtonRB } from "react-bootstrap/Button";
 import "../../style.css";
 
+/** Types */
 type variantType =
   | "primary"
   | "secondary"
@@ -11,11 +12,12 @@ type variantType =
   | "light"
   | "link"
   | "info"
-  | "dark";
+  | "dark"
+  | undefined;
 
-type sizingType = "lg" | "sm";
+type sizingType = "lg" | "sm" | "xs" | undefined;
 
-type typeType = "submit" | "button" | "reset";
+type typeType = "submit" | "button" | "reset" | undefined;
 type asType = "input";
 
 export interface ButtonProps {
@@ -29,6 +31,8 @@ export interface ButtonProps {
   className?: string;
   /** Is button in Active state */
   active?: boolean;
+  /** Option to fit button width to its parent width */
+  block?: boolean;
   /** Is button in Disabled state */
   disabled?: boolean;
   /** Link for button. It will render as `<a>` but with button styling */
@@ -47,10 +51,30 @@ const Button = ({
   variant = "primary",
   active = false,
   disabled = false,
+  block = false,
+  size,
+  className = "",
   ...rest
 }: ButtonProps) => {
+  const sizeClassName =
+    size === "lg"
+      ? "btn-lg"
+      : size === "sm"
+      ? "btn-sm"
+      : size === "xs"
+      ? "btn-xs"
+      : "";
+
+  const blockClassName = block ? "btn-block" : "";
+
   return (
-    <ButtonRB variant={variant} active={active} disabled={disabled} {...rest}>
+    <ButtonRB
+      variant={variant}
+      active={active}
+      disabled={disabled}
+      className={`${sizeClassName} ${className} ${blockClassName}`}
+      {...rest}
+    >
       {children}
     </ButtonRB>
   );
