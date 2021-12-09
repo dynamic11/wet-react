@@ -1,0 +1,48 @@
+import { ArgsTable, Canvas, Meta, Story } from "@storybook/addon-docs";
+
+import Button from "../Button";
+
+<Meta title="Components/Button/Tags" component={Button} />
+
+export const Template = (args) => <Button {...args} />;
+
+# Button
+
+## Button tags
+
+Normally components will render a HTML `<Button>` element.
+However you can render whatever you'd like.
+
+_For example:_
+
+- Adding a href prop will automatically render an `<a>` element.
+- You can use the `as` prop to render whatever your heart desires.
+
+React Bootstrap will take care of the proper ARIA roles for you.
+
+<Canvas>
+  <Story name="Link" args={{ href: "#", children: "Link" }}>
+    {Template.bind({})}
+  </Story>
+  <Story name="Submit" args={{ type: "submit", children: "Submit" }}>
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Button as Input"
+    args={{ type: "button", as: "input", value: "Input" }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Submit as input"
+    args={{ type: "submit", as: "input", value: "Submit" }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Reset as input"
+    args={{ type: "reset", as: "input", value: "Reset" }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>

@@ -1,0 +1,58 @@
+import { ArgsTable, Canvas, Meta, Story } from "@storybook/addon-docs";
+
+import Button from "../Button";
+
+<Meta title="Components/Button/Active" component={Button} />
+
+export const Template = (args) => <Button active {...args} />;
+
+# Button
+
+## Active state
+
+All styling variations in the `active` state:
+
+<Canvas>
+  <Story
+    name="Primary"
+    args={{ variant: "primary", children: "Active primary button" }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Secondary"
+    args={{ variant: "secondary", children: "Active secondary button" }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Danger"
+    args={{ variant: "danger", children: "Active danger button" }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Light"
+    args={{ variant: "light", children: "Active light button" }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story name="Link" args={{ variant: "link", children: "Active link button" }}>
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Success"
+    args={{ variant: "success", children: "Active success button" }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Warning"
+    args={{ variant: "warning", children: "Active warning button" }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story name="Info" args={{ variant: "info", children: "Active info button" }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>

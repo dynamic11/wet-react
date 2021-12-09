@@ -1,0 +1,36 @@
+import { ArgsTable, Canvas, Meta, Story } from "@storybook/addon-docs";
+
+import Button from "../Button";
+
+<Meta title="Components/Button/Sizes" component={Button} />
+
+export const Template = (args) => <Button {...args} />;
+
+# Button
+
+## Button sizing variants
+
+<Canvas>
+  <Story name="Default" args={{ children: "Default" }}>
+    {Template.bind({})}
+  </Story>
+  <Story name="Large" args={{ size: "lg", children: "Large" }}>
+    {Template.bind({})}
+  </Story>
+  <Story name="Small" args={{ size: "sm", children: "Small" }}>
+    {Template.bind({})}
+  </Story>
+  <Story name="Extra small" args={{ size: "xs", children: "Extra small" }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Button blocks
+
+Use to create block level buttons (those that span the full width of a parent).
+
+<Canvas>
+  <Story name="Block" args={{ block: true, children: "Block primary button" }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
