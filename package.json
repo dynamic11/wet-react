@@ -7,7 +7,7 @@
     "test": "jest",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "chromatic": "npx chromatic --project-token=2401d7d904ad"
+    "chromatic": "npx chromatic --project-token=<need-to-add>"
   },
   "author": "",
   "license": "ISC",
