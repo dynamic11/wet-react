@@ -1,0 +1,65 @@
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs';
+
+import Text from '../Text';
+
+<Meta title="Typography/Text/Style" component={Text} />
+
+export const Template = (args) => <Text {...args} />;
+
+# Text
+
+## Text style
+
+You can also set the text styling. Most standard stylings are supported.
+
+**Please Note:**
+
+- **Mark:** Use to highlight a section of text for reference purposes, due to its relevance in another context.
+- **Delete:** Use to indicate text was deleted.
+- **Strikethrough:** Use to indicate text that is no longer relevant.
+- **Code:** Use to emulate source code and display it in monospace font.
+- **Keyboard:** Use to mimic the keys of a computer keyboard.
+- **Strong:** Emphasize text by making it bolder
+- **Italic:** Emphasize text by italicising
+
+<Canvas>
+  <Story name="Default" args={{ children: 'Sample Text (default)' }}>
+    {Template.bind({})}
+  </Story>
+  <Story name="Mark" args={{ children: 'Sample Text (mark)', mark: true }}>
+    {Template.bind({})}
+  </Story>
+  <Story name="Code" args={{ children: 'Sample Text (code)', code: true }}>
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Keyboard"
+    args={{ children: 'Sample Text (keyboard)', keyboard: true }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Deleted"
+    args={{ children: 'Sample Text (deleted)', deleted: true }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Strikethrough"
+    args={{ children: 'Sample Text (strikethrough)', strikethrough: true }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Strong"
+    args={{ children: 'Sample Text (strong)', strong: true }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Italic"
+    args={{ children: 'Sample Text (italic)', italic: true }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>

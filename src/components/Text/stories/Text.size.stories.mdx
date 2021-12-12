@@ -1,0 +1,51 @@
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs';
+
+import Text from '../Text';
+
+<Meta title="Typography/Text/Sizing" component={Text} />
+
+export const Template = (args) => (
+  <Text {...args} style={{ display: 'block' }} />
+);
+
+# Text
+
+## Text sizing
+
+You can override the global default font-size of `16px`, with a line-height of `1.428`.
+
+**Please note:**
+
+- `h1-h6` modify the size of the text. This is done only through styling. It will not effect page structure.
+- `small` is used to define small text, for example side-comments, disclaimers and "fine" print, including copyright and legal text.
+- `lead` Make a paragraph stand out by adding setting this to true
+
+<Canvas>
+  <Story name="h1" args={{ children: 'Sample Text (h1)', size: 'h1' }}>
+    {Template.bind({})}
+  </Story>
+  <Story name="h2" args={{ children: 'Sample Text (h2)', size: 'h2' }}>
+    {Template.bind({})}
+  </Story>
+  <Story name="h3" args={{ children: 'Sample Text (h3)', size: 'h3' }}>
+    {Template.bind({})}
+  </Story>
+  <Story name="h4" args={{ children: 'Sample Text (h4)', size: 'h4' }}>
+    {Template.bind({})}
+  </Story>
+  <Story name="h5" args={{ children: 'Sample Text (h5)', size: 'h5' }}>
+    {Template.bind({})}
+  </Story>
+  <Story name="h6" args={{ children: 'Sample Text (h6)', size: 'h6' }}>
+    {Template.bind({})}
+  </Story>
+  <Story name="Default" args={{ children: 'Sample Text (default)' }}>
+    {Template.bind({})}
+  </Story>
+  <Story name="Small" args={{ children: 'Sample Text (small)', small: true }}>
+    {Template.bind({})}
+  </Story>
+  <Story name="Lead" args={{ children: 'Sample Text (lead)', lead: true }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>

@@ -1,0 +1,57 @@
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs';
+
+import Text from '../Text';
+
+<Meta title="Typography/Text/Background Color" component={Text} />
+
+export const Template = (args) => <Text {...args} />;
+
+# Text
+
+## Text Background Color:
+
+You can modify the text Background color of the text using the `backgroundColor` prop of the `<Text>` component.
+
+_Make sure the contrast between the text and background passes a11y standards._
+
+<Canvas>
+  <Story name="Default" args={{ children: 'Sample Text (default)' }}>
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Primary"
+    args={{ children: 'Sample Text (primary)', backgroundColor: 'primary' }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Info"
+    args={{ children: 'Sample Text (info)', backgroundColor: 'info' }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Muted"
+    args={{ children: 'Sample Text (muted)', backgroundColor: 'muted' }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Success"
+    args={{ children: 'Sample Text (success)', backgroundColor: 'success' }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Warning"
+    args={{ children: 'Sample Text (warning)', backgroundColor: 'warning' }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Danger"
+    args={{ children: 'Sample Text (danger)', backgroundColor: 'danger' }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>

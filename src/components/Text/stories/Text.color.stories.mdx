@@ -1,0 +1,52 @@
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs';
+
+import Text from '../Text';
+
+<Meta title="Typography/Text/Color" component={Text} />
+
+export const Template = (args) => <Text {...args} />;
+
+# Text
+
+## Text Color:
+
+You can modify the text color using the color prop of the `<Text>` component.
+
+<Canvas>
+  <Story name="Default" args={{ children: 'Sample Text (default)' }}>
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Primary"
+    args={{ children: 'Sample Text (primary)', color: 'primary' }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story name="Info" args={{ children: 'Sample Text (info)', color: 'info' }}>
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Muted"
+    args={{ children: 'Sample Text (muted)', color: 'muted' }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Success"
+    args={{ children: 'Sample Text (success)', color: 'success' }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Warning"
+    args={{ children: 'Sample Text (warning)', color: 'warning' }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Danger"
+    args={{ children: 'Sample Text (danger)', color: 'danger' }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
