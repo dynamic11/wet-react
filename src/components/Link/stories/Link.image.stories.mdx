@@ -1,0 +1,51 @@
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs';
+
+import Link from '../Link';
+
+<Meta title="Typography/Link/Image Link" component={Link} />
+
+export const Template = (args) => (
+  <Link {...args}>
+    <img
+      src="https://upload.wikimedia.org/wikipedia/commons/f/f9/Phoenicopterus_ruber_in_S%C3%A3o_Paulo_Zoo.jpg"
+      alt="Sample text"
+      width="200"
+    />
+  </Link>
+);
+
+# Link
+
+## Image Link:
+
+A an image can be wrapped in a link:
+
+### Basic link
+
+<Canvas>
+  <Story name="Basic" args={{ href: '#' }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Target link
+
+The `target` attribute specifies where to open the linked image:
+
+- `_self`: the current browsing context. (Default)
+- `_blank`: usually a new tab, but users can configure browsers to open a new window instead.
+- `_parent`: the parent browsing context of the current one. If no parent, behaves as `_self`.
+- `_top`: the topmost browsing context (the "highest" context that’s an ancestor of the current one). If no ancestors, behaves as `_self`.
+
+<Canvas>
+  <Story
+    name="Target Link"
+    args={{
+      href: 'https://upload.wikimedia.org/wikipedia/commons/f/f9/Phoenicopterus_ruber_in_S%C3%A3o_Paulo_Zoo.jpg',
+      target: '_blank',
+      rel: 'noopener noreferrer',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>

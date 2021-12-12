@@ -1,0 +1,44 @@
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs';
+
+import Link from '../Link';
+
+<Meta title="Typography/Link/Text Link" component={Link} />
+
+export const Template = (args) => <Link {...args} />;
+
+# Link
+
+## Text Link:
+
+A link can be assigned to any string.
+
+### Basic link
+
+<Canvas>
+  <Story name="Basic" args={{ children: 'This is a text link', href: '#' }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Target link
+
+The `target` attribute specifies where to open the linked document:
+
+- `_self`: the current browsing context. (Default)
+- `_blank`: usually a new tab, but users can configure browsers to open a new window instead.
+- `_parent`: the parent browsing context of the current one. If no parent, behaves as `_self`.
+- `_top`: the topmost browsing context (the "highest" context that’s an ancestor of the current one). If no ancestors, behaves as `_self`.
+
+<Canvas>
+  <Story
+    name="Target Link"
+    args={{
+      children: 'Opens "Google Search" in a new tab',
+      href: 'https://www.google.com/',
+      target: '_blank',
+      rel: 'noopener noreferrer',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
