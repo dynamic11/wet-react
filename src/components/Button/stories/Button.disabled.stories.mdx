@@ -1,6 +1,6 @@
-import { ArgsTable, Canvas, Meta, Story } from "@storybook/addon-docs";
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs';
 
-import Button from "../Button";
+import Button from '../Button';
 
 <Meta title="Components/Button/Disabled" component={Button} />
 
@@ -13,54 +13,54 @@ export const Template = (args) => <Button disabled {...args} />;
 All styling variations in the `disabled` state:
 
 <Canvas>
-  <Story name="Default" args={{ children: "Disbaled primary button" }}>
+  <Story name="Default" args={{ children: 'Disbaled primary button' }}>
     {Template.bind({})}
   </Story>
   <Story
     name="Primary"
-    args={{ variant: "primary", children: "Disbaled primary button" }}
+    args={{ variant: 'primary', children: 'Disbaled primary button' }}
   >
     {Template.bind({})}
   </Story>
   <Story
     name="Secondary"
-    args={{ variant: "secondary", children: "Disbaled secondary button" }}
+    args={{ variant: 'secondary', children: 'Disbaled secondary button' }}
   >
     {Template.bind({})}
   </Story>
   <Story
     name="Danger"
-    args={{ variant: "danger", children: "Disbaled danger button" }}
+    args={{ variant: 'danger', children: 'Disbaled danger button' }}
   >
     {Template.bind({})}
   </Story>
   <Story
     name="Light"
-    args={{ variant: "light", children: "Disbaled light button" }}
+    args={{ variant: 'light', children: 'Disbaled light button' }}
   >
     {Template.bind({})}
   </Story>
   <Story
     name="Link"
-    args={{ variant: "link", children: "Disbaled link button" }}
+    args={{ variant: 'link', children: 'Disbaled link button' }}
   >
     {Template.bind({})}
   </Story>
   <Story
     name="Success"
-    args={{ variant: "success", children: "Disbaled success button" }}
+    args={{ variant: 'success', children: 'Disbaled success button' }}
   >
     {Template.bind({})}
   </Story>
   <Story
     name="Warning"
-    args={{ variant: "warning", children: "Disbaled warning button" }}
+    args={{ variant: 'warning', children: 'Disbaled warning button' }}
   >
     {Template.bind({})}
   </Story>
   <Story
     name="Info"
-    args={{ variant: "info", children: "Disbaled info button" }}
+    args={{ variant: 'info', children: 'Disbaled info button' }}
   >
     {Template.bind({})}
   </Story>

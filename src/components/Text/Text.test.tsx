@@ -1,10 +1,10 @@
-import React from "react";
-import { render } from "@testing-library/react";
+import React from 'react';
+import { render } from '@testing-library/react';
 
-import Text from "./Text";
+import Text from './Text';
 
-describe("Text", () => {
-  test("renders sample text", () => {
+describe('Text', () => {
+  test('renders sample text', () => {
     render(<Text>Hello world!</Text>);
   });
 });
