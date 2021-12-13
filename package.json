@@ -11,7 +11,8 @@
     "prettier:fix": "npx prettier . --write",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "chromatic": "npx chromatic --project-token=<need-to-add>"
+    "chromatic": "npx chromatic --project-token=<need-to-add>",
+    "prepare": "husky install"
   },
   "author": "",
   "license": "ISC",
@@ -46,8 +47,10 @@
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.27.1",
     "eslint-plugin-react-hooks": "^4.3.0",
+    "husky": "^7.0.4",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^27.4.3",
+    "lint-staged": "^12.1.2",
     "prettier": "2.5.1",
     "rollup": "^2.60.2",
     "rollup-plugin-dts": "^4.0.1",
@@ -68,5 +71,8 @@
   "types": "dist/index.d.ts",
   "dependencies": {
     "react-bootstrap": "^2.0.3"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": "eslint --cache --fix"
   }
 }
