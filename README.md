@@ -9,7 +9,6 @@ React implementation of the Web Experience Toolkit (WET).
 ## Build status
 
 [![Chromatic Deployment](https://github.com/dynamic11/wet-react/actions/workflows/chromatic.yaml/badge.svg?branch=master)](https://github.com/dynamic11/wet-react/actions/workflows/chromatic.yaml)
-
 [![Linting Check](https://github.com/dynamic11/wet-react/actions/workflows/ci-tests.yaml/badge.svg?branch=master)](https://github.com/dynamic11/wet-react/actions/workflows/chromatic.yaml)
 
 ## Storybook deployments
@@ -34,9 +33,9 @@ The purpose of this package is to "Reactify" the Web Experience Toolkit (WET). T
 
 This project has 3 main goals:
 
-- :white_check_mark: make it easier to create frontend apps
-- :white_check_mark: have accessible components (WCAG AA)
-- :white_check_mark: clean and accurate documentation (Storybook)
+- :rocket: make it easier to create frontend apps
+- :wheelchair: have accessible components (WCAG AA)
+- :books: clean and accurate documentation (Storybook)
 
 ## How to run locally:
 
