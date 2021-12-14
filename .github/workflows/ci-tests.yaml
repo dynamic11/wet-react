@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: ESlint Check
+name: CI Checks
 
 # Controls when the workflow will run
 on:
@@ -37,5 +37,12 @@ jobs:
       # Runs commands using the runners shell
       - name: Install modules
         run: npm install
-      - name: Run ESlint
+        
+      - name: Run ESlint Check
         run: npm run lint
+        
+      - name: Run Prettier Check
+        run: npm run prettier
+        
+      - name: Run test
+        run: npm run test
