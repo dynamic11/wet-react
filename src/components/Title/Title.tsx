@@ -14,7 +14,7 @@ export interface TitleProps {
 }
 
 const Title = ({ children, level = 'h1', ...rest }: TitleProps) => {
-  let titleHtml: React.ReactNode;
+  let titleHtml: JSX.Element;
   switch (level) {
     case 'h2': {
       titleHtml = <h2 {...rest}>{children}</h2>;
