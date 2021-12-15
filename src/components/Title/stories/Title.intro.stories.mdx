@@ -1,0 +1,17 @@
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs';
+
+import Title from '../Title';
+
+<Meta title="Typography/Title/Intro" component={Title} />
+
+export const Template = (args) => <Title {...args} />;
+
+## Heading Levels
+
+Generate headings to structure a webpage. You can select the heading levels `h1-h6` by using the `level` prop. It will auto generate html tags `<h1>`to`<h6>`.
+
+**The default is level `h1`.**
+
+## Available Props
+
+<ArgsTable component="Title" />

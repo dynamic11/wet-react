@@ -1,0 +1,34 @@
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs';
+
+import Title from '../Title';
+
+<Meta title="Typography/Title/Levels" component={Title} />
+
+export const Template = (args) => <Title {...args} />;
+
+# Title
+
+## Levels
+
+Generate headings to structure a webpage. You can select the heading levels `h1-h6` by using the `level` prop. It will auto generate html tags `<h1>`to`<h6>`.
+
+<Canvas>
+  <Story name="Level 1 (H1)" args={{ level: 'h1', children: 'h1. Heading 1' }}>
+    {Template.bind({})}
+  </Story>
+  <Story name="Level 2 (H2)" args={{ level: 'h2', children: 'h2. Heading 2' }}>
+    {Template.bind({})}
+  </Story>
+  <Story name="Level 3 (H3)" args={{ level: 'h3', children: 'h3. Heading 3' }}>
+    {Template.bind({})}
+  </Story>
+  <Story name="Level 4 (H4)" args={{ level: 'h4', children: 'h4. Heading 4' }}>
+    {Template.bind({})}
+  </Story>
+  <Story name="Level 5 (H5)" args={{ level: 'h5', children: 'h3. Heading 5' }}>
+    {Template.bind({})}
+  </Story>
+  <Story name="Level 6 (H6)" args={{ level: 'h6', children: 'h6. Heading 6' }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
