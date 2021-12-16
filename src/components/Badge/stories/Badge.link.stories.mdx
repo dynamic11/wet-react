@@ -1,0 +1,24 @@
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs';
+
+import Badge from '../Badge';
+import { Text, Link, Button } from '../../';
+
+<Meta title="Components/Badge/With Links" component={Badge} />
+
+export const TemplateLink = (args) => (
+  <Link href="#">
+    Sample Text <Badge {...args} />
+  </Link>
+);
+
+# Badge
+
+## Badges with Link
+
+Badges can accompany `Link` components
+
+<Canvas>
+  <Story name="Link" args={{ children: '32' }}>
+    {TemplateLink.bind({})}
+  </Story>
+</Canvas>

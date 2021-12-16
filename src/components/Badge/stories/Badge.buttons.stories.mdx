@@ -1,0 +1,78 @@
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs';
+
+import Badge from '../Badge';
+import { Text, Link, Button } from '../../';
+
+<Meta title="Components/Badge/With Buttons" component={Badge} />
+
+export const DefaultBtnTemplate = (args) => (
+  <Button>
+    Default Button <Badge {...args} />
+  </Button>
+);
+
+export const PrimaryBtnTemplate = (args) => (
+  <Button variant="primary">
+    Primary Button <Badge {...args} />
+  </Button>
+);
+
+export const InfoBtnTemplate = (args) => (
+  <Button variant="info">
+    Info Button <Badge {...args} />
+  </Button>
+);
+
+export const DangerBtnTemplate = (args) => (
+  <Button variant="danger">
+    Danger Button <Badge {...args} />
+  </Button>
+);
+
+export const WarningBtnTemplate = (args) => (
+  <Button variant="warning">
+    Warning Button <Badge {...args} />
+  </Button>
+);
+
+export const SuccessBtnTemplate = (args) => (
+  <Button variant="success">
+    Success Button <Badge {...args} />
+  </Button>
+);
+
+export const LinkBtnTemplate = (args) => (
+  <Button variant="link">
+    Link Button <Badge {...args} />
+  </Button>
+);
+
+# Badge
+
+## Badges with Button
+
+Badges can be used inside the all `Button` variants.
+
+<Canvas>
+  <Story name="Default Button" args={{ children: '32' }}>
+    {DefaultBtnTemplate.bind({})}
+  </Story>
+  <Story name="Primary Button" args={{ children: '32' }}>
+    {PrimaryBtnTemplate.bind({})}
+  </Story>
+  <Story name="Info Button" args={{ children: '32' }}>
+    {InfoBtnTemplate.bind({})}
+  </Story>
+  <Story name="Danger Button" args={{ children: '32' }}>
+    {DangerBtnTemplate.bind({})}
+  </Story>
+  <Story name="Warning Button" args={{ children: '32' }}>
+    {WarningBtnTemplate.bind({})}
+  </Story>
+  <Story name="Success Button" args={{ children: '32' }}>
+    {SuccessBtnTemplate.bind({})}
+  </Story>
+  <Story name="Link Button" args={{ children: '32' }}>
+    {LinkBtnTemplate.bind({})}
+  </Story>
+</Canvas>

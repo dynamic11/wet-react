@@ -1,0 +1,49 @@
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs';
+
+import Badge from '../Badge';
+import { Text, Link, Button } from '../../';
+
+<Meta title="Components/Badge/Visibility" component={Badge} />
+
+export const TemplateText = (args) => (
+  <Text>
+    Sample Text <Badge {...args} />
+  </Text>
+);
+
+# Badge
+
+## Visibility of badge
+
+The visibility of the `Badge` can be controlled.
+
+### Full badge
+
+Badges with content will render.
+
+<Canvas>
+  <Story name="Full Badge" args={{ children: '32' }}>
+    {TemplateText.bind({})}
+  </Story>
+</Canvas>
+
+### Empty badge
+
+Badges with no content will not render.
+
+<Canvas>
+  <Story name="Empty Badge">{TemplateText.bind({})}</Story>
+</Canvas>
+
+### Visibility toggle
+
+The 'visible' prop can manually control the visibility of the badge
+
+<Canvas>
+  <Story name="Visible" args={{ children: '32', visible: true }}>
+    {TemplateText.bind({})}
+  </Story>
+  <Story name="Hidden" args={{ children: '32', visible: false }}>
+    {TemplateText.bind({})}
+  </Story>
+</Canvas>
