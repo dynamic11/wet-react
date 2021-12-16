@@ -1,0 +1,25 @@
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs';
+import { Text, Label } from '../../';
+
+<Meta title="Components/Label/Visibility" component={Label} />
+
+export const TemplateText = (args) => (
+  <Text>
+    Sample Text <Label {...args} />
+  </Text>
+);
+
+# Label
+
+## Visibility of Label
+
+The visibility of the `Label` can be controlled using the `visible` prop.
+
+<Canvas>
+  <Story name="Visible" args={{ children: 'visible label', visible: true }}>
+    {TemplateText.bind({})}
+  </Story>
+  <Story name="Hidden" args={{ children: 'hidden label', visible: false }}>
+    {TemplateText.bind({})}
+  </Story>
+</Canvas>

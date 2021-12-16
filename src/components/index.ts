@@ -4,3 +4,5 @@ export { default as Text } from './Text';
 export { default as Link } from './Link';
 export { default as Alert } from './Alert';
 export { default as ButtonGroup } from './ButtonGroup';
+export { default as Badge } from './Badge';
+export { default as Label } from './Label';

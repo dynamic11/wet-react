@@ -1,0 +1,55 @@
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs';
+
+import { Text, Label } from '../../';
+
+<Meta title="Components/Label/Variants" component={Label} />
+
+export const TemplateText = (args) => (
+  <Text>
+    Sample Text <Label {...args} />
+  </Text>
+);
+
+# Label
+
+## Label variants
+
+Label's can be one of multiple `variants`
+Options:
+
+- `default`
+- `primary`
+- `success`
+- `warning`
+- `danger`
+- `info`
+
+<Canvas>
+  <Story name="Default" args={{ children: 'default label' }}>
+    {TemplateText.bind({})}
+  </Story>
+  <Story
+    name="Primary"
+    args={{ variant: `primary`, children: 'primary label' }}
+  >
+    {TemplateText.bind({})}
+  </Story>
+  <Story
+    name="Success"
+    args={{ variant: `success`, children: 'success label' }}
+  >
+    {TemplateText.bind({})}
+  </Story>
+  <Story
+    name="Warning"
+    args={{ variant: `warning`, children: 'warning label' }}
+  >
+    {TemplateText.bind({})}
+  </Story>
+  <Story name="Danger" args={{ variant: `danger`, children: 'danger label' }}>
+    {TemplateText.bind({})}
+  </Story>
+  <Story name="Info" args={{ variant: `info`, children: 'info label' }}>
+    {TemplateText.bind({})}
+  </Story>
+</Canvas>
