@@ -1,0 +1,34 @@
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs';
+
+import ButtonGroup from '../ButtonGroup';
+import { Button } from '../../';
+
+<Meta title="Components/ButtonGroup/Orientations" component={ButtonGroup} />
+
+export const Template = (args) => (
+  <ButtonGroup {...args}>
+    <Button>Button 1</Button>
+    <Button>Button 2</Button>
+    <Button>Button 3</Button>
+  </ButtonGroup>
+);
+
+# Button
+
+## Button orientation variants
+
+Make a set of buttons appear vertically stacked rather than horizontally, by adding `vertical` to the `<ButtonGroup>`.
+
+### Default orientation
+
+<Canvas>
+  <Story name="Default">{Template.bind({})}</Story>
+</Canvas>
+
+### Vertical orientation
+
+<Canvas>
+  <Story name="Vertical" args={{ vertical: true }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>

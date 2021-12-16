@@ -1,0 +1,40 @@
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs';
+
+import ButtonGroup from '../ButtonGroup';
+import { Button } from '../../';
+
+<Meta title="Components/ButtonGroup/Sizes" component={ButtonGroup} />
+
+export const Template = (args) => (
+  <ButtonGroup {...args}>
+    <Button>Button 1</Button>
+    <Button>Button 2</Button>
+    <Button>Button 3</Button>
+  </ButtonGroup>
+);
+
+# Button
+
+## Button group sizing variants
+
+### Default size
+
+<Canvas>
+  <Story name="Default">{Template.bind({})}</Story>
+</Canvas>
+
+### Large size
+
+<Canvas>
+  <Story name="Large" args={{ size: 'lg' }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Small size
+
+<Canvas>
+  <Story name="Small" args={{ size: 'sm' }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
