@@ -9,7 +9,6 @@ type variantType =
   | 'success'
   | 'warning'
   | 'danger'
-  | 'light'
   | 'link'
   | 'info'
   | undefined;
