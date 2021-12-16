@@ -70,6 +70,8 @@
   ],
   "types": "dist/index.d.ts",
   "dependencies": {
+    "@storybook/addons": "^6.4.9",
+    "@storybook/theming": "^6.4.9",
     "react-bootstrap": "^2.0.3"
   },
   "lint-staged": {
