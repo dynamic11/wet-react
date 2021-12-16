@@ -11,7 +11,7 @@ type variantType =
   | 'info'
   | undefined;
 
-export interface BadgeProps {
+export interface LabelProps {
   /** Hidden label describing the badge */
   variant?: variantType;
   /** Hidden label describing the badge */
