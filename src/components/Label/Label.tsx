@@ -16,7 +16,7 @@ export interface LabelProps {
   variant?: variantType;
   /** Hidden label describing the badge */
   visible?: boolean;
-  /** Contents of badge */
+  /** Contents of label */
   children?: React.ReactNode;
   /** Additional custom classNames */
   className?: string;
@@ -27,7 +27,7 @@ const Label = ({
   visible = true,
   children,
   className,
-}: BadgeProps) => {
+}: LabelProps) => {
   const variantClassName = `label-${variant}`;
 
   return visible ? (
