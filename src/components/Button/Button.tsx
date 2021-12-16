@@ -4,15 +4,14 @@ import '../../style.css';
 
 /** Types */
 type variantType =
+  | 'default'
   | 'primary'
-  | 'secondary'
   | 'success'
   | 'warning'
   | 'danger'
   | 'light'
   | 'link'
   | 'info'
-  | 'dark'
   | undefined;
 
 type sizingType = 'lg' | 'sm' | 'xs' | undefined;
@@ -48,7 +47,7 @@ export interface ButtonProps {
 
 const Button = ({
   children,
-  variant = 'primary',
+  variant = 'default',
   active = false,
   disabled = false,
   block = false,
@@ -72,8 +71,8 @@ const Button = ({
       variant={variant}
       active={active}
       disabled={disabled}
-      className={`${sizeClassName} ${className} ${blockClassName}`}
       {...rest}
+      className={`${sizeClassName} ${className} ${blockClassName}`}
     >
       {children}
     </ButtonRB>
