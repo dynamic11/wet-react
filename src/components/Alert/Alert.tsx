@@ -81,13 +81,11 @@ const Alert = ({
       ? 'alert-danger'
       : 'alert-info';
 
-  return (
-    show && (
-      <section className={`alert ${alertClassName} ${className}`} {...rest}>
-        {children}
-      </section>
-    )
-  );
+  return show ? (
+    <section className={`alert ${alertClassName} ${className}`} {...rest}>
+      {children}
+    </section>
+  ) : null;
 };
 
 Alert.Header = Header;
