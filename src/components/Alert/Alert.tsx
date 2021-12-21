@@ -1,5 +1,5 @@
 import React from 'react';
-import { Title } from '..';
+import Title from '@components/Title';
 import '../../style.css';
 
 /** Types */

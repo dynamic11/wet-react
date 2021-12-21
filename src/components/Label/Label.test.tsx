@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 
-import Label from './Label';
+import Label from '@components/Label';
 
 describe('Label', () => {
   test('renders the default Label component', () => {

@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 
-import Title from './Title';
+import Title from '@components/Title';
 
 describe('Title', () => {
   test('renders the level 1 Title component', () => {

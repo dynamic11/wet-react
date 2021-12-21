@@ -17,7 +17,7 @@
     "ecmaVersion": 12,
     "sourceType": "module"
   },
-  "plugins": ["react", "@typescript-eslint"],
+  "plugins": ["react", "@typescript-eslint", "import"],
   "rules": {
     "no-nested-ternary": "off",
     "react/jsx-props-no-spreading": "off",
@@ -43,8 +43,13 @@
     ]
   },
   "settings": {
+    "import/parsers": {
+      "@typescript-eslint/parser": [".ts", ".tsx"]
+    },
     "import/resolver": {
-      "typescript": {}
+      "typescript": {
+        "alwaysTryTypes": true
+      }
     }
   }
 }

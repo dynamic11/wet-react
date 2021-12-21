@@ -1,8 +1,8 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 
-import ButtonGroup from './ButtonGroup';
-import { Button } from '..';
+import ButtonGroup from '@components/ButtonGroup';
+import Button from '@components/Button';
 
 describe('Button Group', () => {
   test('renders the ButtonGroup component', () => {
