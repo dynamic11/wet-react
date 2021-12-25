@@ -1,0 +1,101 @@
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs';
+
+import { CodeBlock } from '../../';
+
+<Meta title="Components/CodeBlock/Languages" component={CodeBlock} />
+
+export const JavascriptTemplate = (args) => (
+  <CodeBlock {...args}>
+    {`function createStyleObject(classNames, style) {
+    return classNames.reduce((styleObject, className) => {
+      return { ...styleObject, ...style[className] };
+    }, {});
+  }`}
+  </CodeBlock>
+);
+
+export const HTMLTemplate = (args) => (
+  <CodeBlock {...args}>
+    {`<form action="#" method="post">
+  <div>
+    <label for="data1">Form input default appearance:</label>
+    <input name="data1" type="text" id="data1" />
+  </div>
+  <div>
+    <label for="data2">Form text area default appearance:</label>
+    <textarea name="data2" cols="15" rows="3" id="data2"></textarea>
+  </div>
+</form>`}
+  </CodeBlock>
+);
+
+export const CSSTemplate = (args) => (
+  <CodeBlock {...args}>
+    {`p {
+  color: red;
+  text-align: center;
+}`}
+  </CodeBlock>
+);
+
+export const JavaTemplate = (args) => (
+  <CodeBlock {...args}>
+    {`public class Main {
+  static void myMethod() {
+    // code to be executed
+  }
+}`}
+  </CodeBlock>
+);
+
+# CodeBlock
+
+## Common Language Options
+
+We have configured `React Syntax Highlighter` to use `prism.js` as the core formatter therefore the supported langauges can be found [here](https://github.com/react-syntax-highlighter/react-syntax-highlighter/blob/HEAD/AVAILABLE_LANGUAGES_PRISM.MD).
+
+### Javascript
+
+Set `language` to `javascript`
+
+<Canvas>
+  <Story name="Javascript" args={{ language: 'javascript' }}>
+    {JavascriptTemplate.bind({})}
+  </Story>
+</Canvas>
+
+### HTML
+
+Set `language` to `html`
+
+<Canvas>
+  <Story name="HTML" args={{ language: 'markup' }}>
+    {HTMLTemplate.bind({})}
+  </Story>
+</Canvas>
+
+### CSS
+
+Set `language` to `css`
+
+<Canvas>
+  <Story name="CSS" args={{ language: 'css' }}>
+    {CSSTemplate.bind({})}
+  </Story>
+</Canvas>
+
+### Java
+
+Set `language` to `java`
+
+<Canvas>
+  <Story name="Java" args={{ language: 'java' }}>
+    {JavaTemplate.bind({})}
+  </Story>
+</Canvas>
+
+### Others
+
+Many other popular languages are support.
+
+[🚀 List of supported Language](https://github.com/react-syntax-highlighter/react-syntax-highlighter/blob/HEAD/AVAILABLE_LANGUAGES_PRISM.MD).

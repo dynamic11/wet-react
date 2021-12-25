@@ -1,0 +1,29 @@
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs';
+
+import { CodeBlock } from '../..';
+
+<Meta title="Components/CodeBlock/Intro" component={CodeBlock} />
+
+# CodeBlock
+
+Syntax highlighting of source code snippets. It supports most common langauges.
+
+This component is based on [React Syntax Highlighter](https://www.npmjs.com/package/react-syntax-highlighter).
+
+We have configured `React Syntax Highlighter` it to use `prism.js` as the core formatter therefore the supported langauges can be found [here](https://github.com/react-syntax-highlighter/react-syntax-highlighter/blob/HEAD/AVAILABLE_LANGUAGES_PRISM.MD).
+
+⚠️ **The codeBlock styling currently does not match the WET spec. It will be fixed in a future release.**
+
+## Example
+
+<CodeBlock language="javascript">
+  {`function createStyleObject(classNames, style) {
+    return classNames.reduce((styleObject, className) => {
+      return { ...styleObject, ...style[className] };
+    }, {});
+  }`}
+</CodeBlock>
+
+## Available Props
+
+<ArgsTable />

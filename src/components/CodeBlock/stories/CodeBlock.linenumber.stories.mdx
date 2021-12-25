@@ -1,0 +1,63 @@
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs';
+
+import { CodeBlock } from '../../';
+
+<Meta title="Components/CodeBlock/Line Numbering" component={CodeBlock} />
+
+export const JavascriptTemplate = (args) => (
+  <CodeBlock {...args}>
+    {`function createStyleObject(classNames, style) {
+    return classNames.reduce((styleObject, className) => {
+      return { ...styleObject, ...style[className] };
+    }, {});
+  }`}
+  </CodeBlock>
+);
+
+# CodeBlock
+
+## Line numbers
+
+The line numbers for the code snippet can be enabled.
+
+### Line Numbers (off)
+
+Line numbering is `off` by default.
+
+<Canvas>
+  <Story name="Line Numbering (off)" args={{ language: 'javascript' }}>
+    {JavascriptTemplate.bind({})}
+  </Story>
+</Canvas>
+
+### Line Numbers (on)
+
+Line numbers can be enabled using `showLineNumbers`.
+
+<Canvas>
+  <Story
+    name="Line Numbering (on)"
+    args={{ showLineNumbers: true, language: 'markup' }}
+  >
+    {JavascriptTemplate.bind({})}
+  </Story>
+</Canvas>
+
+### Custom Line Numbers
+
+The starting Line number can be specifically defined using `startingLineNumber`.
+
+In this example the starting line number is set to `120`.
+
+<Canvas>
+  <Story
+    name="Custom Line Numbering"
+    args={{
+      showLineNumbers: true,
+      startingLineNumber: 120,
+      language: 'markup',
+    }}
+  >
+    {JavascriptTemplate.bind({})}
+  </Story>
+</Canvas>
