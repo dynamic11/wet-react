@@ -1,5 +1,4 @@
 {
-  "include": ["./jest-setup.ts"],
   "compilerOptions": {
     // Default
     "target": "es5",
@@ -21,5 +20,6 @@
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
     "emitDeclarationOnly": true
-  }
+  },
+  "include": ["./jest.setup.ts"]
 }

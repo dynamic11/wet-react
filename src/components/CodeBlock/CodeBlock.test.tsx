@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 
-import CodeBlock from '.';
+import CodeBlock from '@components/CodeBlock';
 
 describe('CodeClock', () => {
   test('render CodeBlock component', () => {
