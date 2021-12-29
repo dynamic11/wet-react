@@ -51,6 +51,7 @@ const Button = ({
   disabled = false,
   block = false,
   size,
+  href,
   className = '',
   ...rest
 }: ButtonProps) => {
@@ -70,6 +71,7 @@ const Button = ({
       variant={variant}
       active={active}
       disabled={disabled}
+      href={href}
       {...rest}
       className={`${sizeClassName} ${className} ${blockClassName}`}
     >
