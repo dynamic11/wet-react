@@ -3,7 +3,7 @@ import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { a11yDark } from 'react-syntax-highlighter/dist/cjs/styles/prism';
 import '../../style.css';
 
-export interface BadgeProps {
+export interface CodeBlockProps {
   /** the language to highlight code in. (pass text to just render plain monospaced text) */
   language?: string;
   /** prop that will be combined with the top level style on the `pre` tag, styles here will overwrite earlier styles. */
@@ -26,7 +26,7 @@ const CodeBlock = ({
   wrapLines = true,
   children,
   ...rest
-}: BadgeProps) => (
+}: CodeBlockProps) => (
   <SyntaxHighlighter
     language={language}
     style={a11yDark}
