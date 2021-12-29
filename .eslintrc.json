@@ -39,7 +39,7 @@
     ],
     "import/no-extraneous-dependencies": [
       "error",
-      { "devDependencies": ["**/*.test.ts", "**/*.test.tsx"] }
+      { "devDependencies": ["jest.setup.ts", "**/*.test.ts", "**/*.test.tsx"] }
     ]
   },
   "settings": {
