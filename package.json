@@ -76,6 +76,9 @@
     "react-bootstrap": "^2.0.3"
   },
   "lint-staged": {
-    "*.{js,jsx,ts,tsx}": "eslint --cache --fix"
+    "*.{js,jsx,ts,tsx}": [
+      "npm run lint",
+      "npm run prettier"
+    ]
   }
 }
