@@ -60,9 +60,9 @@ const Link = ({ children, className = '', ...rest }: AlertLinkProps) => (
 );
 
 const Body = ({ children, className = '', ...rest }: AlertBodyProps) => (
-  <p className={className} {...rest}>
+  <div className={className} {...rest}>
     {children}
-  </p>
+  </div>
 );
 
 const Alert = ({
