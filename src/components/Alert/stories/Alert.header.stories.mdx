@@ -20,7 +20,7 @@ export const NoHeaderTemplate = (args) => (
 export const CustomHeaderLevelTemplate = (args) => (
   <Alert {...args}>
     {args.children}
-    <Alert.Header level="h4">Level 4 header</Alert.Header>
+    <Alert.Header level="h5">Level 5 header</Alert.Header>
     <Alert.Body>sample content without header</Alert.Body>
   </Alert>
 );
@@ -45,7 +45,7 @@ Possible obtions are: `h1`, `h2`, `h3`, `h4`, `h5`, `h6`
 <Canvas>
   <Story
     name="Custom Heading Level"
-    args={{ children: <Alert.Header>ggggg</Alert.Header> }}
+    args={{ children: <Alert.Header level="h4">Heading Level 4</Alert.Header> }}
   >
     {CustomHeaderLevelTemplate.bind({})}
   </Story>
