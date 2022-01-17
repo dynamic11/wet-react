@@ -2,11 +2,7 @@ import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs';
 
 import { Alert } from '../..';
 
-<Meta
-  title="Components/Alert/Header"
-  component={Alert}
-  subcomponents={{ 'Alert.Header': Alert.Header, 'Alert.Body': Alert.Body }}
-/>
+<Meta title="Components/Alert/Header" component={Alert} />
 
 export const WithHeaderTemplate = (args) => (
   <Alert {...args}>
@@ -23,6 +19,7 @@ export const NoHeaderTemplate = (args) => (
 
 export const CustomHeaderLevelTemplate = (args) => (
   <Alert {...args}>
+    {args.children}
     <Alert.Header level="h4">Level 4 header</Alert.Header>
     <Alert.Body>sample content without header</Alert.Body>
   </Alert>
@@ -46,7 +43,10 @@ You can set the heading level of the `Alert` by using the `level` prop for `<Ale
 Possible obtions are: `h1`, `h2`, `h3`, `h4`, `h5`, `h6`
 
 <Canvas>
-  <Story name="Custom Heading Level">
+  <Story
+    name="Custom Heading Level"
+    args={{ children: <Alert.Header>ggggg</Alert.Header> }}
+  >
     {CustomHeaderLevelTemplate.bind({})}
   </Story>
 </Canvas>
