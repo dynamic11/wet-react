@@ -1,4 +1,4 @@
-# WET-React UI components libarary
+# WET-React UI components library
 
 <img src="https://user-images.githubusercontent.com/11470442/145418747-6b58458d-02f5-499f-ba52-96a4cc181efa.png" alt="drawing" width="300"/>
 
