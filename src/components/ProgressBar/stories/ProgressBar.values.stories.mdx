@@ -1,0 +1,50 @@
+import { Canvas, Meta, Story } from '@storybook/addon-docs';
+
+import { ProgressBar } from '../..';
+
+<Meta title="Components/ProgressBar/Values" component={ProgressBar} />
+
+export const Template = (args) => <ProgressBar {...args} />;
+
+# ProgressBar
+
+Using the `max` and `min` props it is possible to set the upper and lower bounds of the `ProgressBar`
+
+## Min value
+
+The **minimum** value that the progress bar begins from can be set using the `min` prop.
+
+In this example the `min` is set to `90`, the `max` defaults to `100`, and the current value is `95` so the progress is 50%.
+
+<Canvas>
+  <Story name="Min Value" args={{ min: 90, now: 95, label: '90/95' }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Max value
+
+The **maximum** value that the progress bar reaches can be set using the `max` prop.
+
+In this example the `max` is set to `50`, the `min` defaults to `0`, and the current value is `25` so the progress is 50%.
+
+<Canvas>
+  <Story name="Max Value" args={{ max: 50, now: 25, label: '25/50' }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Max & Min values
+
+The **maximum** and **minimum** values can be set at the same time.
+
+In this example the `min` is set to `10`, the `max` is set to `20`, and the current value is `15` so the progress is 50%.
+
+<Canvas>
+  <Story
+    name="Max/Min Values"
+    args={{ min: 10, max: 20, now: 15, label: '50%' }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
