@@ -1,0 +1,45 @@
+import { Canvas, Meta, Story } from '@storybook/addon-docs';
+
+import { Panel } from '../..';
+
+<Meta title="Components/Panel/Variants" component={Panel} />
+
+export const Template = (args) => (
+  <Panel {...args}>This is some Panel content</Panel>
+);
+
+# Panels
+
+## Panel variants
+
+Several variants are available for Panels. The default is the `info` variant.
+
+<Canvas>
+  <Story name="Default" args={{ headerContent: 'Panel Header (Default)' }}>
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Success"
+    args={{ variant: 'success', headerContent: 'Panel Header (Success)' }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Info"
+    args={{ variant: 'info', headerContent: 'Panel Header (Info)' }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Warning"
+    args={{ variant: 'warning', headerContent: 'Panel Header (Warning)' }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Danger"
+    args={{ variant: 'danger', headerContent: 'Panel Header (Danger)' }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
