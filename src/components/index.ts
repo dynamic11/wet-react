@@ -7,3 +7,4 @@ export { default as ButtonGroup } from './ButtonGroup';
 export { default as Badge } from './Badge';
 export { default as Label } from './Label';
 export { default as CodeBlock } from './CodeBlock';
+export { default as ProgressBar } from './ProgressBar';
