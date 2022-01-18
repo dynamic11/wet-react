@@ -6,4 +6,5 @@ export { default as Alert } from './Alert';
 export { default as ButtonGroup } from './ButtonGroup';
 export { default as Badge } from './Badge';
 export { default as Label } from './Label';
+export { default as Panel } from './Panel';
 export { default as CodeBlock } from './CodeBlock';
