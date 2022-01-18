@@ -31,5 +31,7 @@ You can add an optional footer to the `Panel` by using setting the `footerConten
 You can also leave `footerContent` empty to hide the footer.
 
 <Canvas>
-  <Story name="Panel Without Footer">{Template.bind({})}</Story>
+  <Story name="Panel Without Footer" args={{ headerContent: 'Panel header' }}>
+    {Template.bind({})}
+  </Story>
 </Canvas>
