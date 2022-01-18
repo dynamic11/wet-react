@@ -76,6 +76,7 @@
   "dependencies": {
     "@storybook/addons": "^6.4.13",
     "@storybook/theming": "^6.4.13",
+    "anysort": "^2.0.0",
     "react-bootstrap": "^2.1.1",
     "react-syntax-highlighter": "^15.0.0"
   },
