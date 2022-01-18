@@ -1,0 +1,40 @@
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs';
+
+import { Alert } from '../..';
+
+<Meta
+  title="Components/Alert/Variants"
+  component={Alert}
+  subcomponents={{ 'Alert.Header': Alert.Header, 'Alert.Body': Alert.Body }}
+/>
+
+export const Template = (args) => (
+  <Alert {...args}>
+    <Alert.Header>{args.variant || 'default (info)'}</Alert.Header>
+    <Alert.Body>
+      sample content here: <Alert.Link href="#">Test Link</Alert.Link>
+    </Alert.Body>
+  </Alert>
+);
+
+# Alert
+
+## Alert variants
+
+Several variants are available for Alerts. The default is the `info` variant.
+
+<Canvas>
+  <Story name="Default">{Template.bind({})}</Story>
+  <Story name="Success" args={{ variant: 'success' }}>
+    {Template.bind({})}
+  </Story>
+  <Story name="Info" args={{ variant: 'info' }}>
+    {Template.bind({})}
+  </Story>
+  <Story name="Warning" args={{ variant: 'warning' }}>
+    {Template.bind({})}
+  </Story>
+  <Story name="Danger" args={{ variant: 'danger' }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>

@@ -1,0 +1,47 @@
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs';
+
+import { Alert } from '../..';
+
+<Meta title="Components/Alert/Links" component={Alert} />
+
+export const NoLinkTemplate = (args) => (
+  <Alert {...args}>
+    <Alert.Header>No links</Alert.Header>
+    <Alert.Body>sample content with header</Alert.Body>
+  </Alert>
+);
+
+export const WithLinkTemplate = (args) => (
+  <Alert {...args}>
+    <Alert.Header>With Links</Alert.Header>
+    <Alert.Body>
+      sample content with header <Alert.Link href="#">Test Link</Alert.Link>
+    </Alert.Body>
+  </Alert>
+);
+
+export const WithMultipleLinksTemplate = (args) => (
+  <Alert {...args}>
+    <Alert.Header>With Multiple Links</Alert.Header>
+    <Alert.Body>
+      sample <Alert.Link href="#">Content</Alert.Link> with header{' '}
+      <Alert.Link href="#">Test Link</Alert.Link>
+    </Alert.Body>
+  </Alert>
+);
+
+# Links
+
+## Alert with links
+
+You can add links to the `<Alert>` by using `<Alert.Link>`. The styling of the link is dependent on the `variant` chosen for the `<Alert>`.
+
+<Canvas>
+  <Story name="No Link">{NoLinkTemplate.bind({})}</Story>
+  <Story name="With Link">{WithLinkTemplate.bind({})}</Story>
+  <Story name="With Multiple Links">{WithMultipleLinksTemplate.bind({})}</Story>
+</Canvas>
+
+## Custom Link Destination (`href`)
+
+The `href` that the link is pointing to can be defined using the `href` prop for the `<Alert.Link>`.

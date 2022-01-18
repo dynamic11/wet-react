@@ -1,0 +1,52 @@
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs';
+
+import { Alert } from '../..';
+
+<Meta title="Components/Alert/Header" component={Alert} />
+
+export const WithHeaderTemplate = (args) => (
+  <Alert {...args}>
+    <Alert.Header>With header</Alert.Header>
+    <Alert.Body>sample content with header</Alert.Body>
+  </Alert>
+);
+
+export const NoHeaderTemplate = (args) => (
+  <Alert {...args}>
+    <Alert.Body>sample content without header</Alert.Body>
+  </Alert>
+);
+
+export const CustomHeaderLevelTemplate = (args) => (
+  <Alert {...args}>
+    {args.children}
+    <Alert.Header level="h5">Level 5 header</Alert.Header>
+    <Alert.Body>sample content without header</Alert.Body>
+  </Alert>
+);
+
+# Alert
+
+## Alert with a header
+
+You can add an optional header to the `Alert` by using `<Alert.Header>`
+
+<Canvas>
+  <Story name="With Header">{WithHeaderTemplate.bind({})}</Story>
+  <Story name="No Header">{NoHeaderTemplate.bind({})}</Story>
+</Canvas>
+
+## Custom heading level
+
+You can set the heading level of the `Alert` by using the `level` prop for `<Alert.Header>`. The default value is `h2`.
+
+Possible obtions are: `h1`, `h2`, `h3`, `h4`, `h5`, `h6`
+
+<Canvas>
+  <Story
+    name="Custom Heading Level"
+    args={{ children: <Alert.Header level="h4">Heading Level 4</Alert.Header> }}
+  >
+    {CustomHeaderLevelTemplate.bind({})}
+  </Story>
+</Canvas>
