@@ -10,6 +10,7 @@ React implementation of the Web Experience Toolkit (WET).
 
 [![Chromatic Deployment](https://github.com/dynamic11/wet-react/actions/workflows/chromatic.yaml/badge.svg?branch=master)](https://github.com/dynamic11/wet-react/actions/workflows/chromatic.yaml)
 [![Linting Check](https://github.com/dynamic11/wet-react/actions/workflows/ci-tests.yaml/badge.svg?branch=master)](https://github.com/dynamic11/wet-react/actions/workflows/chromatic.yaml)
+[![codecov](https://codecov.io/gh/dynamic11/wet-react/branch/master/graph/badge.svg?token=13E1BGWDHR)](https://codecov.io/gh/dynamic11/wet-react)
 
 ## Storybook deployments
 
