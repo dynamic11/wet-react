@@ -3,3 +3,4 @@ node_modules
 build-storybook.log
 .DS_Store
 .eslintcache
+coverage
