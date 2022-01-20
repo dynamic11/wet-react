@@ -1,0 +1,30 @@
+import { Canvas, Meta, Story } from '@storybook/addon-docs';
+
+import { ProgressBar } from '../..';
+
+<Meta title="Components/ProgressBar/Styles" component={ProgressBar} />
+
+export const Template = (args) => <ProgressBar {...args} />;
+
+# ProgressBar
+
+
+## ProgressBar Styling variants
+
+Several styling options are avaiable for ProgressBar
+
+<Canvas>
+  <Story name="Striped" args={{ min: 90, now: 95, label: '90/95',striped: true }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## variants
+
+<Canvas>
+  <Story name="Variants" args={{ min: 90, now: 95, label: '90/95',variant: 'success' }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+
