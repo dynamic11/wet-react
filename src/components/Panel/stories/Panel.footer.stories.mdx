@@ -1,0 +1,37 @@
+import { Canvas, Meta, Story } from '@storybook/addon-docs';
+
+import { Panel } from '../..';
+
+<Meta title="Components/Panel/Footer" component={Panel} />
+
+export const Template = (args) => (
+  <Panel {...args}>This is some Panel content</Panel>
+);
+
+# Panel
+
+## Panel with a footer
+
+You can add an optional footer to the `Panel` by using setting the `footerContent` prop.
+
+<Canvas>
+  <Story
+    name="Panel With Footer"
+    args={{
+      headerContent: 'Panel header',
+      footerContent: 'Panel with footer',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Panel without a footer
+
+You can also leave `footerContent` empty to hide the footer.
+
+<Canvas>
+  <Story name="Panel Without Footer" args={{ headerContent: 'Panel header' }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>

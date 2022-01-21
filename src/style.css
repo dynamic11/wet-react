@@ -2,6 +2,7 @@
 /* @import url(https://wet-boew.github.io/themes-dist/GCWeb/GCWeb/css/theme.min.css); */
 @import url(https://wet-boew.github.io/wet-boew/theme-wet-boew/css/theme.min.css);
 
+
 .visually-hidden,
 .visually-hidden-focusable:not(:focus):not(:focus-within) {
   position: absolute !important;
@@ -13,4 +14,8 @@
   clip: rect(0, 0, 0, 0) !important;
   white-space: nowrap !important;
   border: 0 !important;
+}
+
+* .token.plain-text {
+  color: #ffffff;
 }
