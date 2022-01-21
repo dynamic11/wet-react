@@ -1,0 +1,46 @@
+import { Canvas, Meta, Story } from '@storybook/addon-docs';
+
+import { Panel } from '../..';
+
+<Meta title="Components/Panel/Header" component={Panel} />
+
+export const Template = (args) => (
+  <Panel {...args}>This is some Panel content</Panel>
+);
+
+# Panel
+
+## Panel with a header
+
+You can add an optional header to the `Panel` by using setting the `headerContent` prop.
+
+<Canvas>
+  <Story name="Panel With Header" args={{ headerContent: 'Panel with Header' }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Panel without a header
+
+You can also leave `headerContent` empty to hide the header.
+
+<Canvas>
+  <Story name="Panel Without Header">{Template.bind({})}</Story>
+</Canvas>
+
+## Custom heading level
+
+You can set the heading level of the `Panel` by using the `headerLevel` prop. The default value is `h2`.
+
+This will make no visual difference. It is just for structuring the page.
+
+Possible obtions are: `h1`, `h2`, `h3`, `h4`, `h5`, `h6`
+
+<Canvas>
+  <Story
+    name="Custom Header Level"
+    args={{ headerContent: 'Panel with Header (h1)', headerLevel: 'h1' }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>

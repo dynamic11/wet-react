@@ -1,0 +1,7 @@
+{
+  "recommendations": [
+    "silvenon.mdx",
+    "esbenp.prettier-vscode",
+    "dbaeumer.vscode-eslint"
+  ]
+}

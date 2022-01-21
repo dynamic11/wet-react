@@ -1,4 +1,4 @@
-# WET-React UI components libarary
+# WET-React UI components library
 
 <img src="https://user-images.githubusercontent.com/11470442/145418747-6b58458d-02f5-499f-ba52-96a4cc181efa.png" alt="drawing" width="300"/>
 
@@ -10,6 +10,7 @@ React implementation of the Web Experience Toolkit (WET).
 
 [![Chromatic Deployment](https://github.com/dynamic11/wet-react/actions/workflows/chromatic.yaml/badge.svg?branch=master)](https://github.com/dynamic11/wet-react/actions/workflows/chromatic.yaml)
 [![Linting Check](https://github.com/dynamic11/wet-react/actions/workflows/ci-tests.yaml/badge.svg?branch=master)](https://github.com/dynamic11/wet-react/actions/workflows/chromatic.yaml)
+[![codecov](https://codecov.io/gh/dynamic11/wet-react/branch/master/graph/badge.svg?token=13E1BGWDHR)](https://codecov.io/gh/dynamic11/wet-react)
 
 ## Storybook deployments
 
