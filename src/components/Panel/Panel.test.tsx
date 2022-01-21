@@ -152,7 +152,9 @@ describe('Panel Tests', () => {
   describe('Panel visibility', () => {
     test('Hidden Panel', () => {
       const PanelBodyContent = 'Body: Hello world!';
-      const result = render(<Panel visible={false}>{PanelBodyContent}</Panel>);
+      const result = render(
+        <Panel isVisible={false}>{PanelBodyContent}</Panel>
+      );
 
       expect(result.container.querySelector('.panel')).not.toBeInTheDocument();
     });

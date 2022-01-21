@@ -8,7 +8,7 @@ export interface AlertProps {
   /** The styling variant that you would like to use */
   variant?: variantType;
   /** Show alert */
-  show?: boolean;
+  isVisible?: boolean;
   /** Content of Alert */
   children?: React.ReactNode;
   /** Additional custom classNames */
@@ -17,7 +17,7 @@ export interface AlertProps {
 
 const Alert = ({
   variant = 'info',
-  show = true,
+  isVisible = true,
   className = '',
   children,
   ...rest
@@ -31,7 +31,7 @@ const Alert = ({
       ? 'alert-danger'
       : 'alert-info';
 
-  return show ? (
+  return isVisible ? (
     <section className={`alert ${alertClassName} ${className}`} {...rest}>
       {children}
     </section>

@@ -16,7 +16,7 @@ export interface PanelProps {
   /** The content of panel footer */
   footerContent?: React.ReactNode;
   /** Show panel */
-  visible?: boolean;
+  isVisible?: boolean;
   /** Content of panel */
   children?: React.ReactNode;
   /** Additional custom classNames */
@@ -25,7 +25,7 @@ export interface PanelProps {
 
 const Panel = ({
   variant = 'info',
-  visible = true,
+  isVisible = true,
   className = '',
   headerContent,
   headerLevel = 'h2',
@@ -42,7 +42,7 @@ const Panel = ({
       ? 'panel-danger'
       : 'panel-info';
 
-  return visible ? (
+  return isVisible ? (
     <div className={`panel ${panelClassName} ${className}`} {...rest}>
       {headerContent && (
         <header className="panel-heading">
