@@ -175,7 +175,7 @@ describe('ProgressBar Tests', () => {
           min={20}
           max={40}
           label={LabelPlaceholder}
-          visuallyHidden
+          isLabelVisible
         />
       );
 

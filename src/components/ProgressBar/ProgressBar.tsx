@@ -6,7 +6,7 @@ export interface ProgressBarProps {
   /** Show label that represents visual percentage. EG. 60% */
   label?: React.ReactNode;
   /** Hide's the label visually. */
-  visuallyHidden?: boolean;
+  isLabelVisible?: boolean;
   /** Maximum value progress can reach */
   max?: number;
   /** Minimum value progress can begin from */
@@ -19,7 +19,7 @@ export interface ProgressBarProps {
 
 const ProgressBar = ({
   label,
-  visuallyHidden = false,
+  isLabelVisible = false,
   max = 100,
   min = 0,
   now = 0,
@@ -27,17 +27,18 @@ const ProgressBar = ({
   ...rest
 }: ProgressBarProps) => {
   const sterilizedMin = min > max ? max : min;
-  const sterilizedNow = now < min ? min : now > max ? max : now;
+  const sterilizedNow =
+    now < sterilizedMin ? sterilizedMin : now > max ? max : now;
 
   return (
     <ProgressBarRB
       label={label}
-      visuallyHidden={visuallyHidden}
+      visuallyHidden={isLabelVisible}
       max={max}
       min={sterilizedMin}
       now={sterilizedNow}
-      {...rest}
       className={className}
+      {...rest}
     />
   );
 };
