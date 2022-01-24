@@ -22,19 +22,24 @@ const ProgressBar = ({
   visuallyHidden = false,
   max = 100,
   min = 0,
-  now,
+  now = 0,
   className,
   ...rest
-}: ProgressBarProps) => (
-  <ProgressBarRB
-    label={label}
-    visuallyHidden={visuallyHidden}
-    max={max}
-    min={min}
-    now={now}
-    {...rest}
-    className={className}
-  />
-);
+}: ProgressBarProps) => {
+  const sterilizedMin = min > max ? max : min;
+  const sterilizedNow = now < min ? min : now > max ? max : now;
+
+  return (
+    <ProgressBarRB
+      label={label}
+      visuallyHidden={visuallyHidden}
+      max={max}
+      min={sterilizedMin}
+      now={sterilizedNow}
+      {...rest}
+      className={className}
+    />
+  );
+};
 
 export default ProgressBar;
