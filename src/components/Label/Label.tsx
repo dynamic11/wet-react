@@ -26,7 +26,7 @@ const Label = ({
   variant = 'default',
   visible = true,
   children,
-  className,
+  className = '',
 }: LabelProps) => {
   const variantClassName = `label-${variant}`;
 
