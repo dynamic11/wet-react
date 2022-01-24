@@ -1,0 +1,40 @@
+import { Canvas, Meta, Story } from '@storybook/addon-docs';
+
+import { ProgressBar } from '../..';
+
+<Meta title="Components/ProgressBar/Label" component={ProgressBar} />
+
+export const Template = (args) => <ProgressBar {...args} />;
+
+# ProgressBar
+
+## ProgressBar with label
+
+Add a label prop to show a visible percentage. For low percentages, consider adding a min-width to ensure the label's text is fully visible.
+
+<Canvas>
+  <Story name="With label" args={{ now: 60, label: '60%' }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## ProgressBar with no label
+
+Th label is optional and can be omitted
+
+<Canvas>
+  <Story name="With no label" args={{ now: 60 }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Screenreader only label
+
+<Canvas>
+  <Story
+    name="Screenreader only label"
+    args={{ now: 60, label: '60%', visuallyHidden: true }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
