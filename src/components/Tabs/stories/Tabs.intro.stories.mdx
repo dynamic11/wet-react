@@ -11,7 +11,27 @@ Use to provide contextual feedback messages for typical user actions. Choose fro
 ## Example
 
 <Canvas>
-  <Tabs defaultActiveKey="key2"></Tabs>
+  <Tabs
+    defaultActiveKey="key2"
+    data={[
+      {
+        key: 'key1',
+        title: 'Tab 1',
+        children: <h2>This is tab content</h2>,
+        className: '',
+      },
+      {
+        key: 'key2',
+        title: 'Tab 2',
+        children: <h2>This is tab content 2</h2>,
+      },
+      {
+        key: 'key3',
+        title: 'Tab 3',
+        children: <h2>This is tab content as well 3</h2>,
+      },
+    ]}
+  ></Tabs>
 </Canvas>
 
 ## Available Props

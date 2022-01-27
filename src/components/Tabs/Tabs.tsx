@@ -1,48 +1,46 @@
-import React, { useState } from 'react';
+import React, { ReactNode, useEffect, useState } from 'react';
 import Nav from 'react-bootstrap/Nav';
 import '../../style.css';
 
+type tabData = {
+  key: string;
+  title: string;
+  children: ReactNode;
+  className?: string;
+};
+
 export interface TabsProps {
-  /** Content of Tabs */
-  children?: React.ReactNode;
+  /**  Mark the tab with a matching `key` as active. */
+  activeKey?: string;
+  /** The default active key that is selected on start */
+  defaultActiveKey?: string;
+  /** An array of data used to create the tabs */
+  data: tabData[];
   /** Additional custom classNames */
   className?: string;
-  defaultActiveKey?: string;
-  data: object[];
 }
 
 const Tabs = ({
   className = '',
-  children,
+  activeKey,
   defaultActiveKey,
   data,
   ...rest
 }: TabsProps) => {
   const [activeTab, setActiveTab] = useState(defaultActiveKey || null);
 
-  const testData = [
-    {
-      key: 'key1',
-      title: 'Tab 1',
-      children: <h2>This is tab content</h2>,
-      className: '',
-    },
-    {
-      key: 'key2',
-      title: 'Tab 2',
-      children: <h2>This is tab content 2</h2>,
-    },
-    {
-      key: 'key3',
-      title: 'Tab 3',
-      children: <h2>This is tab content as well</h2>,
-    },
-  ];
+  useEffect(() => {
+    setActiveTab(activeKey);
+  }, [activeKey]);
 
-  // console.log("testData");
+  const onTabClick = (key) => {
+    if (!activeKey) {
+      setActiveTab(key);
+    }
+  };
 
   const renderTabs = () =>
-    testData.map((tab) => (
+    data.map((tab) => (
       <li
         className={`${tab.className} ${activeTab === tab.key ? 'active' : ''}`}
         role="presentation"
@@ -52,7 +50,7 @@ const Tabs = ({
         <a
           id="details-panel2-lnk"
           onClick={() => {
-            setActiveTab(tab.key);
+            onTabClick(tab.key);
           }}
           role="tab"
           aria-controls="details-panel2"
@@ -64,8 +62,8 @@ const Tabs = ({
 
   const renderTabContent = () => {
     let tabContent = null;
-    for (let i = 0; i < testData.length; i += 1) {
-      const tab = testData[i];
+    for (let i = 0; i < data.length; i += 1) {
+      const tab = data[i];
       if (activeTab === tab.key) {
         tabContent = (
           <>
@@ -75,16 +73,10 @@ const Tabs = ({
               aria-hidden="true"
               id="wb-auto-4"
               role="tab"
-              aria-posinset={2}
-              aria-setsize={3}
             >
               {tab.title}
             </summary>
-            <div
-              className="tgl-panel"
-              aria-labelledby="wb-auto-4"
-              aria-hidden="false"
-            >
+            <div className="tgl-panel" aria-labelledby="wb-auto-4">
               {tab.children}
             </div>
           </>
@@ -105,7 +97,7 @@ const Tabs = ({
 
       <div className="tabpanels">
         <details
-          id="details-panel2"
+          id="details-panel"
           open
           className="wb-auto-2-grp fade in"
           role="tabpanel"
