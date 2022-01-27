@@ -1,6 +1,6 @@
 {
   "name": "gcweb-react",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "description": "React component library for GCWeb canada.ca theme",
   "scripts": {
     "rollup": "rollup -c",
