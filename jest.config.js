@@ -5,4 +5,12 @@ module.exports = {
     '.(css|less|scss)$': 'identity-obj-proxy',
     '^@components(.*)$': '<rootDir>/src/components$1',
   },
+  coverageThreshold: {
+    global: {
+      branches: 83.96,
+      functions: 100,
+      lines: 90.36,
+      statements: 90.36,
+    },
+  },
 };

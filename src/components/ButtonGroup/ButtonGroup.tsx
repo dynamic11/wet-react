@@ -9,7 +9,7 @@ export interface ButtonGroupProps {
   /** The custom 'non-default' size of button group */
   size?: sizingType;
   /** Orientation of button group */
-  vertical?: boolean;
+  isVertical?: boolean;
   /** Buttons to group */
   children?: React.ReactNode;
   /** Additional custom classNames */
@@ -18,11 +18,11 @@ export interface ButtonGroupProps {
 
 const ButtonGroup = ({
   size,
-  vertical = false,
+  isVertical = false,
   children,
   ...rest
 }: ButtonGroupProps) => (
-  <ButtonGroupRB size={size} vertical={vertical} {...rest}>
+  <ButtonGroupRB size={size} vertical={isVertical} {...rest}>
     {children}
   </ButtonGroupRB>
 );
