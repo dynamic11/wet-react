@@ -1,5 +1,5 @@
 {
-  "name": "gcweb-react",
+  "name": "@dynamic11/react-wet",
   "version": "0.0.0",
   "description": "React component library for GCWeb canada.ca theme",
   "scripts": {
@@ -14,7 +14,7 @@
     "chromatic": "npx chromatic --project-token=<need-to-add>",
     "prepare": "husky install"
   },
-  "author": "",
+  "author": "ISED",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.16.7",
