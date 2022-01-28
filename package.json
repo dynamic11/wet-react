@@ -1,6 +1,6 @@
 {
-  "name": "gcweb-react",
-  "version": "1.0.0",
+  "name": "@dynamic11/react-wet",
+  "version": "0.0.0",
   "description": "React component library for GCWeb canada.ca theme",
   "scripts": {
     "rollup": "rollup -c",
@@ -14,7 +14,7 @@
     "chromatic": "npx chromatic --project-token=<need-to-add>",
     "prepare": "husky install"
   },
-  "author": "",
+  "author": "ISED",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.16.7",
@@ -22,6 +22,7 @@
     "@babel/preset-react": "^7.16.7",
     "@babel/preset-typescript": "^7.16.7",
     "@rollup/plugin-commonjs": "^21.0.1",
+    "@rollup/plugin-json": "^4.1.0",
     "@rollup/plugin-node-resolve": "^13.1.3",
     "@rollup/plugin-typescript": "^8.3.0",
     "@storybook/addon-a11y": "^6.4.13",
@@ -29,7 +30,9 @@
     "@storybook/addon-docs": "^6.4.13",
     "@storybook/addon-essentials": "^6.4.13",
     "@storybook/addon-links": "^6.4.13",
+    "@storybook/addons": "^6.4.14",
     "@storybook/react": "^6.4.13",
+    "@storybook/theming": "^6.4.14",
     "@testing-library/jest-dom": "^5.16.1",
     "@testing-library/react": "^12.1.2",
     "@types/jest": "^27.4.0",
@@ -55,7 +58,7 @@
     "jest": "^27.4.7",
     "lint-staged": "^12.1.7",
     "prettier": "2.5.1",
-    "rollup": "^2.64.0",
+    "rollup": "^2.66.1",
     "rollup-plugin-dts": "^4.1.0",
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "rollup-plugin-postcss": "^4.0.2",
@@ -65,7 +68,10 @@
   },
   "peerDependencies": {
     "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react-dom": "^17.0.2",
+    "anysort": "^2.0.0",
+    "react-bootstrap": "^2.1.1",
+    "react-syntax-highlighter": "^15.0.0"
   },
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -73,17 +79,13 @@
     "dist"
   ],
   "types": "dist/index.d.ts",
-  "dependencies": {
-    "@storybook/addons": "^6.4.13",
-    "@storybook/theming": "^6.4.13",
-    "anysort": "^2.0.0",
-    "react-bootstrap": "^2.1.1",
-    "react-syntax-highlighter": "^15.0.0"
-  },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
-      "npm run lint",
-      "npm run prettier"
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{json,md}": [
+      "prettier --write"
     ]
   }
 }
