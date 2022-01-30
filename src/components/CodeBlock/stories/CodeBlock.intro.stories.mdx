@@ -16,13 +16,15 @@ We have configured `React Syntax Highlighter` it to use `prism.js` as the core f
 
 ## Example
 
-<CodeBlock language="javascript">
-  {`function createStyleObject(classNames, style) {
+<Canvas>
+  <CodeBlock language="javascript">
+    {`function createStyleObject(classNames, style) {
     return classNames.reduce((styleObject, className) => {
       return { ...styleObject, ...style[className] };
     }, {});
   }`}
-</CodeBlock>
+  </CodeBlock>
+</Canvas>
 
 ## Available Props
 
