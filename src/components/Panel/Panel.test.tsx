@@ -6,54 +6,54 @@ import Panel from '@components/Panel';
 
 describe('Panel Tests', () => {
   describe('Test Panel style variants', () => {
-    const PanelContent = 'Hello world!';
+    const panelContent = 'Hello world!';
 
     test('Default Panel', () => {
-      const result = render(<Panel>{PanelContent}</Panel>);
+      const result = render(<Panel>{panelContent}</Panel>);
       expect(result.container.querySelector('.panel')).toHaveClass(
         'panel-info'
       );
-      expect(screen.getByText(PanelContent)).toHaveClass('panel-body');
+      expect(screen.getByText(panelContent)).toHaveClass('panel-body');
     });
 
     test('Success Panel', () => {
-      const result = render(<Panel variant="success">{PanelContent}</Panel>);
+      const result = render(<Panel variant="success">{panelContent}</Panel>);
       expect(result.container.querySelector('.panel')).toHaveClass(
         'panel-success'
       );
-      expect(screen.getByText(PanelContent)).toHaveClass('panel-body');
+      expect(screen.getByText(panelContent)).toHaveClass('panel-body');
     });
 
     test('Info Panel', () => {
-      const result = render(<Panel variant="info">{PanelContent}</Panel>);
+      const result = render(<Panel variant="info">{panelContent}</Panel>);
       expect(result.container.querySelector('.panel')).toHaveClass(
         'panel-info'
       );
-      expect(screen.getByText(PanelContent)).toHaveClass('panel-body');
+      expect(screen.getByText(panelContent)).toHaveClass('panel-body');
     });
 
     test('Warning Panel', () => {
-      const result = render(<Panel variant="warning">{PanelContent}</Panel>);
+      const result = render(<Panel variant="warning">{panelContent}</Panel>);
       expect(result.container.querySelector('.panel')).toHaveClass(
         'panel-warning'
       );
-      expect(screen.getByText(PanelContent)).toHaveClass('panel-body');
+      expect(screen.getByText(panelContent)).toHaveClass('panel-body');
     });
 
     test('Danger Panel', () => {
-      const result = render(<Panel variant="danger">{PanelContent}</Panel>);
+      const result = render(<Panel variant="danger">{panelContent}</Panel>);
       expect(result.container.querySelector('.panel')).toHaveClass(
         'panel-danger'
       );
-      expect(screen.getByText(PanelContent)).toHaveClass('panel-body');
+      expect(screen.getByText(panelContent)).toHaveClass('panel-body');
     });
 
     test('Invalid Panel variant', () => {
-      const result = render(<Panel variant="zzzzzz">{PanelContent}</Panel>);
+      const result = render(<Panel variant="zzzzzz">{panelContent}</Panel>);
       expect(result.container.querySelector('.panel')).toHaveClass(
         'panel-info'
       );
-      expect(screen.getByText(PanelContent)).toHaveClass('panel-body');
+      expect(screen.getByText(panelContent)).toHaveClass('panel-body');
     });
   });
 
