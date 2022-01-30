@@ -137,10 +137,11 @@ describe('ProgressBar Tests', () => {
   });
 
   describe('ProgressBar Label Tests', () => {
+    const labelPlaceholder = 'test 1234';
+
     test('test visible label', () => {
-      const LabelPlaceholder = 'test 1234';
       const result = render(
-        <ProgressBar now={30} min={20} max={40} label={LabelPlaceholder} />
+        <ProgressBar now={30} min={20} max={40} label={labelPlaceholder} />
       );
 
       expect(result.container.querySelector('.progress')).toBeInTheDocument();
@@ -162,19 +163,18 @@ describe('ProgressBar Tests', () => {
         'style',
         'width: 50%;'
       );
-      expect(screen.getByText(LabelPlaceholder)).not.toHaveClass(
+      expect(screen.getByText(labelPlaceholder)).not.toHaveClass(
         'visually-hidden'
       );
     });
 
     test('test hidden label', () => {
-      const LabelPlaceholder = 'test 1234';
       const result = render(
         <ProgressBar
           now={30}
           min={20}
           max={40}
-          label={LabelPlaceholder}
+          label={labelPlaceholder}
           isLabelHidden
         />
       );
@@ -198,7 +198,7 @@ describe('ProgressBar Tests', () => {
         'style',
         'width: 50%;'
       );
-      expect(screen.getByText(LabelPlaceholder)).toHaveClass('visually-hidden');
+      expect(screen.getByText(labelPlaceholder)).toHaveClass('visually-hidden');
     });
   });
 });
