@@ -14,34 +14,20 @@ export interface TitleProps {
 }
 
 const Title = ({ children, level = 'h1', ...rest }: TitleProps) => {
-  let titleHtml: JSX.Element;
-  switch (level) {
-    case 'h2': {
-      titleHtml = <h2 {...rest}>{children}</h2>;
-      break;
-    }
-    case 'h3': {
-      titleHtml = <h3 {...rest}>{children}</h3>;
-      break;
-    }
-    case 'h4': {
-      titleHtml = <h4 {...rest}>{children}</h4>;
-      break;
-    }
-    case 'h5': {
-      titleHtml = <h5 {...rest}>{children}</h5>;
-      break;
-    }
-    case 'h6': {
-      titleHtml = <h6 {...rest}>{children}</h6>;
-      break;
-    }
-    default: {
-      titleHtml = <h1 {...rest}>{children}</h1>;
-      break;
-    }
-  }
-  return titleHtml;
+  const Tag =
+    level === 'h2'
+      ? 'h2'
+      : level === 'h3'
+      ? 'h3'
+      : level === 'h4'
+      ? 'h4'
+      : level === 'h5'
+      ? 'h5'
+      : level === 'h6'
+      ? 'h6'
+      : 'h1';
+
+  return <Tag {...rest}>{children}</Tag>;
 };
 
 export default Title;
