@@ -11,9 +11,6 @@ export interface ImageProps {
   roundedCircle?: boolean;
   /** Sets image shape as thumbnail. */
   thumbnail?: boolean;
-  /** Change the underlying component CSS base class name and modifier class names prefix.
-   * This is an escape hatch for working with heavily customized bootstrap css. */
-  bsPrefix?: string;
   /** Sets the source of the image */
   src?: string;
   /** Sets the alternate text for the image */
@@ -25,7 +22,6 @@ const ImageWET = ({
   rounded = false,
   roundedCircle = false,
   thumbnail = false,
-  bsPrefix = 'img',
   src = '',
   alt = '',
   ...rest
@@ -35,7 +31,6 @@ const ImageWET = ({
     rounded={rounded}
     roundedCircle={roundedCircle}
     thumbnail={thumbnail}
-    bsPrefix={bsPrefix}
     src={src}
     alt={alt}
     {...rest}
