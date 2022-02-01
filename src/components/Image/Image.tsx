@@ -3,8 +3,6 @@ import Image from 'react-bootstrap/Image';
 import '../../style.css';
 
 export interface ImageProps {
-  /** Sets image as fluid image. */
-  fluid?: boolean;
   /** Sets image shape as rounded. */
   rounded?: boolean;
   /** Sets image shape as circle. */
@@ -18,23 +16,26 @@ export interface ImageProps {
 }
 
 const ImageWET = ({
-  fluid = false,
   rounded = false,
   roundedCircle = false,
   thumbnail = false,
   src = '',
   alt = '',
   ...rest
-}: ImageProps) => (
-  <Image
-    fluid={fluid}
-    rounded={rounded}
-    roundedCircle={roundedCircle}
-    thumbnail={thumbnail}
-    src={src}
-    alt={alt}
-    {...rest}
-  />
-);
+}: ImageProps) => {
+  const styles = rounded === true ? 'img-rounded' : '';
+  const styles2 = roundedCircle === true ? 'img-circle' : '';
+  const styles3 = thumbnail === true ? 'img-thumbnail' : '';
+  const finalstyle = `${styles} ${styles2} ${styles3}`;
+
+  return (
+    <Image
+      src={src}
+      alt={alt}
+      className={finalstyle.trimStart().trimEnd()}
+      {...rest}
+    />
+  );
+};
 
 export default ImageWET;
