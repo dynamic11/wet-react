@@ -1,0 +1,40 @@
+import { Canvas, Meta, ArgsTable } from '@storybook/addon-docs';
+
+import { Details } from '../../';
+
+<Meta title="Components/Details/Intro" component={Details} />
+
+# Details
+
+Build vertically collapsing component.
+
+## Example
+
+Click the summaries below to expand/collapse the detail content.
+
+<Canvas>
+  <Details
+    data={[
+      {
+        key: 'key1',
+        title: 'Summary 1',
+        children: <h2>This is Summary content</h2>,
+        className: '',
+      },
+      {
+        key: 'key2',
+        title: 'Summary 2',
+        children: <h2>This is Summary content 2</h2>,
+      },
+      {
+        key: 'key3',
+        title: 'Summary 3',
+        children: <h2>This is Summary content as well 3</h2>,
+      },
+    ]}
+  />
+</Canvas>
+
+## Available Props
+
+<ArgsTable component="Details" />
