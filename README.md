@@ -13,7 +13,6 @@ React implementation of the Web Experience Toolkit (WET).
 [![codecov](https://codecov.io/gh/dynamic11/wet-react/branch/master/graph/badge.svg?token=13E1BGWDHR)](https://codecov.io/gh/dynamic11/wet-react)
 [![npm version](https://badge.fury.io/js/@dynamic11%2Freact-wet.svg)](https://badge.fury.io/js/@dynamic11%2Freact-wet)
 
-
 ## Storybook deployments
 
 The Storybook build can be found here:
