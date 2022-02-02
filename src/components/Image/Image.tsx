@@ -2,7 +2,7 @@ import React from 'react';
 import Image from 'react-bootstrap/Image';
 import '../../style.css';
 
-export interface ImageProps {
+export interface ImageWETProps {
   /** Sets image shape as rounded. */
   rounded?: boolean;
   /** Sets image shape as circle. */
@@ -22,7 +22,7 @@ const ImageWET = ({
   src = '',
   alt = '',
   ...rest
-}: ImageProps) => {
+}: ImageWETProps) => {
   const styles = rounded === true ? 'img-rounded' : '';
   const styles2 = roundedCircle === true ? 'img-circle' : '';
   const styles3 = thumbnail === true ? 'img-thumbnail' : '';
