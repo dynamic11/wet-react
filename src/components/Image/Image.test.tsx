@@ -14,6 +14,12 @@ describe('Image Tests', () => {
     );
     expect(screen.getByRole('img')).toHaveClass('img-circle');
   });
+  test('Test image defaults', () => {
+    render(<ImageWET rounded />);
+    expect(screen.getByRole('img')).toHaveClass('img-rounded');
+    expect(screen.getByRole('img')).toHaveAttribute('src', '');
+    expect(screen.getByRole('img')).toHaveAttribute('alt', '');
+  });
   test('Test image source and alt', () => {
     render(
       <ImageWET
