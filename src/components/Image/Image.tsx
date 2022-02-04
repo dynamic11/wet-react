@@ -18,9 +18,9 @@ export interface ImageWETProps {
   /** Use to layer text and images for media content like blog comments, tweets, and so forth. */
   media?: boolean;
   /** Sets the source of the image */
-  src?: string;
+  src: string;
   /** Sets the alternate text for the image */
-  alt?: string;
+  alt: string;
 }
 
 const ImageWET = ({
