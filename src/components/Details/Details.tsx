@@ -8,6 +8,11 @@ type detailData = {
   className?: string;
 };
 
+export interface DetailItemProps {
+  /** data used to create the detail item */
+  dataItem: detailData;
+}
+
 export interface DetailsProps {
   /** An array of data used to create the details */
   data: detailData[];
@@ -15,19 +20,22 @@ export interface DetailsProps {
   className?: string;
 }
 
-const Details = ({ className = '', data, ...rest }: DetailsProps) => {
-  const renderDetails = () =>
-    data.map((detail) => (
-      <li key={detail.key} className={className} {...rest}>
-        <details key={detail.key}>
-          <summary key={detail.key}>{detail.title}</summary>
-          {detail.children}
-        </details>
-      </li>
-    ));
+const DetailItem = ({ dataItem }: DetailItemProps) => (
+  <li key={dataItem.key} className={dataItem.className}>
+    <details key={dataItem.key}>
+      <summary key={dataItem.key}>{dataItem.title}</summary>
+      {dataItem.children}
+    </details>
+  </li>
+);
 
-  return <ul className="list-unstyled">{renderDetails()}</ul>;
-};
+const Details = ({ className = '', data, ...rest }: DetailsProps) => (
+  <ul className={`list-unstyled ${className}`} {...rest}>
+    {data.map((dataItem) => (
+      <DetailItem dataItem={dataItem} />
+    ))}
+  </ul>
+);
 
 Details.displayName = 'Details';
 
