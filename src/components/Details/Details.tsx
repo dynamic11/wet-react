@@ -21,7 +21,7 @@ export interface DetailsProps {
 }
 
 const DetailItem = ({ dataItem }: DetailItemProps) => (
-  <li key={dataItem.key} className={dataItem.className}>
+  <li className={dataItem.className}>
     <details key={dataItem.key}>
       <summary key={dataItem.key}>{dataItem.title}</summary>
       {dataItem.children}
@@ -32,7 +32,7 @@ const DetailItem = ({ dataItem }: DetailItemProps) => (
 const Details = ({ className = '', data, ...rest }: DetailsProps) => (
   <ul className={`list-unstyled ${className}`} {...rest}>
     {data.map((dataItem) => (
-      <DetailItem dataItem={dataItem} />
+      <DetailItem dataItem={dataItem} key={dataItem.key} />
     ))}
   </ul>
 );
