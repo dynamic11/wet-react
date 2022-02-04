@@ -25,13 +25,13 @@ describe('Details', () => {
 
   describe('Test Details Variants', () => {
     test('Default Panel', () => {
-      const result = render(<Details data={detailsData} />);
+      render(<Details data={detailsData} />);
+      // check for headings
       detailsData.forEach((data) => {
         expect(screen.getByText(data.title)).toBeInTheDocument();
       });
-      expect(result.container.querySelectorAll('h2').length).toBe(
-        detailsData.length
-      );
+      // check for content
+      expect(screen.getAllByRole('heading', { level: 2 })).toHaveLength(3);
     });
   });
 });
