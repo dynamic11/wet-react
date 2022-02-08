@@ -1,0 +1,43 @@
+import { ArgsTable, Canvas, Meta } from '@storybook/addon-docs';
+
+import { Form, Button, Alert } from '../..';
+
+<Meta title="Components/Form/Form Label" component={Form} />
+
+# Forms
+
+## Form Label
+
+`<Form.Label>` is used to label a form input.
+
+### Visible Label
+
+<Canvas>
+  <Story name="Visible Label">
+    <Form>
+      <Form.Label htmlFor="inputPassword5">Password</Form.Label>
+      <Form.Control
+        type="password"
+        id="inputPassword5"
+        aria-describedby="passwordHelpBlock"
+      />
+    </Form>
+  </Story>
+</Canvas>
+
+### Visually Hidden Label
+
+<Canvas>
+  <Story name="Visually Hidden Label">
+    <Form>
+      <Form.Label htmlFor="inputPassword5" isVisuallyHidden>
+        Password
+      </Form.Label>
+      <Form.Control type="password" id="inputPassword5" />
+    </Form>
+  </Story>
+</Canvas>
+
+### Form.Label Props
+
+**TO BE ADDED**
