@@ -1,0 +1,70 @@
+import { ArgsTable, Canvas, Meta } from '@storybook/addon-docs';
+
+import { Form, Button, Alert } from '../..';
+
+<Meta title="Components/Form/Form Text" component={Form} />
+
+# Forms
+
+## Form Text
+
+Block-level help text in forms can be created using `<Form.Text>`.
+
+<Alert variant="warning">
+  <Alert.Header level="h5">
+    Associating help text with form controls
+  </Alert.Header>
+  <Alert.Body>
+    Help text should be explicitly associated with the form control it relates
+    to using the <code>aria-describedby</code> attribute. This will ensure that
+    assistive technologies—such as screen readers—will announce this help text
+    when the user focuses or enters the control.
+  </Alert.Body>
+</Alert>
+
+### General Example
+
+<Canvas>
+  <Story name="General Example">
+    <Form>
+      <Form.Label htmlFor="inputPassword5">Password</Form.Label>
+      <Form.Control
+        type="password"
+        id="inputPassword5"
+        aria-describedby="passwordHelpBlock"
+      />
+      <Form.Text id="passwordHelpBlock">
+        Your password must be 8-20 characters long, contain letters and numbers,
+        and must not contain spaces, special characters, or emoji.
+      </Form.Text>
+    </Form>
+  </Story>
+</Canvas>
+
+### Muted/Unmuted Text
+
+The `isMuted` prop can be used to mute the text styling. It defaults to `true`.
+
+<Canvas>
+  <Story name="Muted/Unmuted Text">
+    <Form>
+      <Form.Label htmlFor="inputPassword5">Password</Form.Label>
+      <Form.Control
+        type="password"
+        id="inputPassword5"
+        aria-describedby="passwordHelpBlock"
+      />
+      <Form.Text id="passwordHelpBlock" isMuted>
+        Muted text by default or by setting `isMuted` to true.
+      </Form.Text>
+      <br />
+      <Form.Text id="passwordHelpBlock" isMuted={false}>
+        Unmuted text by setting `isMuted` to false.
+      </Form.Text>
+    </Form>
+  </Story>
+</Canvas>
+
+### Form.Text Props
+
+**TO BE ADDED**

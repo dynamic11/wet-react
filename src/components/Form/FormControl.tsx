@@ -40,7 +40,9 @@ export interface FormControlProps {
   /** The HTML input type, which is only relevant if as is 'input' (the default). */
   type?: typeType;
   /** Make the control disabled. */
-  disabled?: boolean;
+  isDisabled?: boolean;
+  /** Make the control readonly. */
+  isReadOnly?: boolean;
   /** Add "aria-invalid="true" to input */
   isInvalid?: boolean;
   /** Add "aria-required="true" to input */
@@ -61,7 +63,8 @@ const FormControl = ({
   placeholder,
   as,
   type = 'text',
-  disabled = false,
+  isDisabled = false,
+  isReadOnly = false,
   isInvalid = false,
   isRequired = false,
   htmlSize,
@@ -78,7 +81,8 @@ const FormControl = ({
     <FormRB.Control
       as={as}
       type={type}
-      disabled={disabled}
+      disabled={isDisabled}
+      readOnly={isReadOnly}
       aria-required={isRequired}
       aria-invalid={isInvalid}
       htmlSize={htmlSize}
