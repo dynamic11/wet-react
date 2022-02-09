@@ -1,3 +1,4 @@
 *.css
 *.svg
 node_modules/
+rollup.config.js
