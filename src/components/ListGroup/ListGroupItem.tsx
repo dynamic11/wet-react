@@ -3,16 +3,7 @@ import ListGroupRB from 'react-bootstrap/ListGroup';
 import '../../style.css';
 
 /** Types */
-type variantType =
-  | 'primary'
-  | 'secondary'
-  | 'warning'
-  | 'danger'
-  | 'light'
-  | 'info'
-  | 'success'
-  | 'dark'
-  | undefined;
+type variantType = 'warning' | 'danger' | 'info' | 'success' | undefined;
 
 export interface ListGroupItemProps {
   /** Sets contextual classes for list item */
@@ -29,27 +20,13 @@ export interface ListGroupItemProps {
 const ListGroupItem = ({
   active = false,
   href,
-  variant = 'primary',
+  variant = undefined,
   children,
   ...rest
 }: ListGroupItemProps) => (
-  // const styles = 'list-group-item';
-  // const styles2 = active === true ? 'active' : '';
-  // const styles3 = `list-group-item-${variant}`;
-  // const finalstyle = `${styles} ${styles2} ${styles3}`;
-  // let body: React.ReactNode;
-
-  // if (href) {
-  //   body = <li className={finalstyle}>{children}</li>;
-  // } else {
-  //   body = (
-  //     <a href={href} className={finalstyle}>
-  //       {children}
-  //     </a>
-  //   );
-  // }
-
-  <ListGroupRB.Item>{children}</ListGroupRB.Item>
+  <ListGroupRB.Item variant={variant} active={active} href={href} {...rest}>
+    {children}
+  </ListGroupRB.Item>
 );
 ListGroupItem.displayName = 'ListGroup.Item';
 
