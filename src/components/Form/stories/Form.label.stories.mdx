@@ -40,4 +40,17 @@ import { Form, Button, Alert } from '../..';
 
 ### Form.Label Props
 
-**TO BE ADDED**
+**We are working to display the props in a table. Until then, you can find the props below:**
+
+```typescript
+export interface FormLabelProps {
+  /** Content of button */
+  children?: React.ReactNode;
+  /** Uses controlId from <FormGroup> if not explicitly specified. */
+  htmlFor?: string;
+  /** Hides the label visually while still allowing it to be read by assistive technologies */
+  isVisuallyHidden?: boolean;
+  /** Additional custom classNames */
+  className?: string;
+}
+```
