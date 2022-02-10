@@ -1,0 +1,98 @@
+import { ArgsTable, Canvas, Meta } from '@storybook/addon-docs';
+
+import { Form } from '../..';
+
+<Meta title="Components/Form/Form Check" component={Form} />
+
+# Forms
+
+## Form Check
+
+For the non-textual checkbox and radio controls, FormCheck provides a single component for both types that adds some additional styling and improved layout.
+
+### Default
+
+<Canvas>
+  <Story name="Default">
+    <Form>
+      <Form.check type="checkbox" label={`default checkbox 1`} />
+      <Form.check type="checkbox" label={`default checkbox 2`} />
+    </Form>
+    <Form>
+      <Form.check type="radio" label={`default radio 1`} />
+      <Form.check type="radio" label={`default radio 2`} />
+    </Form>
+  </Story>
+</Canvas>
+
+### Disabled
+
+You can choose to disable a checkbox or a radio controls
+
+<Canvas>
+  <Story name="Disabled">
+    <Form>
+      <Form.check type="checkbox" label={`default checkbox 1`} />
+      <Form.check isDisabled type="checkbox" label={`disabled checkbox 2`} />
+    </Form>
+    <Form>
+      <Form.check type="radio" label={`default radio 1`} />
+      <Form.check isDisabled type="radio" label={`disabled default radio 2`} />
+    </Form>
+  </Story>
+</Canvas>
+
+### Inline
+
+Group checkboxes or radios on the same horizontal row by adding the `isInline` prop.
+
+<Canvas>
+  <Story name="Inline" style={{ width: '500px' }}>
+    <Form>
+      <Form.check isInline type="checkbox" label={`checkbox 1`} />
+      <Form.check isInline type="checkbox" label={`checkbox 2`} />
+      <Form.check
+        isInline
+        isDisabled
+        type="checkbox"
+        label={`disabled checkbox 2`}
+      />
+    </Form>
+    <Form>
+      <Form.check isInline type="radio" label={`default radio 1`} />
+      <Form.check
+        isInline
+        isDisabled
+        type="radio"
+        label={`disabled default radio 3`}
+      />
+    </Form>
+  </Story>
+</Canvas>
+
+### Form.Select Props
+
+**We are working to display the props in a table. Until then, you can find the props below:**
+
+```typescript
+export interface FormCheckProps {
+  /** title attribute */
+  title?: string;
+  /** label attribute */
+  label?: React.ReactNode;
+  /** The HTML input type, which is only relevant if as is 'input' (the default). */
+  type?: typeType;
+  /** Make the control disabled. */
+  isDisabled?: boolean;
+  /** Groups controls horizontally with other <Form.Checks>. */
+  isInline?: boolean;
+  /** Add "aria-invalid="true" to input */
+  isInvalid?: boolean;
+  /** Add "aria-required="true" to input */
+  isRequired?: boolean;
+  /** Uses controlId from <FormGroup> if not explicitly specified. */
+  id?: string;
+  /** Additional custom classNames */
+  className?: string;
+}
+```
