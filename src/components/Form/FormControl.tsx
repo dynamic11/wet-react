@@ -49,7 +49,7 @@ export interface FormControlProps {
   isRequired?: boolean;
   /** The size attribute of the underlying HTML element. Specifies the visible width in characters if as is 'input'. */
   htmlSize?: number;
-  /** Input size variants */
+  /** Input size variants: 'default', 'sm', 'lg' */
   size?: sizeType;
   /** A callback fired when the value prop changes */
   onChange;

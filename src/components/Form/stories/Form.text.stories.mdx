@@ -67,4 +67,17 @@ The `isMuted` prop can be used to mute the text styling. It defaults to `true`.
 
 ### Form.Text Props
 
-**TO BE ADDED**
+**We are working to display the props in a table. Until then, you can find the props below:**
+
+```typescript
+export interface FormTextProps {
+  /** Content of button */
+  children?: React.ReactNode;
+  /** A convenience prop for add the text-muted class, since it's so commonly used here. */
+  isMuted?: boolean;
+  /** Hides the label visually while still allowing it to be read by assistive technologies */
+  visuallyHidden?: boolean;
+  /** Additional custom classNames */
+  className?: string;
+}
+```
