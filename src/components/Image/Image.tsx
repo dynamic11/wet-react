@@ -1,8 +1,8 @@
 import React from 'react';
-import Image from 'react-bootstrap/Image';
+import ImageRB from 'react-bootstrap/Image';
 import '../../style.css';
 
-export interface ImageWETProps {
+export interface ImageProps {
   /** Sets image shape as rounded. */
   rounded?: boolean;
   /** Sets image shape as circle. */
@@ -23,7 +23,7 @@ export interface ImageWETProps {
   alt: string;
 }
 
-const ImageWET = ({
+const Image = ({
   rounded = false,
   roundedCircle = false,
   thumbnail = false,
@@ -34,7 +34,7 @@ const ImageWET = ({
   src = '',
   alt = '',
   ...rest
-}: ImageWETProps) => {
+}: ImageProps) => {
   const styles = rounded === true ? 'img-rounded' : '';
   const styles2 = roundedCircle === true ? 'img-circle' : '';
   const styles3 = thumbnail === true ? 'img-thumbnail' : '';
@@ -44,7 +44,7 @@ const ImageWET = ({
   const styles7 = media === true ? 'media-object' : '';
   const finalstyle = `${styles} ${styles2} ${styles3} ${styles4} ${styles5} ${styles6} ${styles7}`;
 
-  return <Image src={src} alt={alt} className={finalstyle} {...rest} />;
+  return <ImageRB src={src} alt={alt} className={finalstyle} {...rest} />;
 };
 
-export default ImageWET;
+export default Image;

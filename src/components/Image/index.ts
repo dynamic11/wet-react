@@ -1,3 +1,3 @@
-import ImageWET from './Image';
+import Image from './Image';
 
-export default ImageWET;
+export default Image;
