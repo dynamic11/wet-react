@@ -15,12 +15,12 @@ For the non-textual checkbox and radio controls, FormCheck provides a single com
 <Canvas>
   <Story name="Default">
     <Form>
-      <Form.check type="checkbox" label={`default checkbox 1`} />
-      <Form.check type="checkbox" label={`default checkbox 2`} />
+      <Form.Check type="checkbox" label={`default checkbox 1`} />
+      <Form.Check type="checkbox" label={`default checkbox 2`} />
     </Form>
     <Form>
-      <Form.check type="radio" label={`default radio 1`} />
-      <Form.check type="radio" label={`default radio 2`} />
+      <Form.Check type="radio" label={`default radio 1`} />
+      <Form.Check type="radio" label={`default radio 2`} />
     </Form>
   </Story>
 </Canvas>
@@ -32,12 +32,12 @@ You can choose to disable a checkbox or a radio controls
 <Canvas>
   <Story name="Disabled">
     <Form>
-      <Form.check type="checkbox" label={`default checkbox 1`} />
-      <Form.check isDisabled type="checkbox" label={`disabled checkbox 2`} />
+      <Form.Check type="checkbox" label={`default checkbox 1`} />
+      <Form.Check isDisabled type="checkbox" label={`disabled checkbox 2`} />
     </Form>
     <Form>
-      <Form.check type="radio" label={`default radio 1`} />
-      <Form.check isDisabled type="radio" label={`disabled default radio 2`} />
+      <Form.Check type="radio" label={`default radio 1`} />
+      <Form.Check isDisabled type="radio" label={`disabled default radio 2`} />
     </Form>
   </Story>
 </Canvas>
@@ -49,9 +49,9 @@ Group checkboxes or radios on the same horizontal row by adding the `isInline` p
 <Canvas>
   <Story name="Inline" style={{ width: '500px' }}>
     <Form>
-      <Form.check isInline type="checkbox" label={`checkbox 1`} />
-      <Form.check isInline type="checkbox" label={`checkbox 2`} />
-      <Form.check
+      <Form.Check isInline type="checkbox" label={`checkbox 1`} />
+      <Form.Check isInline type="checkbox" label={`checkbox 2`} />
+      <Form.Check
         isInline
         isDisabled
         type="checkbox"
@@ -59,8 +59,8 @@ Group checkboxes or radios on the same horizontal row by adding the `isInline` p
       />
     </Form>
     <Form>
-      <Form.check isInline type="radio" label={`default radio 1`} />
-      <Form.check
+      <Form.Check isInline type="radio" label={`default radio 1`} />
+      <Form.Check
         isInline
         isDisabled
         type="radio"
