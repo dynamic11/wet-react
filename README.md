@@ -59,7 +59,7 @@ import { Button } from '@dynamic11/wet-react';
 
 ### Stylesheet
 
-WET-React doesn't ship with a specific stylesheet. It is made to be compatible with either the WET or GCWeb theme (based on Bootstrap 3). To allow for this flexibility you can choose to import either CSS file in the HTML header of your project.
+WET-React doesn't ship with a specific stylesheet. It is made to be compatible with either the WET or GCWeb theme (based on Bootstrap 3). To allow for this flexibility, you can choose to import either CSS file in the HTML header of your project.
 
 As an example, using the following file in the HTML header will give the components the GCWeb theme.
 
