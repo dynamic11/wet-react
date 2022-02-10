@@ -15,6 +15,26 @@
   border: 0 !important;
 }
 
+.form-check {
+  display: block;
+  min-height: 1.5rem;
+  padding-left: 1.5em;
+}
+
+.checkbox label,
+.radio label {
+  min-height: 23px;
+  padding-left: 0px;
+  margin-bottom: 0;
+  font-weight: 400;
+  cursor: pointer;
+}
+
+.form-check-inline {
+  display: inline-block;
+  margin-right: 1rem;
+}
+
 * .token.plain-text {
   color: #ffffff;
 }
