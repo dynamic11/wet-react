@@ -12,9 +12,8 @@ export interface ListGroupItemProps {
   href?: string;
   /** Sets list item as active */
   active?: boolean;
-  /** The text for the item in the list */
+  /** The content for the item in the list */
   children: React.ReactNode;
-  /**  */
 }
 
 const ListGroupItem = ({

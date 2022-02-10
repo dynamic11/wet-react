@@ -1,0 +1,30 @@
+import { ArgsTable, Canvas, Meta } from '@storybook/addon-docs';
+
+import ListGroup from '../ListGroup';
+
+<Meta title="Components/List Group/Links" component={ListGroup} />
+
+export const TemplateGroup = ({ children, ...rest }) => {
+  return (
+    <ListGroup>
+      <ListGroup.Item {...rest}> {children} </ListGroup.Item>
+    </ListGroup>
+  );
+};
+
+# List Group Item Links
+
+ListGroup items can have a link attached to them using the `href` attribute to be take users to a page on click.
+
+<Canvas>
+  <Story
+    name="Link"
+    args={{
+      children: 'placeholder text',
+      variant: 'success',
+      href: '#',
+    }}
+  >
+    {TemplateGroup.bind({})}
+  </Story>
+</Canvas>
