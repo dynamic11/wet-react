@@ -32,6 +32,8 @@ type typeType =
   | 'week'
   | undefined;
 
+type FormControlElement = HTMLInputElement | HTMLTextAreaElement;
+
 export interface FormControlProps {
   /** Placeholder content */
   placeholder?: string;
@@ -52,7 +54,7 @@ export interface FormControlProps {
   /** Input size variants: 'default', 'sm', 'lg' */
   size?: sizeType;
   /** A callback fired when the value prop changes */
-  onChange;
+  onChange?: React.ChangeEventHandler<FormControlElement>;
   /** Uses controlId from <FormGroup> if not explicitly specified. */
   id?: string;
   /** Additional custom classNames */
