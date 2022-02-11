@@ -1,7 +1,25 @@
 {
-  "name": "@dynamic11/react-wet",
+  "name": "@dynamic11/wet-react",
+  "author": "ISED",
+  "license": "ISC",
   "version": "0.2.0",
-  "description": "React component library for GCWeb canada.ca theme",
+  "description": "React component library for WET-BOEW components compatible with the GC-Web theme",
+  "keywords": [
+    "react",
+    "react-component",
+    "bootstrap",
+    "WET",
+    "WET-BOEW",
+    "accessibility",
+    "GC-Web"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dynamic11/wet-react.git"
+  },
+  "bugs": {
+    "url": "https://github.com/dynamic11/wet-react/issues"
+  },
   "scripts": {
     "rollup": "rollup -c",
     "test": "jest --coverage",
@@ -14,8 +32,6 @@
     "chromatic": "npx chromatic --project-token=<need-to-add>",
     "prepare": "husky install"
   },
-  "author": "ISED",
-  "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.16.7",
     "@babel/preset-env": "^7.16.8",
