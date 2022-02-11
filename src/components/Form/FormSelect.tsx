@@ -21,7 +21,7 @@ export interface FormSelectProps {
   /** Input size variants: 'default', 'sm', 'lg' */
   size?: sizeType;
   /** A callback fired when the value prop changes */
-  onChange;
+  onChange?: React.ChangeEventHandler<HTMLSelectElement>;
   /** Uses controlId from <Form.Group> if not explicitly specified. */
   id?: string;
   /** Additional custom classNames */
