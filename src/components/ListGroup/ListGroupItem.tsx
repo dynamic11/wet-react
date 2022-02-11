@@ -17,7 +17,9 @@ export interface ListGroupItemProps {
 }
 
 function goTo(link) {
-  window.open(`${link}`);
+  if (link !== '') {
+    window.open(`${link}`);
+  }
 }
 
 const ListGroupItem = ({
