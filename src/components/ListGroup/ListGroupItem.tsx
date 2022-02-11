@@ -16,14 +16,24 @@ export interface ListGroupItemProps {
   children: React.ReactNode;
 }
 
+function goTo(link) {
+  window.open(`${link}`);
+}
+
 const ListGroupItem = ({
   active = false,
-  href,
+  href = '',
   variant = undefined,
   children,
   ...rest
 }: ListGroupItemProps) => (
-  <ListGroupRB.Item variant={variant} active={active} href={href} {...rest}>
+  <ListGroupRB.Item
+    variant={variant}
+    active={active}
+    href={href}
+    onClick={() => goTo(href)}
+    {...rest}
+  >
     {children}
   </ListGroupRB.Item>
 );
