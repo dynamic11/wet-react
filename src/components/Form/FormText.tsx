@@ -2,7 +2,7 @@ import React from 'react';
 import FormRB from 'react-bootstrap/Form';
 import '../../style.css';
 
-export interface FormTextProps {
+export interface FormTextProps extends React.HTMLAttributes<HTMLElement> {
   /** Content of button */
   children?: React.ReactNode;
   /** A convenience prop for add the text-muted class, since it's so commonly used here. */
