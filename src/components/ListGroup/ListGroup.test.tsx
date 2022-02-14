@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { render, screen, fireEvent } from '@testing-library/react';
 
 import ListGroup from '@components/ListGroup';
 import ListGroupItem from './ListGroupItem';
@@ -53,20 +53,37 @@ describe('ListGroup tests', () => {
         'list-group-item-success'
       );
     });
-    describe('Testing ListGroup Links ', () => {
-      test('Test if link is there', () => {
-        render(
-          <ListGroup>
-            <ListGroup.Item href="https://www.youtube.com/" variant="success">
-              {placeholder}
-            </ListGroup.Item>
-          </ListGroup>
-        );
-        expect(screen.getByText(placeholder)).toHaveAttribute(
-          'href',
-          'https://www.youtube.com/'
-        );
-      });
+  });
+  describe('Testing ListGroupItem Links ', () => {
+    test('Test if link is there', () => {
+      render(
+        <ListGroup>
+          <ListGroup.Item href="https://www.youtube.com/" variant="success">
+            {placeholder}
+          </ListGroup.Item>
+        </ListGroup>
+      );
+      expect(screen.getByText(placeholder)).toHaveAttribute(
+        'href',
+        'https://www.youtube.com/'
+      );
+    });
+    test('Test if List items respond to being clicked on', () => {
+      const followLink = jest.fn();
+      render(
+        <ListGroup>
+          <ListGroup.Item
+            href="https://www.youtube.com/"
+            variant="success"
+            onClick={followLink}
+          >
+            {placeholder}
+          </ListGroup.Item>
+        </ListGroup>
+      );
+      const item = screen.getByText(placeholder);
+      fireEvent.click(item);
+      expect(followLink).toHaveBeenCalledTimes(1);
     });
   });
 });

@@ -14,26 +14,28 @@ export interface ListGroupItemProps {
   active?: boolean;
   /** The content for the item in the list */
   children: React.ReactNode;
-}
-
-function goTo(link) {
-  if (link !== '') {
-    window.open(`${link}`);
-  }
+  /** Sets list item state as disabled */
+  disabled?: boolean;
+  /** Marks a ListGroupItem as actionable, applying
+   * additional hover, active and disabled styles for links and buttons. */
+  action?: boolean;
 }
 
 const ListGroupItem = ({
   active = false,
   href = '',
+  disabled = false,
+  action = false,
   variant = undefined,
   children,
   ...rest
 }: ListGroupItemProps) => (
   <ListGroupRB.Item
     variant={variant}
+    disabled={disabled}
+    action={action}
     active={active}
     href={href}
-    onClick={() => goTo(href)}
     {...rest}
   >
     {children}

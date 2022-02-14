@@ -6,7 +6,7 @@ import ListGroup from '../ListGroup';
 
 export const TemplateGroup = ({ children, ...rest }) => {
   return (
-    <ListGroup>
+    <ListGroup numbered>
       <ListGroup.Item {...rest}> {children} </ListGroup.Item>
     </ListGroup>
   );
@@ -14,7 +14,8 @@ export const TemplateGroup = ({ children, ...rest }) => {
 
 # List Group Item Links
 
-ListGroup items can have a link attached to them using the `href` attribute to be take users to a page on click.
+ListGroup items can have a link attached to them using the `href` attribute to be take users to a page on click if `action` is set to true.
+If the item is disabled by setting the `disabled` attribute to true, clicking the item will do nothing.
 
 <Canvas>
   <Story
@@ -22,6 +23,8 @@ ListGroup items can have a link attached to them using the `href` attribute to b
     args={{
       children: 'placeholder text',
       variant: 'success',
+      disabled: false,
+      action: true,
       href: 'https://www.youtube.com/',
     }}
   >
