@@ -1,0 +1,219 @@
+import { ArgsTable, Canvas, Meta } from '@storybook/addon-docs';
+
+import { Form } from '../..';
+
+<Meta title="Components/Form/Form Control" component={Form} />
+
+# Forms
+
+## Form Control
+
+Give textual form controls like `<input>`s and `<textarea>`s an upgrade with custom styles, sizing, focus states, and more.
+
+### General Example
+
+For textual form controls—like `inputs` and `textareas`—use the `<Form.Control>` component. `<Form.Control>` adds some additional styles for general appearance, focus state, sizing, and more.
+
+<Canvas>
+  <Story name="General Example">
+    <Form>
+      <Form.Group controlId="exampleForm.ControlInput1">
+        <Form.Label>Email address</Form.Label>
+        <Form.Control type="email" placeholder="name@example.com" />
+      </Form.Group>
+      <Form.Group controlId="exampleForm.ControlTextarea1">
+        <Form.Label>Example textarea</Form.Label>
+        <Form.Control as="textarea" rows={3} />
+      </Form.Group>
+    </Form>
+  </Story>
+</Canvas>
+
+### Visual Sizing
+
+The size of the control can me chosen by setting the `size` prop. The options are `default`, `sm`, or `lg`. By default it uses `default`.
+
+<Canvas>
+  <Story name="Visual Sizing">
+    <Form>
+      <Form.Control size="lg" type="text" placeholder="Large text" />
+      <br />
+      <Form.Control type="text" placeholder="Normal text" />
+      <br />
+      <Form.Control size="sm" type="text" placeholder="Small text" />
+    </Form>
+  </Story>
+</Canvas>
+
+### Disabled
+
+Add the `isDisabled` prop on an input to give it a grayed out appearance and remove pointer events.
+
+<Canvas>
+  <Story name="Disabled">
+    <Form>
+      <Form.Control
+        type="text"
+        placeholder="Disabled input"
+        aria-label="Disabled input example"
+        isDisabled
+      />
+    </Form>
+  </Story>
+</Canvas>
+
+### Readonly
+
+Add the `isReadOnly` prop on an input to prevent modification of the input's value. Read-only inputs appear lighter (just like disabled inputs), but retain the standard cursor.
+
+<Canvas>
+  <Story name="Readonly">
+    <Form>
+      <Form.Control
+        type="text"
+        placeholder="Readonly input"
+        aria-label="Readonly input example"
+        isReadOnly
+      />
+    </Form>
+  </Story>
+</Canvas>
+
+### Form Control Types
+
+You can define the HTML input `type`, which is only relevant if `as` is 'input' (the default).
+
+**Possible types are:**
+
+```
+controlType =
+  | 'button'
+  | 'checkbox'
+  | 'color'
+  | 'date'
+  | 'datetime-local'
+  | 'email'
+  | 'file'
+  | 'hidden'
+  | 'image'
+  | 'month'
+  | 'number'
+  | 'password'
+  | 'radio'
+  | 'range'
+  | 'reset'
+  | 'search'
+  | 'submit'
+  | 'tel'
+  | 'text'
+  | 'time'
+  | 'url'
+  | 'week'
+```
+
+#### Control Type Examples
+
+<Canvas>
+  <Story name="Control Type Examples">
+    <Form>
+      <Form.Group>
+        <Form.Label>Text type:</Form.Label>
+        <Form.Control type="text" placeholder="Text input" />
+      </Form.Group>
+      <Form.Group>
+        <Form.Label>Email type:</Form.Label>
+        <Form.Control type="email" placeholder="example@gmail.com" />
+      </Form.Group>
+      <Form.Group>
+        <Form.Label>Password type:</Form.Label>
+        <Form.Control type="password" placeholder="password" />
+      </Form.Group>
+      <Form.Group>
+        <Form.Label>URL type:</Form.Label>
+        <Form.Control type="url" placeholder="url input" />
+      </Form.Group>
+    </Form>
+  </Story>
+</Canvas>
+
+### Date Picker
+
+Date Picker is a popular control type that has some specific props.
+
+The `min` and `max` props can be used to restrict dates.
+
+<Canvas>
+  <Story name="Date Picker">
+    <Form>
+      <Form.Group>
+        <Form.Label>Date type:</Form.Label>
+        <Form.Control
+          type="Date"
+          placeholder="Date input"
+          min="2021-02-10"
+          max="2021-02-20"
+        />
+      </Form.Group>
+    </Form>
+  </Story>
+</Canvas>
+
+### File Input
+
+The `file` input allows you to upload files.
+
+<Canvas>
+  <Story name="File input">
+    <Form>
+      <Form.Group controlId="formFile" className="mb-3">
+        <Form.Label>Default file input example</Form.Label>
+        <Form.Control type="file" />
+      </Form.Group>
+      <Form.Group controlId="formFileDisabled" className="mb-3">
+        <Form.Label>Disabled file input example</Form.Label>
+        <Form.Control type="file" disabled />
+      </Form.Group>
+      <Form.Group controlId="formFileSm" className="mb-3">
+        <Form.Label>Small file input example</Form.Label>
+        <Form.Control type="file" size="sm" />
+      </Form.Group>
+      <Form.Group controlId="formFileLg" className="mb-3">
+        <Form.Label>Large file input example</Form.Label>
+        <Form.Control type="file" size="lg" />
+      </Form.Group>
+    </Form>
+  </Story>
+</Canvas>
+
+### Form.Control Props
+
+**We are working to display the props in a table. Until then, you can find the props below:**
+
+```typescript
+export interface FormControlProps {
+  /** Placeholder content */
+  placeholder?: string;
+  /** The underlying HTML element to use when rendering the FormControl. */
+  as?: asType;
+  /** The HTML input type, which is only relevant if as is 'input' (the default). */
+  type?: typeType;
+  /** Make the control disabled. */
+  isDisabled?: boolean;
+  /** Make the control readonly. */
+  isReadOnly?: boolean;
+  /** Add "aria-invalid="true" to input */
+  isInvalid?: boolean;
+  /** Add "aria-required="true" to input */
+  isRequired?: boolean;
+  /** The size attribute of the underlying HTML element. Specifies the visible width in characters if as is 'input'. */
+  htmlSize?: number;
+  /** Input size variants: 'default', 'sm', 'lg' */
+  size?: sizeType;
+  /** A callback fired when the value prop changes */
+  onChange;
+  /** Uses controlId from <FormGroup> if not explicitly specified. */
+  id?: string;
+  /** Additional custom classNames */
+  className?: string;
+}
+```
