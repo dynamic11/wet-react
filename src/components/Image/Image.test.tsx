@@ -10,7 +10,7 @@ describe('Image Tests', () => {
       render(
         <Image
           src="https://media.istockphoto.com/photos/very-closeup-view-of-amazing-domestic-pet-in-mirror-round-fashion-is-picture-id1281804798?b=1&k=20&m=1281804798&s=170667a&w=0&h=HIWbeaP_cQSngCz7l9t3xwyE2eyzVgIy3K6xIqPhJQA="
-          rounded
+          roundedCornerStyle
         />
       );
       expect(screen.getByRole('img')).toHaveClass('img-rounded');
@@ -20,7 +20,7 @@ describe('Image Tests', () => {
       render(
         <Image
           src="https://media.istockphoto.com/photos/very-closeup-view-of-amazing-domestic-pet-in-mirror-round-fashion-is-picture-id1281804798?b=1&k=20&m=1281804798&s=170667a&w=0&h=HIWbeaP_cQSngCz7l9t3xwyE2eyzVgIy3K6xIqPhJQA="
-          roundedCircle
+          circleStyle
         />
       );
       expect(screen.getByRole('img')).toHaveClass('img-circle');
@@ -30,27 +30,27 @@ describe('Image Tests', () => {
       render(
         <Image
           src="https://media.istockphoto.com/photos/very-closeup-view-of-amazing-domestic-pet-in-mirror-round-fashion-is-picture-id1281804798?b=1&k=20&m=1281804798&s=170667a&w=0&h=HIWbeaP_cQSngCz7l9t3xwyE2eyzVgIy3K6xIqPhJQA="
-          thumbnail
+          thumbnailStyle
         />
       );
       expect(screen.getByRole('img')).toHaveClass('img-thumbnail');
     });
 
-    test('Test full width style', () => {
+    test('Test fill container style', () => {
       render(
         <Image
           src="https://media.istockphoto.com/photos/very-closeup-view-of-amazing-domestic-pet-in-mirror-round-fashion-is-picture-id1281804798?b=1&k=20&m=1281804798&s=170667a&w=0&h=HIWbeaP_cQSngCz7l9t3xwyE2eyzVgIy3K6xIqPhJQA="
-          fullWidth
+          fillContainer
         />
       );
       expect(screen.getByRole('img')).toHaveClass('full-width');
     });
 
-    test('Test thumbnail tile style ', () => {
+    test('Test content style ', () => {
       render(
         <Image
           src="https://media.istockphoto.com/photos/very-closeup-view-of-amazing-domestic-pet-in-mirror-round-fashion-is-picture-id1281804798?b=1&k=20&m=1281804798&s=170667a&w=0&h=HIWbeaP_cQSngCz7l9t3xwyE2eyzVgIy3K6xIqPhJQA="
-          thumbnailTile
+          contentStyle
         />
       );
       expect(screen.getByRole('img')).toHaveClass('thumbnail');
@@ -60,7 +60,7 @@ describe('Image Tests', () => {
       render(
         <Image
           src="https://media.istockphoto.com/photos/very-closeup-view-of-amazing-domestic-pet-in-mirror-round-fashion-is-picture-id1281804798?b=1&k=20&m=1281804798&s=170667a&w=0&h=HIWbeaP_cQSngCz7l9t3xwyE2eyzVgIy3K6xIqPhJQA="
-          media
+          mediaStyle
         />
       );
       expect(screen.getByRole('img')).toHaveClass('media-object');
@@ -70,14 +70,14 @@ describe('Image Tests', () => {
       render(
         <Image
           src="https://media.istockphoto.com/photos/very-closeup-view-of-amazing-domestic-pet-in-mirror-round-fashion-is-picture-id1281804798?b=1&k=20&m=1281804798&s=170667a&w=0&h=HIWbeaP_cQSngCz7l9t3xwyE2eyzVgIy3K6xIqPhJQA="
-          responsive
+          responsiveStyle
         />
       );
       expect(screen.getByRole('img')).toHaveClass('img-responsive');
     });
   });
   test('Test image defaults', () => {
-    render(<Image rounded />);
+    render(<Image roundedCornerStyle />);
     expect(screen.getByRole('img')).toHaveAttribute('src', '');
     expect(screen.getByRole('img')).toHaveAttribute('alt', '');
   });
@@ -85,7 +85,7 @@ describe('Image Tests', () => {
     render(
       <Image
         src="https://media.istockphoto.com/photos/very-closeup-view-of-amazing-domestic-pet-in-mirror-round-fashion-is-picture-id1281804798?b=1&k=20&m=1281804798&s=170667a&w=0&h=HIWbeaP_cQSngCz7l9t3xwyE2eyzVgIy3K6xIqPhJQA="
-        thumbnail
+        thumbnailStyle
         alt="Cool Cat Photo"
       />
     );
