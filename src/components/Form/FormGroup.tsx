@@ -2,7 +2,7 @@ import React from 'react';
 import FormRB from 'react-bootstrap/Form';
 import '../../style.css';
 
-export interface FormGroupProps {
+export interface FormGroupProps extends React.HTMLAttributes<HTMLElement> {
   /** Content of button */
   children?: React.ReactNode;
   /** Unique Id of form group elements */

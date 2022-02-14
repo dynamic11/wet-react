@@ -2,7 +2,7 @@ import React from 'react';
 import FormRB from 'react-bootstrap/Form';
 import '../../style.css';
 
-export interface FormLabelProps {
+export interface FormLabelProps extends React.HTMLAttributes<HTMLElement> {
   /** Content of button */
   children?: React.ReactNode;
   /** Uses controlId from <FormGroup> if not explicitly specified. */
