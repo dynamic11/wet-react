@@ -7,7 +7,6 @@ import { Jumbotron } from '../..';
 export const Template = ({ children, ...rest }) => {
   return (
     <Jumbotron {...rest}>
-      {' '}
       <h1>Header</h1>
       <div>Content to read</div>
     </Jumbotron>
@@ -15,6 +14,8 @@ export const Template = ({ children, ...rest }) => {
 };
 
 # Jumbotron
+
+Use a Jumbotron's `fluid` attribute to change its appearance.
 
 ## Fluid Jumbotron
 
@@ -28,7 +29,7 @@ Make a Jumbotron fluid so that it takes up all of it's container's space.
 
 ## Non Fluid Jumbotron
 
-Non fluid Jumbotron will not take up all the space by default.
+A non-fluid Jumbotron will not take up all the space by default.
 
 <Canvas>
   <Story name="Not fluid" args={{ fluid: false }}>
