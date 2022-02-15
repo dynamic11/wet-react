@@ -11,8 +11,7 @@ export interface JumbotronProps {
 
 const Jumbotron = ({ children, fluid = false, ...rest }: JumbotronProps) => {
   const style = fluid ? 'container-fluid' : '';
-  const finalStyle = `jumbotron ${style}`;
-  return <div className={finalStyle}>{children}</div>;
+  return <div className={`jumbotron ${style}`}>{children}</div>;
 };
 
 export default Jumbotron;
