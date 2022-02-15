@@ -2,7 +2,7 @@ import React from 'react';
 import ImageRB from 'react-bootstrap/Image';
 import '../../style.css';
 
-export interface ImageProps {
+export interface ImageProps extends React.HTMLAttributes<HTMLImageElement> {
   /** Sets image shape as rounded. */
   roundedCornerStyle?: boolean;
   /** Sets image shape as circle. */
