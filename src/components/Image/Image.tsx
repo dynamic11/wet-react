@@ -8,15 +8,15 @@ export interface ImageProps {
   /** Sets image shape as circle. */
   circleStyle?: boolean;
   /** Sets image shape as thumbnail. */
-  thumbnailStyle?: boolean;
+  thumbnail?: boolean;
   /** Use to make larger images scale properly, and never exceed the width of the parent container */
-  responsiveStyle?: boolean;
+  responsive?: boolean;
   /** Use to stretch a smaller image to the width of the container. */
   fillContainer?: boolean;
   /** Use to add any kind of content like headings, paragraphs, or buttons into a thumbnail, to create a thumbnail tile effect */
-  contentStyle?: boolean;
+  thumbnailContent?: boolean;
   /** Use to layer text and images for media content like blog comments, tweets, and so forth. */
-  mediaStyle?: boolean;
+  mediaObject?: boolean;
   /** Sets the source of the image */
   src: string;
   /** Sets the alternate text for the image */
@@ -26,23 +26,23 @@ export interface ImageProps {
 const Image = ({
   roundedCornerStyle = false,
   circleStyle = false,
-  thumbnailStyle = false,
-  responsiveStyle = false,
+  thumbnail = false,
+  responsive = false,
   fillContainer = false,
-  contentStyle = false,
-  mediaStyle = false,
+  thumbnailContent = false,
+  mediaObject = false,
   src = '',
   alt = '',
   ...rest
 }: ImageProps) => {
-  const styles = roundedCornerStyle === true ? 'img-rounded' : '';
-  const styles2 = circleStyle === true ? 'img-circle' : '';
-  const styles3 = thumbnailStyle === true ? 'img-thumbnail' : '';
-  const styles4 = responsiveStyle === true ? 'img-responsive' : '';
-  const styles5 = fillContainer === true ? 'full-width' : '';
-  const styles6 = contentStyle === true ? 'thumbnail' : '';
-  const styles7 = mediaStyle === true ? 'media-object' : '';
-  const finalstyle = `${styles} ${styles2} ${styles3} ${styles4} ${styles5} ${styles6} ${styles7}`;
+  const roundedStyle = roundedCornerStyle === true ? 'img-rounded' : '';
+  const circularStyle = circleStyle === true ? 'img-circle' : '';
+  const thumbnailStyle = thumbnail === true ? 'img-thumbnail' : '';
+  const responsiveStyle = responsive === true ? 'img-responsive' : '';
+  const fillContainerStyle = fillContainer === true ? 'full-width' : '';
+  const contentStyle = thumbnailContent === true ? 'thumbnail' : '';
+  const mediaStyle = mediaObject === true ? 'media-object' : '';
+  const finalstyle = `${roundedStyle} ${circularStyle} ${thumbnailStyle} ${responsiveStyle} ${fillContainerStyle} ${contentStyle} ${mediaStyle}`;
 
   return <ImageRB src={src} alt={alt} className={finalstyle} {...rest} />;
 };
