@@ -30,7 +30,7 @@ describe('Image Tests', () => {
       render(
         <Image
           src="https://media.istockphoto.com/photos/very-closeup-view-of-amazing-domestic-pet-in-mirror-round-fashion-is-picture-id1281804798?b=1&k=20&m=1281804798&s=170667a&w=0&h=HIWbeaP_cQSngCz7l9t3xwyE2eyzVgIy3K6xIqPhJQA="
-          thumbnailStyle
+          thumbnail
         />
       );
       expect(screen.getByRole('img')).toHaveClass('img-thumbnail');
@@ -50,7 +50,7 @@ describe('Image Tests', () => {
       render(
         <Image
           src="https://media.istockphoto.com/photos/very-closeup-view-of-amazing-domestic-pet-in-mirror-round-fashion-is-picture-id1281804798?b=1&k=20&m=1281804798&s=170667a&w=0&h=HIWbeaP_cQSngCz7l9t3xwyE2eyzVgIy3K6xIqPhJQA="
-          contentStyle
+          thumbnailContent
         />
       );
       expect(screen.getByRole('img')).toHaveClass('thumbnail');
@@ -60,7 +60,7 @@ describe('Image Tests', () => {
       render(
         <Image
           src="https://media.istockphoto.com/photos/very-closeup-view-of-amazing-domestic-pet-in-mirror-round-fashion-is-picture-id1281804798?b=1&k=20&m=1281804798&s=170667a&w=0&h=HIWbeaP_cQSngCz7l9t3xwyE2eyzVgIy3K6xIqPhJQA="
-          mediaStyle
+          mediaObject
         />
       );
       expect(screen.getByRole('img')).toHaveClass('media-object');
@@ -70,7 +70,7 @@ describe('Image Tests', () => {
       render(
         <Image
           src="https://media.istockphoto.com/photos/very-closeup-view-of-amazing-domestic-pet-in-mirror-round-fashion-is-picture-id1281804798?b=1&k=20&m=1281804798&s=170667a&w=0&h=HIWbeaP_cQSngCz7l9t3xwyE2eyzVgIy3K6xIqPhJQA="
-          responsiveStyle
+          responsive
         />
       );
       expect(screen.getByRole('img')).toHaveClass('img-responsive');
@@ -85,7 +85,7 @@ describe('Image Tests', () => {
     render(
       <Image
         src="https://media.istockphoto.com/photos/very-closeup-view-of-amazing-domestic-pet-in-mirror-round-fashion-is-picture-id1281804798?b=1&k=20&m=1281804798&s=170667a&w=0&h=HIWbeaP_cQSngCz7l9t3xwyE2eyzVgIy3K6xIqPhJQA="
-        thumbnailStyle
+        thumbnail
         alt="Cool Cat Photo"
       />
     );
