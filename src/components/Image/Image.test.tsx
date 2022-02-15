@@ -10,7 +10,7 @@ describe('Image Tests', () => {
       render(
         <Image
           src="https://media.istockphoto.com/photos/very-closeup-view-of-amazing-domestic-pet-in-mirror-round-fashion-is-picture-id1281804798?b=1&k=20&m=1281804798&s=170667a&w=0&h=HIWbeaP_cQSngCz7l9t3xwyE2eyzVgIy3K6xIqPhJQA="
-          roundedCornerStyle
+          rounded
         />
       );
       expect(screen.getByRole('img')).toHaveClass('img-rounded');
@@ -20,7 +20,7 @@ describe('Image Tests', () => {
       render(
         <Image
           src="https://media.istockphoto.com/photos/very-closeup-view-of-amazing-domestic-pet-in-mirror-round-fashion-is-picture-id1281804798?b=1&k=20&m=1281804798&s=170667a&w=0&h=HIWbeaP_cQSngCz7l9t3xwyE2eyzVgIy3K6xIqPhJQA="
-          circleStyle
+          roundedCircle
         />
       );
       expect(screen.getByRole('img')).toHaveClass('img-circle');
@@ -40,7 +40,7 @@ describe('Image Tests', () => {
       render(
         <Image
           src="https://media.istockphoto.com/photos/very-closeup-view-of-amazing-domestic-pet-in-mirror-round-fashion-is-picture-id1281804798?b=1&k=20&m=1281804798&s=170667a&w=0&h=HIWbeaP_cQSngCz7l9t3xwyE2eyzVgIy3K6xIqPhJQA="
-          fillContainer
+          fullWidth
         />
       );
       expect(screen.getByRole('img')).toHaveClass('full-width');
@@ -77,7 +77,7 @@ describe('Image Tests', () => {
     });
   });
   test('Test image defaults', () => {
-    render(<Image roundedCornerStyle />);
+    render(<Image rounded />);
     expect(screen.getByRole('img')).toHaveAttribute('src', '');
     expect(screen.getByRole('img')).toHaveAttribute('alt', '');
   });
