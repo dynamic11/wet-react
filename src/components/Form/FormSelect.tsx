@@ -5,7 +5,8 @@ import '../../style.css';
 /** Types */
 type sizeType = 'lg' | 'sm' | 'default' | undefined;
 
-export interface FormSelectProps {
+export interface FormSelectProps
+  extends Omit<React.SelectHTMLAttributes<HTMLSelectElement>, 'size'> {
   /** Content of button */
   children?: React.ReactNode;
   /** Placeholder content */

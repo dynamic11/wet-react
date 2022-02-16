@@ -5,7 +5,7 @@ import '../../style.css';
 /** Types */
 type sizingType = 'lg' | 'sm' | undefined;
 
-export interface ButtonGroupProps {
+export interface ButtonGroupProps extends React.HTMLAttributes<HTMLElement> {
   /** The custom 'non-default' size of button group */
   size?: sizingType;
   /** Orientation of button group */

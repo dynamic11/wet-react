@@ -4,7 +4,7 @@ import '../../style.css';
 /** Types */
 type variantType = 'success' | 'warning' | 'danger' | 'info' | undefined;
 
-export interface AlertProps {
+export interface AlertProps extends React.HTMLAttributes<HTMLDivElement> {
   /** The styling variant that you would like to use */
   variant?: variantType;
   /** Show alert */

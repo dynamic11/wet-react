@@ -5,7 +5,8 @@ import '../../style.css';
 /** Types */
 type typeType = 'checkbox' | 'radio' | 'switch' | undefined;
 
-export interface FormCheckProps {
+export interface FormCheckProps
+  extends React.InputHTMLAttributes<HTMLInputElement> {
   /** title attribute */
   title?: string;
   /** label attribute */

@@ -4,7 +4,7 @@ import '../../style.css';
 type targetType = '_blank' | '_self' | '_parent' | '_top' | undefined;
 
 /** Types */
-export interface LinkProps {
+export interface LinkProps extends React.HTMLAttributes<HTMLAnchorElement> {
   /** Content of heading */
   children?: React.ReactNode;
   /** The target of hyperlink */

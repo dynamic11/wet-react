@@ -34,7 +34,8 @@ type typeType =
 
 type FormControlElement = HTMLInputElement | HTMLTextAreaElement;
 
-export interface FormControlProps {
+export interface FormControlProps
+  extends React.HTMLAttributes<FormControlElement> {
   /** Placeholder content */
   placeholder?: string;
   /** The underlying HTML element to use when rendering the FormControl. */
