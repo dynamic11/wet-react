@@ -2,7 +2,7 @@ import React from 'react';
 import ProgressBarRB from 'react-bootstrap/ProgressBar';
 import '../../style.css';
 
-export interface ProgressBarProps {
+export interface ProgressBarProps extends React.HTMLAttributes<HTMLDivElement> {
   /** Show label that represents visual percentage. EG. 60% */
   label?: React.ReactNode;
   /** Hide's the label visually. */

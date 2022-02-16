@@ -1,6 +1,6 @@
 import React from 'react';
 
-export interface AlertBodyProps {
+export interface AlertBodyProps extends React.HTMLAttributes<HTMLDivElement> {
   /** Content of alert body */
   children?: React.ReactNode;
   /** Additional custom classNames */

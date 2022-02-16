@@ -23,12 +23,18 @@ The `<Form.Control>` component renders a form control with Bootstrap styling. Th
       <Form.Label>Password</Form.Label>
       <Form.Control type="password" placeholder="Password" />
     </Form.Group>
-    <Button variant="primary" type="submit">
-      Submit
-    </Button>
+    <Form.Group controlId="formBasicCheckbox">
+      <Form.Check type="checkbox" label="Check me out" />
+    </Form.Group>
+    <Button type="submit">Submit</Button>
   </Form>
 </Canvas>
 
 ## Form Props
+
+The `<Form>` component accepts all of the default props for the `form` HTML element in addition to the ones in the table below.
+
+More info about the HTML element:<br/>
+https://developer.mozilla.org/en-US/docs/Web/API/HTMLFormElement
 
 <ArgsTable />

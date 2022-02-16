@@ -32,7 +32,10 @@ type typeType =
   | 'week'
   | undefined;
 
-export interface FormControlProps {
+type FormControlElement = HTMLInputElement | HTMLTextAreaElement;
+
+export interface FormControlProps
+  extends React.HTMLAttributes<FormControlElement> {
   /** Placeholder content */
   placeholder?: string;
   /** The underlying HTML element to use when rendering the FormControl. */
@@ -49,10 +52,10 @@ export interface FormControlProps {
   isRequired?: boolean;
   /** The size attribute of the underlying HTML element. Specifies the visible width in characters if as is 'input'. */
   htmlSize?: number;
-  /** Input size variants */
+  /** Input size variants: 'default', 'sm', 'lg' */
   size?: sizeType;
   /** A callback fired when the value prop changes */
-  onChange;
+  onChange?: React.ChangeEventHandler<FormControlElement>;
   /** Uses controlId from <FormGroup> if not explicitly specified. */
   id?: string;
   /** Additional custom classNames */

@@ -4,6 +4,7 @@ import FormLabel from './FormLabel';
 import FormText from './FormText';
 import FormControl from './FormControl';
 import FormSelect from './FormSelect';
+import FormCheck from './FormCheck';
 
 export type FormProps = typeof OriginForm & {
   Group: typeof FormGroup;
@@ -11,6 +12,7 @@ export type FormProps = typeof OriginForm & {
   Control: typeof FormControl;
   Select: typeof FormSelect;
   Text: typeof FormText;
+  Check: typeof FormCheck;
 };
 
 const Form = OriginForm as FormProps;
@@ -20,5 +22,6 @@ Form.Label = FormLabel;
 Form.Control = FormControl;
 Form.Text = FormText;
 Form.Select = FormSelect;
+Form.Check = FormCheck;
 
 export default Form;

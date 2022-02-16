@@ -1,6 +1,6 @@
 import { ArgsTable, Canvas, Meta } from '@storybook/addon-docs';
 
-import { Form, Button, Alert } from '../..';
+import { Form } from '../..';
 
 <Meta title="Components/Form/Form Select" component={Form} />
 
@@ -8,7 +8,7 @@ import { Form, Button, Alert } from '../..';
 
 ## Form Select
 
-Customize the native `<select>`s with custom CSS that changes the element’s initial appearance.
+Customize the native `<select>`s with custom CSS that changes the element's initial appearance.
 
 ### Default
 
@@ -66,4 +66,34 @@ By setting the `htmlSize` you can define the number of visible lines
 
 ### Form.Select Props
 
-**TO BE ADDED**
+The `<Form.Select>` component accepts all of the default props for the `select` HTML element in addition to the ones in the table below.
+
+More info about the HTML element:<br/>
+https://developer.mozilla.org/en-US/docs/Web/API/HTMLSelectElement
+
+**We are working to display the props in a table. Until then, you can find the props below:**
+
+```typescript
+export interface FormSelectProps {
+  /** Content of button */
+  children?: React.ReactNode;
+  /** Placeholder content */
+  placeholder?: string;
+  /** Make the control disabled. */
+  isDisabled?: boolean;
+  /** Add "aria-invalid="true" to input */
+  isInvalid?: boolean;
+  /** Add "aria-required="true" to input */
+  isRequired?: boolean;
+  /** The size attribute of the underlying HTML element. Specifies the number of visible options. */
+  htmlSize?: number;
+  /** Input size variants: 'default', 'sm', 'lg' */
+  size?: sizeType;
+  /** A callback fired when the value prop changes */
+  onChange;
+  /** Uses controlId from <Form.Group> if not explicitly specified. */
+  id?: string;
+  /** Additional custom classNames */
+  className?: string;
+}
+```

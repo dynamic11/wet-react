@@ -5,7 +5,8 @@ import '../../style.css';
 /** Types */
 type sizeType = 'lg' | 'sm' | 'default' | undefined;
 
-export interface FormSelectProps {
+export interface FormSelectProps
+  extends Omit<React.SelectHTMLAttributes<HTMLSelectElement>, 'size'> {
   /** Content of button */
   children?: React.ReactNode;
   /** Placeholder content */
@@ -16,13 +17,13 @@ export interface FormSelectProps {
   isInvalid?: boolean;
   /** Add "aria-required="true" to input */
   isRequired?: boolean;
-  /** The size attribute of the underlying HTML element. Specifies the number of visible options.. */
+  /** The size attribute of the underlying HTML element. Specifies the number of visible options. */
   htmlSize?: number;
-  /** Input size variants */
+  /** Input size variants: 'default', 'sm', 'lg' */
   size?: sizeType;
   /** A callback fired when the value prop changes */
-  onChange;
-  /** Uses controlId from <FormGroup> if not explicitly specified. */
+  onChange?: React.ChangeEventHandler<HTMLSelectElement>;
+  /** Uses controlId from <Form.Group> if not explicitly specified. */
   id?: string;
   /** Additional custom classNames */
   className?: string;

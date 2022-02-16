@@ -18,7 +18,8 @@ type sizingType = 'lg' | 'sm' | 'xs' | undefined;
 type typeType = 'submit' | 'button' | 'reset' | undefined;
 type asType = 'input';
 
-export interface ButtonProps {
+export interface ButtonProps
+  extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   /** Content of button */
   children?: React.ReactNode;
   /** The styling variant that you would like to use */
