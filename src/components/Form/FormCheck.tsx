@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React from 'react';
 import FormRB from 'react-bootstrap/Form';
 import '../../style.css';
@@ -6,7 +7,7 @@ import '../../style.css';
 type typeType = 'checkbox' | 'radio' | 'switch' | undefined;
 
 export interface FormCheckProps
-  extends React.InputHTMLAttributes<HTMLInputElement> {
+  extends Omit<React.InputHTMLAttributes<HTMLInputElement>, 'value'> {
   /** title attribute */
   title?: string;
   /** label attribute */
@@ -21,36 +22,46 @@ export interface FormCheckProps
   isInvalid?: boolean;
   /** Add "aria-required="true" to input */
   isRequired?: boolean;
+  /** The status of checkbox (True/False) */
+  value?: boolean;
   /** Uses controlId from <FormGroup> if not explicitly specified. */
   id?: string;
   /** Additional custom classNames */
   className?: string;
 }
 
-const FormCheck = ({
-  title = '',
-  label,
-  type = 'checkbox',
-  isDisabled = false,
-  isInline = false,
-  isInvalid = false,
-  isRequired = false,
-  id,
-  className = '',
-  ...rest
-}: FormCheckProps) => (
-  <FormRB.Check
-    title={title}
-    label={label}
-    type={type}
-    disabled={isDisabled}
-    inline={isInline}
-    aria-required={isRequired}
-    aria-invalid={isInvalid}
-    id={id}
-    className={`${type} ${className}`}
-    {...rest}
-  />
+const FormCheck = React.forwardRef<HTMLInputElement, FormCheckProps>(
+  (
+    {
+      title = '',
+      label,
+      type = 'checkbox',
+      isDisabled = false,
+      isInline = false,
+      isInvalid = false,
+      isRequired = false,
+      value = false,
+      id,
+      className = '',
+      ...rest
+    }: FormCheckProps,
+    ref: React.ForwardedRef<HTMLInputElement>
+  ) => (
+    <FormRB.Check
+      title={title}
+      label={label}
+      type={type}
+      disabled={isDisabled}
+      inline={isInline}
+      checked={value}
+      aria-required={isRequired}
+      aria-invalid={isInvalid}
+      ref={ref}
+      id={id}
+      className={`${type} ${className}`}
+      {...rest}
+    />
+  )
 );
 
 FormCheck.displayName = 'Form.Check';
