@@ -1,7 +1,7 @@
-/* eslint-disable */
 import React from 'react';
 import FormRB from 'react-bootstrap/Form';
 import '../../style.css';
+import PropTypes from 'prop-types';
 
 /** Types */
 type sizeType = 'lg' | 'sm' | 'default' | undefined;
@@ -114,5 +114,47 @@ const FormControl = React.forwardRef<FormControlElement, FormControlProps>(
 );
 
 FormControl.displayName = 'Form.Control';
+
+FormControl.propTypes = {
+  placeholder: PropTypes.string,
+  value: PropTypes.oneOf([
+    PropTypes.string,
+    PropTypes.arrayOf(PropTypes.string),
+    PropTypes.number,
+  ]),
+  defaultValue: PropTypes.oneOf([
+    PropTypes.string,
+    PropTypes.arrayOf(PropTypes.string),
+    PropTypes.number,
+  ]),
+  as: PropTypes.string,
+  type: PropTypes.string,
+  isDisabled: PropTypes.bool,
+  isReadOnly: PropTypes.bool,
+  isInvalid: PropTypes.bool,
+  isRequired: PropTypes.bool,
+  htmlSize: PropTypes.number,
+  size: PropTypes.string,
+  onChange: PropTypes.func,
+  id: PropTypes.string,
+  className: PropTypes.string,
+};
+
+FormControl.defaultProps = {
+  placeholder: undefined,
+  value: '',
+  defaultValue: undefined,
+  as: undefined,
+  type: 'text',
+  isDisabled: false,
+  isReadOnly: false,
+  isInvalid: false,
+  isRequired: false,
+  htmlSize: undefined,
+  size: 'default',
+  onChange: undefined,
+  id: undefined,
+  className: '',
+};
 
 export default FormControl;

@@ -104,5 +104,8 @@
     "*.{json,md}": [
       "prettier --write"
     ]
+  },
+  "dependencies": {
+    "@types/prop-types": "^15.7.4"
   }
 }
