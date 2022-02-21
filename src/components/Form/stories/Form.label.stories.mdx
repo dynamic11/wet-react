@@ -19,8 +19,23 @@ import { Form } from '../..';
       <Form.Control
         type="password"
         id="inputPassword5"
-        aria-describedby="passwordHelpBlock"
       />
+    </Form>
+
+  </Story>
+</Canvas>
+
+### Required Label
+
+By setting `isRequired` to `true`, it is possible to provide a visual cue to the user about the requirement.
+
+<Canvas>
+  <Story name="Required Label">
+    <Form>
+      <Form.Label htmlFor="inputPassword5" isRequired>
+        Password
+      </Form.Label>
+      <Form.Control type="password" id="inputPassword5" />
     </Form>
   </Story>
 </Canvas>
@@ -50,6 +65,10 @@ export interface FormLabelProps {
   htmlFor?: string;
   /** Hides the label visually while still allowing it to be read by assistive technologies */
   isVisuallyHidden?: boolean;
+  /** Applies 'require' styling to form label */
+  isRequired?: boolean;
+  /** Allows for the customization of "required" label. It is helpful for translations. Default: "required"*/
+  requiredText;
   /** Additional custom classNames */
   className?: string;
 }
