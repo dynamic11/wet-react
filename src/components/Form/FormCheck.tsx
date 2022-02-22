@@ -1,4 +1,3 @@
-/* eslint-disable */
 import React from 'react';
 import FormRB from 'react-bootstrap/Form';
 import '../../style.css';
@@ -30,7 +29,7 @@ export interface FormCheckProps
   className?: string;
 }
 
-const FormCheck = React.forwardRef<HTMLInputElement, FormCheckProps>(
+const FormCheck = React.forwardRef(
   (
     {
       title = '',

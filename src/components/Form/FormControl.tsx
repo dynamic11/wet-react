@@ -1,4 +1,3 @@
-/* eslint-disable */
 import React from 'react';
 import FormRB from 'react-bootstrap/Form';
 import '../../style.css';
@@ -67,7 +66,7 @@ export interface FormControlProps
   className?: string;
 }
 
-const FormControl = React.forwardRef<FormControlElement, FormControlProps>(
+const FormControl = React.forwardRef(
   (
     {
       placeholder,
@@ -86,7 +85,7 @@ const FormControl = React.forwardRef<FormControlElement, FormControlProps>(
       className = '',
       ...rest
     }: FormControlProps,
-    ref: any
+    ref: React.ForwardedRef<HTMLTextAreaElement>
   ) => {
     const sizeClassName =
       size === 'sm' ? 'input-sm' : size === 'lg' ? 'input-lg' : '';
