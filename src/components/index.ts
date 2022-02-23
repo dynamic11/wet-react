@@ -9,6 +9,7 @@ export { default as Label } from './Label';
 export { default as Panel } from './Panel';
 export { default as CodeBlock } from './CodeBlock';
 export { default as ProgressBar } from './ProgressBar';
+export { default as ListGroup } from './ListGroup';
 export { default as Image } from './Image';
 export { default as Details } from './Details';
 export { default as Form } from './Form';
