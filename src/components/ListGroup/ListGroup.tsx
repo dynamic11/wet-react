@@ -10,7 +10,7 @@ export interface ListGroupProps {
 }
 
 const ListGroup = ({ children, ...rest }: ListGroupProps) => (
-  <ListGroupRB {...rest}>{children}</ListGroupRB>
+  <ListGroupRB {...rest}>{React.Children.toArray(children)}</ListGroupRB>
 );
 
 ListGroup.displayName = 'ListGroup';
