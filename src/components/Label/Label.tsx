@@ -11,7 +11,7 @@ type variantType =
   | 'info'
   | undefined;
 
-export interface LabelProps {
+export interface LabelProps extends React.HTMLAttributes<HTMLElement> {
   /** Hidden label describing the badge */
   variant?: variantType;
   /** Hidden label describing the badge */

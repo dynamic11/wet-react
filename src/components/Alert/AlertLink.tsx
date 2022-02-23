@@ -1,6 +1,7 @@
 import React from 'react';
 
-export interface AlertLinkProps {
+export interface AlertLinkProps
+  extends React.HTMLAttributes<HTMLAnchorElement> {
   /** Content of alert Link */
   children?: React.ReactNode;
   /** The target of hyperlink */

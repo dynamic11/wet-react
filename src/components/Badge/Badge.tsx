@@ -1,7 +1,7 @@
 import React from 'react';
 import '../../style.css';
 
-export interface BadgeProps {
+export interface BadgeProps extends React.HTMLAttributes<HTMLElement> {
   /** Hidden label describing the badge */
   badgeLabel?: string;
   /** Hidden label describing the badge */

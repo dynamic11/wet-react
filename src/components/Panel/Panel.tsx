@@ -6,7 +6,7 @@ import '../../style.css';
 type variantType = 'success' | 'warning' | 'danger' | 'info' | undefined;
 type headingLevelType = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | undefined;
 
-export interface PanelProps {
+export interface PanelProps extends React.HTMLAttributes<HTMLElement> {
   /** The styling variant that you would like to use */
   variant?: variantType;
   /** The content of panel header */

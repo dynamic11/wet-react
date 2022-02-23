@@ -4,7 +4,7 @@ import '../../style.css';
 /** Types */
 type levelType = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | undefined;
 
-export interface TitleProps {
+export interface TitleProps extends React.HTMLAttributes<HTMLElement> {
   /** Content of heading */
   children?: React.ReactNode;
   /** Heading level */
