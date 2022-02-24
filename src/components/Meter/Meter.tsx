@@ -21,7 +21,6 @@ const Meter = ({
   value = 0,
   low = 0,
   high = 100,
-  children,
   ...rest
 }: MeterProps) => {
   const sterilizedMin = min > max ? max : min;
@@ -37,6 +36,7 @@ const Meter = ({
       value={sterilizedValue}
       low={sterilizedLow}
       high={sterilizedHigh}
+      {...rest}
     />
   );
 };
