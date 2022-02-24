@@ -15,12 +15,20 @@ For the non-textual checkbox and radio controls, FormCheck provides a single com
 <Canvas>
   <Story name="Default">
     <Form>
-      <Form.Check type="checkbox" label={`default checkbox 1`} />
-      <Form.Check type="checkbox" label={`default checkbox 2`} />
+      <Form.Check
+        type="checkbox"
+        label={`default checkbox 1`}
+        value="checkbox-1"
+      />
+      <Form.Check
+        type="checkbox"
+        label={`default checkbox 2`}
+        value="checkbox-1"
+      />
     </Form>
     <Form>
-      <Form.Check type="radio" label={`default radio 1`} />
-      <Form.Check type="radio" label={`default radio 2`} />
+      <Form.Check type="radio" label={`default radio 1`} value="radio-1" />
+      <Form.Check type="radio" label={`default radio 2`} value="radio-1" />
     </Form>
   </Story>
 </Canvas>
