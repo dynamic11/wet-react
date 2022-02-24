@@ -38,6 +38,10 @@ export interface FormControlProps
   extends React.HTMLAttributes<FormControlElement> {
   /** Placeholder content */
   placeholder?: string;
+  /** Placeholder content */
+  defaultValue?: string | string[] | number;
+  /** The value attribute of underlying input */
+  value?: string | string[] | number;
   /** The underlying HTML element to use when rendering the FormControl. */
   as?: asType;
   /** The HTML input type, which is only relevant if as is 'input' (the default). */
@@ -62,41 +66,51 @@ export interface FormControlProps
   className?: string;
 }
 
-const FormControl = ({
-  placeholder,
-  as,
-  type = 'text',
-  isDisabled = false,
-  isReadOnly = false,
-  isInvalid = false,
-  isRequired = false,
-  htmlSize,
-  size = 'default',
-  onChange,
-  id,
-  className = '',
-  ...rest
-}: FormControlProps) => {
-  const sizeClassName =
-    size === 'sm' ? 'input-sm' : size === 'lg' ? 'input-lg' : '';
+const FormControl = React.forwardRef(
+  (
+    {
+      placeholder,
+      value = '',
+      defaultValue,
+      as,
+      type = 'text',
+      isDisabled = false,
+      isReadOnly = false,
+      isInvalid = false,
+      isRequired = false,
+      htmlSize,
+      size = 'default',
+      onChange,
+      id,
+      className = '',
+      ...rest
+    }: FormControlProps,
+    ref: React.ForwardedRef<HTMLTextAreaElement>
+  ) => {
+    const sizeClassName =
+      size === 'sm' ? 'input-sm' : size === 'lg' ? 'input-lg' : '';
 
-  return (
-    <FormRB.Control
-      as={as}
-      type={type}
-      disabled={isDisabled}
-      readOnly={isReadOnly}
-      aria-required={isRequired}
-      aria-invalid={isInvalid}
-      htmlSize={htmlSize}
-      onChange={onChange}
-      placeholder={placeholder}
-      id={id}
-      className={`${sizeClassName} ${className}`}
-      {...rest}
-    />
-  );
-};
+    return (
+      <FormRB.Control
+        as={as}
+        type={type}
+        disabled={isDisabled}
+        readOnly={isReadOnly}
+        aria-required={isRequired}
+        aria-invalid={isInvalid}
+        htmlSize={htmlSize}
+        onChange={onChange}
+        placeholder={placeholder}
+        value={value}
+        defaultValue={defaultValue}
+        ref={ref}
+        id={id}
+        className={`${sizeClassName} ${className}`}
+        {...rest}
+      />
+    );
+  }
+);
 
 FormControl.displayName = 'Form.Control';
 

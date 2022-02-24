@@ -27,30 +27,36 @@ export interface FormCheckProps
   className?: string;
 }
 
-const FormCheck = ({
-  title = '',
-  label,
-  type = 'checkbox',
-  isDisabled = false,
-  isInline = false,
-  isInvalid = false,
-  isRequired = false,
-  id,
-  className = '',
-  ...rest
-}: FormCheckProps) => (
-  <FormRB.Check
-    title={title}
-    label={label}
-    type={type}
-    disabled={isDisabled}
-    inline={isInline}
-    aria-required={isRequired}
-    aria-invalid={isInvalid}
-    id={id}
-    className={`${type} ${className}`}
-    {...rest}
-  />
+const FormCheck = React.forwardRef(
+  (
+    {
+      title = '',
+      label,
+      type = 'checkbox',
+      isDisabled = false,
+      isInline = false,
+      isInvalid = false,
+      isRequired = false,
+      id,
+      className = '',
+      ...rest
+    }: FormCheckProps,
+    ref: React.ForwardedRef<HTMLInputElement>
+  ) => (
+    <FormRB.Check
+      title={title}
+      label={label}
+      type={type}
+      disabled={isDisabled}
+      inline={isInline}
+      aria-required={isRequired}
+      aria-invalid={isInvalid}
+      ref={ref}
+      id={id}
+      className={`${type} ${className}`}
+      {...rest}
+    />
+  )
 );
 
 FormCheck.displayName = 'Form.Check';
