@@ -6,7 +6,7 @@ import '../../style.css';
 type typeType = 'checkbox' | 'radio' | 'switch' | undefined;
 
 export interface FormCheckProps
-  extends Omit<React.InputHTMLAttributes<HTMLInputElement>, 'value'> {
+  extends React.InputHTMLAttributes<HTMLInputElement> {
   /** title attribute */
   title?: string;
   /** label attribute */
@@ -21,8 +21,6 @@ export interface FormCheckProps
   isInvalid?: boolean;
   /** Add "aria-required="true" to input */
   isRequired?: boolean;
-  /** The status of checkbox (True/False) */
-  value?: boolean;
   /** Uses controlId from <FormGroup> if not explicitly specified. */
   id?: string;
   /** Additional custom classNames */
@@ -39,7 +37,6 @@ const FormCheck = React.forwardRef(
       isInline = false,
       isInvalid = false,
       isRequired = false,
-      value = false,
       id,
       className = '',
       ...rest
@@ -52,7 +49,6 @@ const FormCheck = React.forwardRef(
       type={type}
       disabled={isDisabled}
       inline={isInline}
-      checked={value}
       aria-required={isRequired}
       aria-invalid={isInvalid}
       ref={ref}
