@@ -38,7 +38,7 @@ const ListGroupItem = ({
     href={href}
     {...rest}
   >
-    {children}
+    {React.Children.toArray(children)}
   </ListGroupRB.Item>
 );
 ListGroupItem.displayName = 'ListGroup.Item';
