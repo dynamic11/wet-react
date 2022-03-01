@@ -9,7 +9,7 @@ export interface CarouselProps extends React.HTMLAttributes<HTMLDivElement> {
 }
 
 const Carousel = ({ children, ...rest }: CarouselProps) => (
-  <div className="wb-tabs carousel-s1">
+  <div className="wb-tabs">
     <div className="tabpanel">{children}</div>
   </div>
 );
