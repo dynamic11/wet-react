@@ -29,38 +29,44 @@ export interface FormSelectProps
   className?: string;
 }
 
-const FormSelect = ({
-  children,
-  placeholder,
-  htmlSize,
-  isDisabled = false,
-  isInvalid = false,
-  isRequired = false,
-  size = 'default',
-  onChange,
-  id,
-  className = '',
-  ...rest
-}: FormSelectProps) => {
-  const sizeClassName =
-    size === 'sm' ? 'input-sm' : size === 'lg' ? 'input-lg' : '';
+const FormSelect = React.forwardRef(
+  (
+    {
+      children,
+      placeholder,
+      htmlSize,
+      isDisabled = false,
+      isInvalid = false,
+      isRequired = false,
+      size = 'default',
+      onChange,
+      id,
+      className = '',
+      ...rest
+    }: FormSelectProps,
+    ref: React.ForwardedRef<HTMLSelectElement>
+  ) => {
+    const sizeClassName =
+      size === 'sm' ? 'input-sm' : size === 'lg' ? 'input-lg' : '';
 
-  return (
-    <FormRB.Select
-      disabled={isDisabled}
-      aria-required={isRequired}
-      aria-invalid={isInvalid}
-      onChange={onChange}
-      placeholder={placeholder}
-      htmlSize={htmlSize}
-      id={id}
-      className={`${sizeClassName} form-control ${className}`}
-      {...rest}
-    >
-      {children}
-    </FormRB.Select>
-  );
-};
+    return (
+      <FormRB.Select
+        disabled={isDisabled}
+        aria-required={isRequired}
+        aria-invalid={isInvalid}
+        onChange={onChange}
+        placeholder={placeholder}
+        htmlSize={htmlSize}
+        ref={ref}
+        id={id}
+        className={`${sizeClassName} form-control ${className}`}
+        {...rest}
+      >
+        {children}
+      </FormRB.Select>
+    );
+  }
+);
 
 FormSelect.displayName = 'Form.Select';
 
