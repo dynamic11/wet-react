@@ -1,0 +1,37 @@
+import { ArgsTable, Canvas, Meta } from '@storybook/addon-docs';
+
+import Modal from '../Modal';
+
+<Meta title="Components/Modal/Body" component={Modal} />
+
+export const TemplateGroup = ({ title, content, closeButton, ...rest }) => {
+  return (
+    <Modal {...rest}>
+      <Modal.Header closeButton>
+        <Modal.Title> {title} </Modal.Title>
+      </Modal.Header>
+      <Modal.Body>{content} </Modal.Body>
+    </Modal>
+  );
+};
+
+# Modal
+
+<Canvas>
+  <Story
+    name="Body"
+    args={{
+      content: 'placeholder text',
+      title: 'success',
+      closeButton: false,
+      show: true,
+      animation: true,
+      restoreFocus: true,
+      keyboard: true,
+      centered: true,
+      className: 'lbx-modal',
+    }}
+  >
+    {TemplateGroup.bind({})}
+  </Story>
+</Canvas>
