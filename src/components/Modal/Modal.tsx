@@ -38,13 +38,13 @@ export interface ModalProps extends React.HTMLAttributes<HTMLDivElement> {
 
 const Modal = ({
   children,
-  // show,
-  // animation = true,
-  // autoFocus,
+  show,
+  animation = true,
+  autoFocus,
   size = 'lg',
   fullScreen = 'lg-down',
-  // restoreFocus = true,
-  // keyboard = true,
+  restoreFocus = true,
+  keyboard = true,
   scrollable,
   centered,
   ...rest
@@ -54,6 +54,11 @@ const Modal = ({
     fullscreen={fullScreen}
     scrollable={scrollable}
     centered={centered}
+    keyboard={keyboard}
+    autoFocus={autoFocus}
+    restoreFocus={restoreFocus}
+    animation={animation}
+    show={show}
     {...rest}
   >
     {React.Children.toArray(children)}
