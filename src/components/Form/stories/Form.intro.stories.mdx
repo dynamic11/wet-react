@@ -38,3 +38,26 @@ More info about the HTML element:<br/>
 https://developer.mozilla.org/en-US/docs/Web/API/HTMLFormElement
 
 <ArgsTable />
+
+## Form Props
+
+Form elements can be wrapped with a `<Form.Group>` component. This allows us to group the `label` with the form controls.
+
+**This component uses React's `useContext` to pass the `controlId`, `isRequired`, and `isInvalid` props to its children.**
+
+Available props can be seen below.
+
+````
+{
+  /** Content of group */
+  children?: React.ReactNode;
+  /** Unique Id of form group elements */
+  controlId?: string;
+  /** Additional custom classNames */
+  className?: string;
+  /** Applies 'required' styling to form group elements */
+  isRequired?: boolean;
+  /** Sets whether form input is valid */
+  isInvalid?: boolean;
+}```
+````

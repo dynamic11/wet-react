@@ -3,7 +3,7 @@ import FormRB from 'react-bootstrap/Form';
 import FormGroupContext from './FormGroupContext';
 
 export interface FormGroupProps extends React.HTMLAttributes<HTMLElement> {
-  /** Content of button */
+  /** Content of group */
   children?: React.ReactNode;
   /** Unique Id of form group elements */
   controlId?: string;
@@ -11,7 +11,7 @@ export interface FormGroupProps extends React.HTMLAttributes<HTMLElement> {
   className?: string;
   /** Applies 'require' styling to form group */
   isRequired?: boolean;
-  /** Set whether form input is valid */
+  /** Sets whether form input is valid */
   isInvalid?: boolean;
 }
 
