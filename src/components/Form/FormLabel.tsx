@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import FormRB from 'react-bootstrap/Form';
-import '../../style.css';
+import FormGroupContext from './FormGroupContext';
 
 export interface FormLabelProps extends React.HTMLAttributes<HTMLElement> {
   /** Content of button */
@@ -26,7 +26,11 @@ const FormLabel = ({
   className = '',
   ...rest
 }: FormLabelProps) => {
-  const requiredStyling = isRequired ? 'required' : '';
+  const { isRequiredCon } = useContext(FormGroupContext);
+
+  const isFieldRequired = isRequired || isRequiredCon;
+  const requiredStyling = isFieldRequired ? 'required' : '';
+
   return (
     <FormRB.Label
       htmlFor={htmlFor}
@@ -36,7 +40,9 @@ const FormLabel = ({
     >
       <>
         {children}
-        {isRequired && <strong className="required"> ({requiredText})</strong>}
+        {isFieldRequired && (
+          <strong className="required"> ({requiredText})</strong>
+        )}
       </>
     </FormRB.Label>
   );

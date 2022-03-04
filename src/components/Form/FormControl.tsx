@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import FormRB from 'react-bootstrap/Form';
-import '../../style.css';
+import FormGroupContext from './FormGroupContext';
 
 /** Types */
 type sizeType = 'lg' | 'sm' | 'default' | undefined;
@@ -87,6 +87,8 @@ const FormControl = React.forwardRef(
     }: FormControlProps,
     ref: React.ForwardedRef<HTMLTextAreaElement>
   ) => {
+    const { isRequiredCon, isInvalidCon } = useContext(FormGroupContext);
+
     const sizeClassName =
       size === 'sm' ? 'input-sm' : size === 'lg' ? 'input-lg' : '';
 
@@ -96,8 +98,8 @@ const FormControl = React.forwardRef(
         type={type}
         disabled={isDisabled}
         readOnly={isReadOnly}
-        aria-required={isRequired}
-        aria-invalid={isInvalid}
+        aria-required={isRequired || isRequiredCon}
+        aria-invalid={isInvalid || isInvalidCon}
         htmlSize={htmlSize}
         onChange={onChange}
         placeholder={placeholder}
