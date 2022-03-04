@@ -1,6 +1,5 @@
 import React from 'react';
 import FormRB from 'react-bootstrap/Form';
-import '../../style.css';
 
 export interface FormTextProps extends React.HTMLAttributes<HTMLElement> {
   /** Content of button */

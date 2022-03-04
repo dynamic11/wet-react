@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import FormRB from 'react-bootstrap/Form';
-import '../../style.css';
+import FormGroupContext from './FormGroupContext';
 
 /** Types */
 type typeType = 'checkbox' | 'radio' | 'switch' | undefined;
@@ -42,21 +42,25 @@ const FormCheck = React.forwardRef(
       ...rest
     }: FormCheckProps,
     ref: React.ForwardedRef<HTMLInputElement>
-  ) => (
-    <FormRB.Check
-      title={title}
-      label={label}
-      type={type}
-      disabled={isDisabled}
-      inline={isInline}
-      aria-required={isRequired}
-      aria-invalid={isInvalid}
-      ref={ref}
-      id={id}
-      className={`${type} ${className}`}
-      {...rest}
-    />
-  )
+  ) => {
+    const { isRequiredCon, isInvalidCon } = useContext(FormGroupContext);
+
+    return (
+      <FormRB.Check
+        title={title}
+        label={label}
+        type={type}
+        disabled={isDisabled}
+        inline={isInline}
+        aria-required={isRequired || isRequiredCon}
+        aria-invalid={isInvalid || isInvalidCon}
+        ref={ref}
+        id={id}
+        className={`${type} ${className}`}
+        {...rest}
+      />
+    );
+  }
 );
 
 FormCheck.displayName = 'Form.Check';
