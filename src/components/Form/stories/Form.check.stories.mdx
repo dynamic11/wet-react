@@ -88,6 +88,26 @@ You can also customize the required message using the `requiredText` prop
   </Story>
 </Canvas>
 
+### Invalid
+
+You can set a checkbox or radio as "invalid" using the `isInvalid` prop.
+
+<Canvas>
+  <Story name="Invalid">
+    <Form>
+      <Form.Group isInvalid>
+        <Form.Check type="checkbox" label="invalid checkbox" />
+        <Form.Check type="radio" label="invalid radio" />
+      </Form.Group>
+    </Form>
+    <Form>
+        <Form.Check type="checkbox" label="invalid checkbox" isInvalid/>
+        <Form.Check type="radio" label="invalid radio" isInvalid/>
+    </Form>
+
+  </Story>
+</Canvas>
+
 ### Inline
 
 Group checkboxes or radios on the same horizontal row by adding the `isInline` prop.

@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import FormRB from 'react-bootstrap/Form';
+import FormLabel from './FormLabel';
 import FormGroupContext from './FormGroupContext';
 
 /** Types */
@@ -75,10 +76,14 @@ const FormCheck = React.forwardRef(
             name={name}
             {...rest}
           />
-          {label}
-          {isRequiredResult && showRequiredStyling && type === 'checkbox' && (
-            <strong className="required"> ({requiredText})</strong>
-          )}
+          <FormLabel
+            as="span"
+            showRequiredStyling={
+              isRequiredResult && showRequiredStyling && type === 'checkbox'
+            }
+          >
+            {label}
+          </FormLabel>
         </FormRB.Check.Label>
       </FormRB.Check>
     );

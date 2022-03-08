@@ -1,0 +1,141 @@
+import { Story, Canvas, Meta } from '@storybook/addon-docs';
+
+import { Form } from '../..';
+
+<Meta title="Components/Form/Form Check Group" component={Form} />
+
+# Forms
+
+## Form Check Group
+
+For the non-textual checkbox and radio controls, FormCheck provides a single component for both types that adds some additional styling and improved layout.
+
+### Checkbox Group
+
+<Canvas>
+  <Story name="Checkbox group">
+    <Form>
+      <Form.Group>
+        <Form.CheckGroup label="Sample question">
+          <Form.Check type="checkbox" label={`checkbox 1`} />
+          <Form.Check type="checkbox" label={`checkbox 2`} />
+        </Form.CheckGroup>
+      </Form.Group>
+    </Form>
+  </Story>
+</Canvas>
+
+### Checkbox Group
+
+<Canvas>
+  <Story name="Radio group">
+    <Form>
+      <Form.Group>
+        <Form.CheckGroup label="Sample question">
+          <Form.Check type="radio" label={`checkbox 1`} />
+          <Form.Check type="radio" label={`checkbox 2`} />
+        </Form.CheckGroup>
+      </Form.Group>
+    </Form>
+  </Story>
+</Canvas>
+
+### Required
+
+You can set a checkbox or radio as required using the `isRequired` prop.
+
+<Canvas>
+  <Story name="Required group">
+    <Form>
+      <Form.Group isRequired>
+        <Form.CheckGroup label="Sample question">
+          <Form.Check
+            type="checkbox"
+            label={`checkbox 1`}
+            showRequiredStyling={false}
+          />
+          <Form.Check
+            type="checkbox"
+            label={`checkbox 2`}
+            showRequiredStyling={false}
+          />
+        </Form.CheckGroup>
+      </Form.Group>
+    </Form>
+    <Form>
+      <Form.Group isRequired>
+        <Form.CheckGroup label="Sample question">
+          <Form.Check type="radio" label={`checkbox 1`} />
+          <Form.Check type="radio" label={`checkbox 2`} />
+        </Form.CheckGroup>
+      </Form.Group>
+    </Form>
+  </Story>
+</Canvas>
+
+### Custom Required Message
+
+You can set a custom "required" text
+
+<Canvas>
+  <Story name="Custom required text">
+    <Form>
+      <Form.Group isRequired>
+        <Form.CheckGroup label="Sample question" requiredText="custom">
+          <Form.Check type="radio" label={`checkbox 1`} />
+          <Form.Check type="radio" label={`checkbox 2`} />
+        </Form.CheckGroup>
+      </Form.Group>
+    </Form>
+  </Story>
+</Canvas>
+
+### Invalid
+
+You can set a custom "required" text
+
+<Canvas>
+  <Story name="Invalid State">
+    <Form>
+      <Form.Group isRequired isInvalid>
+        <Form.CheckGroup label="Sample question" requiredText="custom">
+          <Form.Check
+            type="checkbox"
+            label={`checkbox 1`}
+            showRequiredStyling={false}
+          />
+          <Form.Check
+            type="checkbox"
+            label={`checkbox 2`}
+            showRequiredStyling={false}
+          />
+        </Form.CheckGroup>
+      </Form.Group>
+    </Form>
+    <Form>
+      <Form.Group isRequired isInvalid>
+        <Form.CheckGroup label="Sample question" requiredText="custom">
+          <Form.Check type="radio" label={`checkbox 1`} />
+          <Form.Check type="radio" label={`checkbox 2`} />
+        </Form.CheckGroup>
+      </Form.Group>
+    </Form>
+  </Story>
+</Canvas>
+
+### Form.CheckGroup Props
+
+**We are working to display the props in a table. Until then, you can find the props below:**
+
+```typescript
+export interface FormCheckProps {
+  /** Content of form label */
+  children?: React.ReactNode;
+  /** label attribute */
+  label?: React.ReactNode;
+  /** Allows for the customization of "required" label. It is helpful for translations. Default: "required" */
+  requiredText?: React.ReactNode;
+  /** Additional custom classNames */
+  className?: string;
+}
+```
