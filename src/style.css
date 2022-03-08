@@ -15,19 +15,16 @@
   border: 0 !important;
 }
 
-.form-check {
-  display: block !important;
-  min-height: 1.5rem !important;
-  padding-left: 1.5em !important;
+.check-label {
+  width: 95%;
 }
 
-.checkbox label,
-.radio label {
-  min-height: 23px !important;
-  padding-left: 0px !important;
-  margin-bottom: 0 !important;
-  font-weight: 400 !important;
-  cursor: pointer !important;
+.checkbox.required:before,
+label.required:before,
+legend.required:before {
+  content: '* ';
+  margin-left: -0.67em;
+  vertical-align: top;
 }
 
 .form-check-inline {
