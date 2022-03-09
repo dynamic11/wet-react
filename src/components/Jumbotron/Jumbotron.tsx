@@ -11,7 +11,11 @@ export interface JumbotronProps extends React.HTMLAttributes<HTMLDivElement> {
 
 const Jumbotron = ({ children, fluid = false, ...rest }: JumbotronProps) => {
   const style = fluid ? 'container-fluid' : '';
-  return <section className={`jumbotron ${style}`}>{children}</section>;
+  return (
+    <section className={`jumbotron ${style}`} {...rest}>
+      {children}
+    </section>
+  );
 };
 
 export default Jumbotron;

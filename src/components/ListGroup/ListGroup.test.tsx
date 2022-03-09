@@ -2,7 +2,6 @@ import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
 
 import ListGroup from '@components/ListGroup';
-import ListGroupItem from './ListGroupItem';
 
 describe('ListGroup tests', () => {
   const placeholder = 'PlaceHolder Text';
