@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import FormRB from 'react-bootstrap/Form';
+import FormLabel from './FormLabel';
 import FormGroupContext from './FormGroupContext';
 
 /** Types */
@@ -7,8 +8,6 @@ type typeType = 'checkbox' | 'radio' | 'switch' | undefined;
 
 export interface FormCheckProps
   extends React.InputHTMLAttributes<HTMLInputElement> {
-  /** title attribute */
-  title?: string;
   /** label attribute */
   label?: React.ReactNode;
   /** The HTML input type, which is only relevant if as is 'input' (the default). */
@@ -19,10 +18,16 @@ export interface FormCheckProps
   isInline?: boolean;
   /** Add "aria-invalid="true" to input */
   isInvalid?: boolean;
-  /** Add "aria-required="true" to input */
+  /** Is field required */
   isRequired?: boolean;
+  /** Show the "required styling" for the field */
+  showRequiredStyling?: boolean;
+  /** Allows for the customization of "required" label. It is helpful for translations. Default: "required" */
+  requiredText?: string;
   /** Uses controlId from <FormGroup> if not explicitly specified. */
   id?: string;
+  /** Name of form field. */
+  name?: string;
   /** Additional custom classNames */
   className?: string;
 }
@@ -30,35 +35,57 @@ export interface FormCheckProps
 const FormCheck = React.forwardRef(
   (
     {
-      title = '',
       label,
       type = 'checkbox',
       isDisabled = false,
       isInline = false,
       isInvalid = false,
       isRequired = false,
+      showRequiredStyling = true,
+      requiredText = 'required',
       id,
+      name = '',
       className = '',
       ...rest
     }: FormCheckProps,
     ref: React.ForwardedRef<HTMLInputElement>
   ) => {
     const { isRequiredCon, isInvalidCon } = useContext(FormGroupContext);
+    const isRequiredResult = isRequired || isRequiredCon;
+    const isInvalidResult = isRequired || isInvalidCon;
+
+    const requiredClassName =
+      isRequiredResult && showRequiredStyling && type === 'checkbox'
+        ? 'required'
+        : '';
 
     return (
       <FormRB.Check
-        title={title}
-        label={label}
         type={type}
-        disabled={isDisabled}
         inline={isInline}
-        aria-required={isRequired || isRequiredCon}
-        aria-invalid={isInvalid || isInvalidCon}
-        ref={ref}
         id={id}
-        className={`${type} ${className}`}
-        {...rest}
-      />
+        className={`${type} ${requiredClassName} ${className}`}
+      >
+        <FormRB.Check.Label className="check-label">
+          <FormRB.Check.Input
+            type={type as any}
+            disabled={isDisabled}
+            aria-required={isRequiredResult}
+            aria-invalid={isInvalidResult}
+            ref={ref}
+            name={name}
+            {...rest}
+          />
+          <FormLabel
+            as="span"
+            showRequiredStyling={
+              isRequiredResult && showRequiredStyling && type === 'checkbox'
+            }
+          >
+            {label}
+          </FormLabel>
+        </FormRB.Check.Label>
+      </FormRB.Check>
     );
   }
 );
