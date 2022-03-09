@@ -5,11 +5,11 @@ import '../../style.css';
 
 export interface ModalTitleProps extends React.HTMLAttributes<HTMLDivElement> {
   /** Content of the title */
-  title?: string;
+  children?: React.ReactNode;
 }
 
-const ModalTitle = ({ title, ...rest }: ModalTitleProps) => (
-  <ModalTitleRB {...rest}>{title}</ModalTitleRB>
+const ModalTitle = ({ children, ...rest }: ModalTitleProps) => (
+  <ModalTitleRB {...rest}>{React.Children.toArray(children)}</ModalTitleRB>
 );
 
 ModalTitle.displayName = 'Modal.Title';

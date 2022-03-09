@@ -11,14 +11,17 @@ Use to extend the entire viewport to showcase key content on your site.
 ## Example
 
 <Canvas>
-  <Modal show className="lbx-hide-gal">
-    <Modal.Header closeButton>
-      <Modal.Title>Title</Modal.Title>
+  <Modal.Dialog>
+    <Modal.Header closeButton closeLabel="Close">
+      <Modal.Title>
+        <div>Title of the Modal</div>
+      </Modal.Title>
     </Modal.Header>
     <Modal.Body>
       <p>Some content to show you all</p>
     </Modal.Body>
-  </Modal>
+    <Modal.Footer>The end of the content</Modal.Footer>
+  </Modal.Dialog>
 </Canvas>
 
 ## Available Props
