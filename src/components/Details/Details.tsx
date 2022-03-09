@@ -1,9 +1,8 @@
 import React, { ReactNode } from 'react';
-import '../../style.css';
 
 type detailData = {
   key: string;
-  title: string;
+  title: ReactNode;
   children: ReactNode;
   className?: string;
 };
