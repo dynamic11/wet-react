@@ -4,13 +4,11 @@ import ListGroup from '../ListGroup';
 
 <Meta title="Components/List Group/Variants" component={ListGroup} />
 
-export const TemplateGroup = ({ children, ...rest }) => {
-  return (
-    <ListGroup>
-      <ListGroup.Item {...rest}> {children} </ListGroup.Item>
-    </ListGroup>
-  );
-};
+export const Template = (args) => (
+  <ListGroup>
+    <ListGroup.Item {...args}> {args.children} </ListGroup.Item>
+  </ListGroup>
+);
 
 # List Group Item Variants
 
@@ -24,7 +22,7 @@ ListGroup items have several possible variants that change their apperance from 
       variant: 'info',
     }}
   >
-    {TemplateGroup.bind({})}
+    {Template.bind({})}
   </Story>
   <Story
     name="Warning Variant"
@@ -33,7 +31,7 @@ ListGroup items have several possible variants that change their apperance from 
       variant: 'warning',
     }}
   >
-    {TemplateGroup.bind({})}
+    {Template.bind({})}
   </Story>
   <Story
     name="Success Variant"
@@ -42,7 +40,7 @@ ListGroup items have several possible variants that change their apperance from 
       variant: 'success',
     }}
   >
-    {TemplateGroup.bind({})}
+    {Template.bind({})}
   </Story>
   <Story
     name="Danger Variant"
@@ -51,6 +49,6 @@ ListGroup items have several possible variants that change their apperance from 
       variant: 'danger',
     }}
   >
-    {TemplateGroup.bind({})}
+    {Template.bind({})}
   </Story>
 </Canvas>
