@@ -13,4 +13,5 @@ export { default as ListGroup } from './ListGroup';
 export { default as Image } from './Image';
 export { default as Details } from './Details';
 export { default as Form } from './Form';
+export { default as Meter } from './Meter';
 export { default as Jumbotron } from './Jumbotron';
