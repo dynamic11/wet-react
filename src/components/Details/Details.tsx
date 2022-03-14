@@ -3,7 +3,7 @@ import React, { ReactNode } from 'react';
 type detailData = {
   key: string;
   title: ReactNode;
-  isOpen: boolean;
+  isOpen?: boolean;
   children: ReactNode;
   className?: string;
 };
@@ -13,7 +13,7 @@ export interface DetailItemProps
   /** data used to create the detail item */
   dataItem: detailData;
   /** should panel be in open state */
-  isOpen: boolean;
+  isOpen?: boolean;
 }
 
 export interface DetailsProps extends React.HTMLAttributes<HTMLDetailsElement> {
