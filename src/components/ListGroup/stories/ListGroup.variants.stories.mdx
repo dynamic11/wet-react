@@ -1,52 +1,60 @@
-import { ArgsTable, Canvas, Meta } from '@storybook/addon-docs';
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs';
 
 import ListGroup from '../ListGroup';
 
-<Meta title="Components/List Group/Variants" component={ListGroup} />
+<Meta
+  title="Components/List Group/Variants"
+  component={ListGroup}
+  subcomponents={{
+    'ListGroup.Item': ListGroup.Item,
+  }}
+/>
 
 export const Template = (args) => (
   <ListGroup>
-    <ListGroup.Item {...args}> {args.children} </ListGroup.Item>
+    <ListGroup.Item {...args}> {args.text} </ListGroup.Item>
   </ListGroup>
 );
 
-# List Group Item Variants
+# List Group
+
+## List Group Item Variants
 
 ListGroup items have several possible variants that change their apperance from their default.
 
 <Canvas>
   <Story
-    name="Info Variant"
+    name="Info"
     args={{
-      children: 'placeholder text',
       variant: 'info',
+      text: 'Placeholder Text',
     }}
   >
     {Template.bind({})}
   </Story>
   <Story
-    name="Warning Variant"
+    name="Warning"
     args={{
-      children: 'placeholder text',
       variant: 'warning',
+      text: 'Placeholder Text',
     }}
   >
     {Template.bind({})}
   </Story>
   <Story
-    name="Success Variant"
+    name="Success"
     args={{
-      children: 'placeholder text',
       variant: 'success',
+      text: 'Placeholder Text',
     }}
   >
     {Template.bind({})}
   </Story>
   <Story
-    name="Danger Variant"
+    name="Danger"
     args={{
-      children: 'placeholder text',
       variant: 'danger',
+      text: 'Placeholder Text',
     }}
   >
     {Template.bind({})}
