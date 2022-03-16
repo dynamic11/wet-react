@@ -18,6 +18,30 @@ The `Details` component was auto generated based on the following `data` prop.
 
 ```
 data = [
+  {
+    key: 'key1',
+    title: 'Summary 1',
+    children: <h2>This is Summary content</h2>,
+    className: '',
+  },
+  {
+    key: 'key2',
+    title: 'Summary 2',
+    children: <h2>This is Summary content 2</h2>,
+  },
+  {
+    key: 'key3',
+    title: 'Summary 3',
+    children: <h2>This is Summary content as well 3</h2>,
+  },
+];
+```
+
+<Canvas>
+  <Story
+    name="Example data"
+    args={{
+      data: [
         {
           key: 'key1',
           title: 'Summary 1',
@@ -34,24 +58,53 @@ data = [
           title: 'Summary 3',
           children: <h2>This is Summary content as well 3</h2>,
         },
-      ]
+      ],
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Programmatically open
+
+You can control which panel is open by setting the `isOpen` property in the data object.
+
+```
+data: [
+  {
+    key: 'key1',
+    title: 'Summary 1',
+    children: <h2>This is Summary content</h2>,
+  },
+  {
+    key: 'key2',
+    title: 'Summary 2',
+    children: <h2>This is Summary content 2</h2>,
+    isOpen: true,
+  },
+  {
+    key: 'key3',
+    title: 'Summary 3',
+    children: <h2>This is Summary content as well 3</h2>,
+  },
+];
 ```
 
 <Canvas>
   <Story
-    name="Example"
+    name="Programmatically open"
     args={{
       data: [
         {
           key: 'key1',
           title: 'Summary 1',
           children: <h2>This is Summary content</h2>,
-          className: '',
         },
         {
           key: 'key2',
           title: 'Summary 2',
           children: <h2>This is Summary content 2</h2>,
+          isOpen: true,
         },
         {
           key: 'key3',

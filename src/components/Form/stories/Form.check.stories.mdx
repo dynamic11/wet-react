@@ -50,6 +50,63 @@ You can choose to disable a checkbox or a radio controls
   </Story>
 </Canvas>
 
+### Required
+
+You can set a checkbox or radio as required using the `isRequired` prop.
+
+By default it will show the "required" styling but you can set the visibility using `showRequiredStyling`
+
+You can also customize the required message using the `requiredText` prop
+
+<Canvas>
+  <Story name="Required">
+    <Form>
+      <Form.Check
+        type="checkbox"
+        label="required field with visible styling"
+        isRequired
+      />
+      <Form.Check
+        showRequiredStyling={true}
+        isRequired
+        type="checkbox"
+        label="required field with visible styling"
+        requiredText="custom message"
+      />
+      <Form.Check
+        showRequiredStyling={false}
+        isRequired
+        type="checkbox"
+        label="required field with hidden styling"
+      />
+      <Form.Check
+        isRequired
+        type="radio"
+        label={`radios do not show styling`}
+      />
+    </Form>
+  </Story>
+</Canvas>
+
+### Invalid
+
+You can set a checkbox or radio as "invalid" using the `isInvalid` prop.
+
+<Canvas>
+  <Story name="Invalid">
+    <Form>
+      <Form.Group isInvalid>
+        <Form.Check type="checkbox" label="invalid checkbox" />
+        <Form.Check type="radio" label="invalid radio" />
+      </Form.Group>
+    </Form>
+    <Form>
+      <Form.Check type="checkbox" label="invalid checkbox" isInvalid />
+      <Form.Check type="radio" label="invalid radio" isInvalid />
+    </Form>
+  </Story>
+</Canvas>
+
 ### Inline
 
 Group checkboxes or radios on the same horizontal row by adding the `isInline` prop.
@@ -89,8 +146,6 @@ https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement
 
 ```typescript
 export interface FormCheckProps {
-  /** title attribute */
-  title?: string;
   /** label attribute */
   label?: React.ReactNode;
   /** The HTML input type, which is only relevant if as is 'input' (the default). */
@@ -101,10 +156,16 @@ export interface FormCheckProps {
   isInline?: boolean;
   /** Add "aria-invalid="true" to input */
   isInvalid?: boolean;
-  /** Add "aria-required="true" to input */
+  /** Is field required */
   isRequired?: boolean;
+  /** Show the "required styling" for the field */
+  showRequiredStyling?: boolean;
+  /** Allows for the customization of "required" label. It is helpful for translations. Default: "required" */
+  requiredText?: string;
   /** Uses controlId from <FormGroup> if not explicitly specified. */
   id?: string;
+  /** Name of form field. */
+  name?: string;
   /** Additional custom classNames */
   className?: string;
 }

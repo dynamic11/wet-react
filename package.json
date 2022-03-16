@@ -2,7 +2,7 @@
   "name": "@dynamic11/wet-react",
   "author": "ISED",
   "license": "ISC",
-  "version": "0.4.3",
+  "version": "0.5.2",
   "description": "React component library for WET-BOEW components compatible with the GC-Web theme",
   "keywords": [
     "react",
@@ -31,6 +31,10 @@
     "build-storybook": "build-storybook",
     "chromatic": "npx chromatic --project-token=<need-to-add>",
     "prepare": "husky install"
+  },
+  "dependencies": {
+    "react-bootstrap": "^2.1.1",
+    "react-syntax-highlighter": "^15.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.17.2",
@@ -86,9 +90,7 @@
   },
   "peerDependencies": {
     "react": "^17.0.2",
-    "react-bootstrap": "^2.1.1",
-    "react-dom": "^17.0.2",
-    "react-syntax-highlighter": "^15.0.0"
+    "react-dom": "^17.0.2"
   },
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",

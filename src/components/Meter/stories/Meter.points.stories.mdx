@@ -1,0 +1,47 @@
+import { Canvas, Meta, Story } from '@storybook/addon-docs';
+
+import { Meter } from '../..';
+
+<Meta title="Components/Meter/Points" component={Meter} />
+
+export const Template = (args) => <Meter {...args} />;
+
+# Meter
+
+Using the `low` and `high` props it is possible to set the key points of the `Meter`
+
+## Low Point
+
+The **low** value that the meter uses to determine what a low value is can be set using the `low` prop.
+
+In this example the `low` is set to `30`, the `min` is set to 0, `max` is defaulting to 100, and `value` is set to 25.
+
+<Canvas>
+  <Story name="Min Value" args={{ value: 25, low: 30 }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## High Point
+
+The **high** value that the meter uses to determine what a high value is can be set using the `high` prop.
+
+In this example the `high` is set to `30`, the `min` is defaulting to 0, `max` is set to 50, and `value` is set to 35.
+
+<Canvas>
+  <Story name="Max Value" args={{ max: 50, value: 35, high: 30 }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## High & Low Point
+
+The **high** and **low** values can be set at the same time.
+
+In this example the `low` is set to `10`, the `high` is set to `70`, the value value is `45`.
+
+<Canvas>
+  <Story name="Max/Min Values" args={{ low: 10, high: 70, value: 45 }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
