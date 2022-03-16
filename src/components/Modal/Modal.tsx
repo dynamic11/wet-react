@@ -23,7 +23,7 @@ export interface ModalProps {
   show?: boolean;
   /** Render a large, extra large or small modal. When not provided, the modal is rendered with medium (default) size. */
   size?: sizeType;
-  /**  */
+  /** Renders a fullscreen modal. Specifying a breakpoint will render the modal as fullscreen below the breakpoint size. */
   fullScreen?: fullScreenType;
   /** When true The modal will restore focus to previously focused element once modal is hidden */
   restorefocus?: boolean;
@@ -39,7 +39,7 @@ const Modal = ({
   children,
   show = false,
   animation = true,
-  autoFocus,
+  autoFocus = true,
   size = 'lg',
   fullScreen = 'lg-down',
   restorefocus = true,
