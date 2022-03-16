@@ -37,7 +37,7 @@ export interface ModalProps {
 
 const Modal = ({
   children,
-  show,
+  show = false,
   animation = true,
   autoFocus,
   size = 'lg',

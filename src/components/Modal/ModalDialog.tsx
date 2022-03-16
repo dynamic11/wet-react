@@ -1,8 +1,6 @@
 import React from 'react';
 import ModalRB from 'react-bootstrap/ModalDialog';
 
-import '../../style.css';
-
 type sizeType = 'sm' | 'lg' | 'xl';
 
 type fullScreenType =

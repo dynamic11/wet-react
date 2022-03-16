@@ -11,7 +11,7 @@ describe('Modal Tests', () => {
   const placeholder = 'PlaceHolder Text';
   describe('Testing Modal exists', () => {
     const result = render(
-      <Modal>
+      <Modal show>
         <div>test</div>
       </Modal>
     );

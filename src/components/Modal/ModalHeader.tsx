@@ -1,8 +1,6 @@
 import ModalHeaderRB from 'react-bootstrap/ModalHeader';
 import React from 'react';
 
-import '../../style.css';
-
 export interface ModalHeaderProps extends React.HTMLAttributes<HTMLDivElement> {
   /** Specify whether the Component should contain a close button */
   closeButton?: boolean;

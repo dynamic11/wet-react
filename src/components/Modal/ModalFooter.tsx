@@ -2,8 +2,6 @@ import ModalFooterRB from 'react-bootstrap/ModalFooter';
 
 import React from 'react';
 
-import '../../style.css';
-
 export interface ModalFooterProps extends React.HTMLAttributes<HTMLDivElement> {
   /** Content of the Footer */
   children?: React.ReactNode;
