@@ -17,7 +17,7 @@ const ModalHeader = ({
   closeButton = true,
   ...rest
 }: ModalHeaderProps) => (
-  <ModalHeaderRB closeButton={closeButton} {...rest}>
+  <ModalHeaderRB closeButton={closeButton} closeVariant="white" {...rest}>
     {React.Children.toArray(children)}
   </ModalHeaderRB>
 );

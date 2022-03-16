@@ -16,13 +16,11 @@ type fullScreenType =
 export interface ModalDialogProps extends React.HTMLAttributes<HTMLDivElement> {
   /** vertically center the Dialog in the window */
   centered?: boolean;
-  /** When true The modal will show itself. */
-  show?: boolean;
   /** Render a large, extra large or small modal. When not provided, the modal is rendered with medium (default) size. */
   size?: sizeType;
-  /**  */
+  /** Renders a fullscreen modal. Specifying a breakpoint will render the modal as fullscreen below the breakpoint size. */
   fullScreen?: fullScreenType;
-  /** Allows scrolling the body instead of the entire Modal when overflowing. */
+  /** Allows scrolling the Modal.body instead of the entire Modal when overflowing. */
   scrollable?: boolean;
   /** The content of the modal */
   children?: React.ReactNode;

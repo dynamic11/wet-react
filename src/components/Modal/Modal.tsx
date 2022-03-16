@@ -26,7 +26,7 @@ export interface ModalProps {
   /**  */
   fullScreen?: fullScreenType;
   /** When true The modal will restore focus to previously focused element once modal is hidden */
-  restoreFocus?: boolean;
+  restorefocus?: boolean;
   /** Allows scrolling the body instead of the entire Modal when overflowing. */
   scrollable?: boolean;
   /** Close the modal when escape key is pressed */
@@ -42,7 +42,7 @@ const Modal = ({
   autoFocus,
   size = 'lg',
   fullScreen = 'lg-down',
-  restoreFocus = true,
+  restorefocus = true,
   keyboard = true,
   scrollable,
   centered,
@@ -50,12 +50,12 @@ const Modal = ({
 }: ModalProps) => (
   <ModalRB
     size={size}
-    fullscreen={fullScreen}
+    fullScreen={fullScreen}
     scrollable={scrollable}
     centered={centered}
     keyboard={keyboard}
     autoFocus={autoFocus}
-    restoreFocus={restoreFocus}
+    restorefocus={restorefocus}
     animation={animation}
     show={show}
     {...rest}
