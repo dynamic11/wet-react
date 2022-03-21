@@ -1,0 +1,76 @@
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs';
+
+import Modal from '../Modal';
+
+<Meta title="Components/Modal/Parts" component={Modal.Dialog} />
+
+export const TemplateGroup = (args) => {
+  return (
+    <Modal.Dialog {...args}>
+      <Modal.Header closeButton closeLabel="goodbye">
+        <Modal.Title> {args.title} </Modal.Title>
+      </Modal.Header>
+      <Modal.Body>{args.content} </Modal.Body>
+      <Modal.Footer> {args.footer}</Modal.Footer>
+    </Modal.Dialog>
+  );
+};
+
+# Modal
+
+<Canvas>
+  <Story
+    name="Dialog"
+    args={{
+      content:
+        'Modal dialogs can be thought of as static modals in the sense they do not popup, they are always there.',
+      title: 'Dialog',
+      centered: false,
+    }}
+  >
+    {TemplateGroup.bind({})}
+  </Story>
+  <Story
+    name="Body"
+    args={{
+      content: "This is the body. This is where the Modal's content is placed.",
+      title: 'Body',
+      centered: true,
+    }}
+  >
+    {TemplateGroup.bind({})}
+  </Story>
+  <Story
+    name="Header"
+    args={{
+      content:
+        "The Header above is where you would put the modal's title and where the close button goes.",
+      title: 'This area is the Header',
+      centered: true,
+    }}
+  >
+    {TemplateGroup.bind({})}
+  </Story>
+  <Story
+    name="Footer"
+    args={{
+      content:
+        'The footer should go at the bottom of the Modal and is usually where buttons related to actions like cancelling or saving are placed.',
+      footer: 'This is the Footer',
+      title: 'Footer',
+      centered: true,
+    }}
+  >
+    {TemplateGroup.bind({})}
+  </Story>
+  <Story
+    name="Title"
+    args={{
+      content: 'The title is meant to take the title of the Modal.',
+      title: 'This is the Title',
+      centered: true,
+    }}
+  >
+    {TemplateGroup.bind({})}
+  </Story>
+</Canvas>

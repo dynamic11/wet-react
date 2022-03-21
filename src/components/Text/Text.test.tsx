@@ -124,7 +124,7 @@ describe('Text Tests', () => {
     });
 
     test('Lead', () => {
-      const result = render(<Text lead>{textMessage}</Text>);
+      render(<Text lead>{textMessage}</Text>);
       expect(screen.getByText(textMessage)).toBeTruthy();
       expect(screen.getByText(textMessage)).toHaveClass('lead');
     });

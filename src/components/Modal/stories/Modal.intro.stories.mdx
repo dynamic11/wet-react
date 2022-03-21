@@ -1,0 +1,27 @@
+import { ArgsTable, Canvas, Meta } from '@storybook/addon-docs';
+
+import { Modal } from '../..';
+
+<Meta title="Components/Modal/Intro" component={Modal} />
+
+# Modal
+
+Use to extend the entire viewport to showcase key content on your site.
+
+## Example
+
+<Canvas>
+  <Modal.Dialog>
+    <Modal.Header closeButton closeLabel="Close">
+      <Modal.Title>Title of the Modal</Modal.Title>
+    </Modal.Header>
+    <Modal.Body>
+      <p>Some content to show you all</p>
+    </Modal.Body>
+    <Modal.Footer>The end of the content</Modal.Footer>
+  </Modal.Dialog>
+</Canvas>
+
+## Available Props
+
+<ArgsTable />
