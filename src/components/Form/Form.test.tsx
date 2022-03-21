@@ -43,6 +43,67 @@ describe('Form Tests', () => {
           screen.getByRole('radio').parentElement?.parentElement
         ).toHaveClass('radio');
       });
+      test('Test default Form check type', () => {
+        render(
+          <Form>
+            <Form.Check label="Target" />
+          </Form>
+        );
+        expect(
+          screen.getByRole('checkbox').parentElement?.parentElement
+        ).toHaveClass('checkbox');
+      });
+      test('Test Invalid property', () => {
+        render(
+          <Form>
+            <Form.Check
+              isInvalid
+              isRequired
+              type="checkbox"
+              label="TestTarget"
+            />
+          </Form>
+        );
+        expect(screen.getByRole('checkbox')).toHaveAttribute(
+          'aria-invalid',
+          'true'
+        );
+      });
+      test('Test isRequired property', () => {
+        render(
+          <Form>
+            <Form.Check isRequired type="radio" label="aTest" />
+          </Form>
+        );
+        expect(screen.getByRole('radio')).toHaveAttribute(
+          'aria-required',
+          'true'
+        );
+      });
+      test('Test required styling', () => {
+        render(
+          <Form>
+            <Form.Check
+              isRequired
+              type="checkbox"
+              showRequiredStyling
+              label="target1"
+            />
+            <Form.Check
+              isRequired
+              type="checkbox"
+              showRequiredStyling={false}
+              label="target2"
+            />
+          </Form>
+        );
+        expect(
+          screen.getAllByRole('checkbox').at(0)?.parentElement?.parentElement
+        ).toHaveClass('required');
+        expect(
+          screen.getAllByRole('checkbox').at(1)?.parentElement?.parentElement
+        ).not.toHaveClass('required');
+      });
     });
   });
 });
