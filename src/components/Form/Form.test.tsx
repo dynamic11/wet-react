@@ -524,7 +524,7 @@ describe('Form Tests', () => {
         );
         expect(screen.getByRole('textbox')).toHaveAttribute('disabled');
       });
-      test('Form Control size test', () => {
+      test('Form Control sm size test', () => {
         render(
           <Form>
             <Form.Group>
@@ -533,6 +533,65 @@ describe('Form Tests', () => {
           </Form>
         );
         expect(screen.getByRole('textbox')).toHaveClass('input-sm');
+      });
+      test('Form Control htmlSize test', () => {
+        render(
+          <Form>
+            <Form.Group>
+              <Form.Control placeholder="test" htmlSize={6} type="email" />
+            </Form.Group>
+          </Form>
+        );
+        expect(screen.getByRole('textbox')).toHaveAttribute('size', '6');
+      });
+      test('Form Control lg size test', () => {
+        render(
+          <Form>
+            <Form.Group>
+              <Form.Control placeholder="test" size="lg" type="email" />
+            </Form.Group>
+          </Form>
+        );
+        expect(screen.getByRole('textbox')).toHaveClass('input-lg');
+      });
+      test('Form Control placeholder content test', () => {
+        render(
+          <Form>
+            <Form.Group>
+              <Form.Control placeholder="test" type="email" />
+            </Form.Group>
+          </Form>
+        );
+        expect(screen.getByRole('textbox')).toHaveAttribute(
+          'placeholder',
+          'test'
+        );
+      });
+    });
+    describe('Form Label Tests', () => {
+      test('Visually hidden Form label', () => {
+        const target = render(
+          <Form>
+            <Form.Group>
+              <Form.Label isVisuallyHidden>Email</Form.Label>
+              <Form.Control placeholder="test" size="sm" type="email" />
+            </Form.Group>
+          </Form>
+        );
+        expect(target.container.querySelector('label')).toHaveClass(
+          'visually-hidden'
+        );
+      });
+      test('is required form label', () => {
+        const target = render(
+          <Form>
+            <Form.Group>
+              <Form.Label isRequired>Email</Form.Label>
+              <Form.Control placeholder="test" size="sm" type="email" />
+            </Form.Group>
+          </Form>
+        );
+        expect(target.container.querySelector('label')).toHaveClass('required');
       });
     });
   });
