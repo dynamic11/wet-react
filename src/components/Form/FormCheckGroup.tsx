@@ -3,7 +3,7 @@ import FormLabel from './FormLabel';
 import FormGroupContext from './FormGroupContext';
 
 /** Types */
-type typeType = 'checkbox' | 'radio' | 'switch' | undefined;
+// type typeType = 'checkbox' | 'radio' | 'switch' | undefined;
 
 export interface FormCheckGroupProps extends React.HTMLAttributes<HTMLElement> {
   /** Content of form label */

@@ -568,31 +568,181 @@ describe('Form Tests', () => {
         );
       });
     });
-    describe('Form Label Tests', () => {
-      test('Visually hidden Form label', () => {
-        const target = render(
-          <Form>
-            <Form.Group>
-              <Form.Label isVisuallyHidden>Email</Form.Label>
-              <Form.Control placeholder="test" size="sm" type="email" />
-            </Form.Group>
-          </Form>
-        );
-        expect(target.container.querySelector('label')).toHaveClass(
-          'visually-hidden'
-        );
-      });
-      test('is required form label', () => {
-        const target = render(
-          <Form>
-            <Form.Group>
-              <Form.Label isRequired>Email</Form.Label>
-              <Form.Control placeholder="test" size="sm" type="email" />
-            </Form.Group>
-          </Form>
-        );
-        expect(target.container.querySelector('label')).toHaveClass('required');
-      });
+  });
+  describe('Form Label Tests', () => {
+    test('Visually hidden Form label', () => {
+      const target = render(
+        <Form>
+          <Form.Group>
+            <Form.Label isVisuallyHidden>Email</Form.Label>
+            <Form.Control placeholder="test" size="sm" type="email" />
+          </Form.Group>
+        </Form>
+      );
+      expect(target.container.querySelector('label')).toHaveClass(
+        'visually-hidden'
+      );
+    });
+    test('is required form label', () => {
+      const target = render(
+        <Form>
+          <Form.Group>
+            <Form.Label isRequired>Email</Form.Label>
+            <Form.Control placeholder="test" size="sm" type="email" />
+          </Form.Group>
+        </Form>
+      );
+      expect(target.container.querySelector('label')).toHaveClass('required');
+    });
+    test('Form Label Hide required styling test', () => {
+      const target = render(
+        <Form>
+          <Form.Group>
+            <Form.Label isRequired showRequiredStyling={false}>
+              Email
+            </Form.Label>
+            <Form.Control placeholder="test" size="sm" type="email" />
+          </Form.Group>
+        </Form>
+      );
+      expect(target.container.querySelector('label')).not.toHaveClass(
+        'required'
+      );
+    });
+    test('Form Label htmlfor prop', () => {
+      const target = render(
+        <Form>
+          <Form.Group>
+            <Form.Label htmlFor="testTarget" isRequired>
+              Email
+            </Form.Label>
+            <Form.Control placeholder="test" size="sm" type="email" />
+          </Form.Group>
+        </Form>
+      );
+      expect(target.container.querySelector('label')).toHaveAttribute(
+        'for',
+        'testTarget'
+      );
+    });
+    test('Form Label recieves id from group test', () => {
+      const target = render(
+        <Form>
+          <Form.Group controlId="testTarget">
+            <Form.Label isRequired>Email</Form.Label>
+            <Form.Control placeholder="test" size="sm" type="email" />
+          </Form.Group>
+        </Form>
+      );
+      expect(target.container.querySelector('label')).toHaveAttribute(
+        'for',
+        'testTarget'
+      );
+    });
+  });
+  describe('FormSelect Tests', () => {
+    test('Form Select isDisabled', () => {
+      render(
+        <Form>
+          <Form.Select isDisabled>
+            <option value="1">Testing</option>
+            <option value="2">Forms</option>
+          </Form.Select>
+        </Form>
+      );
+      expect(screen.getByRole('combobox')).toHaveAttribute('disabled');
+    });
+    test('Form Select isInvalid', () => {
+      render(
+        <Form>
+          <Form.Select isInvalid>
+            <option value="1">Testing</option>
+            <option value="2">Forms</option>
+          </Form.Select>
+        </Form>
+      );
+      expect(screen.getByRole('combobox')).toHaveAttribute(
+        'aria-invalid',
+        'true'
+      );
+    });
+    test('Form Select isRequired', () => {
+      render(
+        <Form>
+          <Form.Select isRequired>
+            <option value="1">Testing</option>
+            <option value="2">Forms</option>
+          </Form.Select>
+        </Form>
+      );
+      expect(screen.getByRole('combobox')).toHaveAttribute(
+        'aria-required',
+        'true'
+      );
+    });
+    test('Form Select html size', () => {
+      render(
+        <Form>
+          <Form.Select htmlSize={2}>
+            <option value="1">Testing</option>
+            <option value="2">Forms</option>
+          </Form.Select>
+        </Form>
+      );
+      expect(screen.getByRole('listbox')).toHaveAttribute('size', '2');
+    });
+    test('Form Select size prop', () => {
+      render(
+        <Form>
+          <Form.Select size="sm">
+            <option value="1">Testing</option>
+            <option value="2">Forms</option>
+          </Form.Select>
+        </Form>
+      );
+      expect(screen.getByRole('combobox')).toHaveClass('input-sm');
+    });
+    test('Form Select invalid Size prop', () => {
+      render(
+        <Form>
+          <Form.Select size="big">
+            <option value="1">Testing</option>
+            <option value="2">Forms</option>
+          </Form.Select>
+        </Form>
+      );
+      expect(screen.getByRole('combobox')).not.toHaveClass('input-sm');
+      expect(screen.getByRole('combobox')).not.toHaveClass('input-lg');
+    });
+    test('Form Select lg size prop', () => {
+      render(
+        <Form>
+          <Form.Select size="lg">
+            <option value="1">Testing</option>
+            <option value="2">Forms</option>
+          </Form.Select>
+        </Form>
+      );
+      expect(screen.getByRole('combobox')).toHaveClass('input-lg');
+    });
+  });
+  describe('Form Text tests', () => {
+    const placeholder = 'Some placeholder text to use in the following tests';
+    test('Muted text test', () => {
+      render(
+        <Form>
+          <Form.Text>{placeholder}</Form.Text>
+        </Form>
+      );
+      expect(screen.getByText(placeholder)).toHaveClass('text-muted');
+    });
+    test('Form text not muted test', () => {
+      render(
+        <Form>
+          <Form.Text isMuted={false}>{placeholder}</Form.Text>
+        </Form>
+      );
+      expect(screen.getByText(placeholder)).not.toHaveClass('text-muted');
     });
   });
 });
