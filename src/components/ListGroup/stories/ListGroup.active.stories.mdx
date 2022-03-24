@@ -1,13 +1,19 @@
-import { ArgsTable, Canvas, Meta } from '@storybook/addon-docs';
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs';
 
 import ListGroup from '../ListGroup';
 
-<Meta title="Components/List Group/Active" component={ListGroup} />
+<Meta
+  title="Components/List Group/Active"
+  component={ListGroup}
+  subcomponents={{
+    'ListGroup.Item': ListGroup.Item,
+  }}
+/>
 
-export const TemplateGroup = ({ children, ...rest }) => {
+export const TemplateGroup = (args) => {
   return (
     <ListGroup numbered>
-      <ListGroup.Item {...rest}> {children} </ListGroup.Item>
+      <ListGroup.Item {...args}> {args.children} </ListGroup.Item>
     </ListGroup>
   );
 };
