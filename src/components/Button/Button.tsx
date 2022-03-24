@@ -36,8 +36,7 @@ export interface ButtonProps
   href?: string;
   /** Type of button */
   type?: typeType;
-  /** Value associated to the button */
-  value?: string;
+  /** You can use a custom element type for this component. */
   as?: asType;
   /** Additional custom classNames */
   className?: string;
@@ -52,6 +51,7 @@ const Button = ({
   disabled = false,
   block = false,
   size,
+  as = 'input',
   href,
   className = '',
   ...rest
