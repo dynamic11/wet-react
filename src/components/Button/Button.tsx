@@ -51,7 +51,6 @@ const Button = ({
   disabled = false,
   block = false,
   size,
-  as = 'input',
   href,
   className = '',
   ...rest
