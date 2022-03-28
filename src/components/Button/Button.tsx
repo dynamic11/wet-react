@@ -16,7 +16,6 @@ type variantType =
 type sizingType = 'lg' | 'sm' | 'xs' | undefined;
 
 type typeType = 'submit' | 'button' | 'reset' | undefined;
-type asType = 'input';
 
 export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
@@ -36,8 +35,8 @@ export interface ButtonProps
   href?: string;
   /** Type of button */
   type?: typeType;
-  /** You can use a custom element type for this component. */
-  as?: asType;
+  /** Value associated to the button */
+  value?: string;
   /** Additional custom classNames */
   className?: string;
   /** Onclick action */
@@ -51,6 +50,7 @@ const Button = ({
   disabled = false,
   block = false,
   size,
+  value,
   href,
   className = '',
   ...rest
@@ -72,6 +72,7 @@ const Button = ({
       active={active}
       disabled={disabled}
       href={href}
+      value={value}
       {...rest}
       className={`${sizeClassName} ${className} ${blockClassName}`}
     >
