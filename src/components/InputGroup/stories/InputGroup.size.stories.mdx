@@ -1,0 +1,46 @@
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs';
+
+import InputGroup from '../InputGroup';
+
+<Meta title="Components/InputGroup/Sizes" component={InputGroup} />
+
+# Input Group
+
+## Input Group Size variants
+
+<Canvas>
+  <Story name="Small">
+    <InputGroup size="sm">
+      <InputGroup.Text id="small username">Username:</InputGroup.Text>
+      <InputGroup.Control
+        placeholder="Small"
+        aria-label="Username"
+        aria-describedby="small username"
+      />
+    </InputGroup>
+  </Story>
+  <Story name="Default">
+    <InputGroup>
+      <InputGroup.Text id="default username">Username:</InputGroup.Text>
+      <InputGroup.Control
+        placeholder="Default"
+        aria-label="Username"
+        aria-describedby="default username"
+      />
+    </InputGroup>
+  </Story>
+  <Story name="Large">
+    <InputGroup size="lg">
+      <InputGroup.Text id="large username">Username:</InputGroup.Text>
+      <InputGroup.Control
+        placeholder="Large"
+        aria-label="Username"
+        aria-describedby="large username"
+      />
+    </InputGroup>
+  </Story>
+</Canvas>
+
+## Available Props
+
+<ArgsTable />
