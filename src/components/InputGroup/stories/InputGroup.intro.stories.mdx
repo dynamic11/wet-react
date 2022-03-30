@@ -9,12 +9,12 @@ import InputGroup from '../InputGroup';
 ## Example
 
 <Canvas>
-  <InputGroup size="lg">
-    <InputGroup.Text>Username:</InputGroup.Text>
+  <InputGroup hasValidation={false}>
+    <InputGroup.Text id="intro username">Username:</InputGroup.Text>
     <InputGroup.Control
       placeholder="Username"
       aria-label="Username"
-      aria-describedby="basic-addon1"
+      aria-describedby="intro username"
     />
   </InputGroup>
 </Canvas>
