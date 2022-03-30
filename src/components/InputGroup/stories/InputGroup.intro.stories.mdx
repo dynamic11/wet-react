@@ -1,0 +1,24 @@
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs';
+
+import InputGroup from '../InputGroup';
+
+<Meta title="Components/InputGroup/Intro" component={InputGroup} />
+
+# Input Group
+
+## Example
+
+<Canvas>
+  <InputGroup size="lg">
+    <InputGroup.Text>Username:</InputGroup.Text>
+    <InputGroup.Control
+      placeholder="Username"
+      aria-label="Username"
+      aria-describedby="basic-addon1"
+    />
+  </InputGroup>
+</Canvas>
+
+## Available Props
+
+<ArgsTable />
