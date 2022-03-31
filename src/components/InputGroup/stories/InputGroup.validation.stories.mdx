@@ -1,0 +1,43 @@
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs';
+
+import InputGroup from '../InputGroup';
+
+<Meta title="Components/InputGroup/Validation" component={InputGroup} />
+
+# Input Group
+
+## Input Group Size variants
+
+<Canvas>
+  <Story name="Has Validation">
+    <InputGroup hasValidation>
+      <InputGroup.Text id="Has Validation">Username:</InputGroup.Text>
+      <InputGroup.Control
+        placeholder="Has Validation"
+        aria-label="Username"
+        aria-describedby="Has Validation"
+        type="text"
+        isInvalid
+        isRequired
+        value="Stuff"
+      />
+      <InputGroup.Feedback tooltip type="invalid">
+        Validation
+      </InputGroup.Feedback>
+    </InputGroup>
+  </Story>
+  <Story name="No Validation">
+    <InputGroup>
+      <InputGroup.Text id="No Validation">Username:</InputGroup.Text>
+      <InputGroup.Control
+        placeholder="No Validation"
+        aria-label="Username"
+        aria-describedby="No Validation"
+      />
+    </InputGroup>
+  </Story>
+</Canvas>
+
+## Available Props
+
+<ArgsTable />
