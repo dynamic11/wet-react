@@ -21,16 +21,20 @@ const InputGroupFeedback = ({
   type = 'valid',
   className = '',
   ...rest
-}: InputGroupFeedbackProps) => (
-  <Form.Control.Feedback
-    tooltip={tooltip}
-    type={type}
-    className={className}
-    {...rest}
-  >
-    {children}
-  </Form.Control.Feedback>
-);
+}: InputGroupFeedbackProps) => {
+  const tooltipClass = tooltip === true ? 'tooltip' : '';
+
+  return (
+    <Form.Control.Feedback
+      tooltip={tooltip}
+      type={type}
+      className={`${tooltipClass} ${className}`}
+      {...rest}
+    >
+      {children}
+    </Form.Control.Feedback>
+  );
+};
 
 InputGroupFeedback.displayName = 'InputGroup.Feedback';
 
