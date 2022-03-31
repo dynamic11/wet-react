@@ -1,5 +1,5 @@
+import FormControl from '@components/Form/FormControl';
 import OriginInputGroup from './InputGroup';
-import FormControl from './FormControl';
 import InputGroupFeedback from './InputGroupFeedback';
 import InputGroupText from './InputGroupText';
 
