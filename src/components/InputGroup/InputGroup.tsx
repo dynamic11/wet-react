@@ -24,16 +24,19 @@ const InputGroup = ({
   size,
   className = '',
   ...rest
-}: InputGroupProps) => (
-  <InputGroupRB
-    size={size}
-    className={className}
-    hasValidation={hasValidation}
-    {...rest}
-  >
-    {children}
-  </InputGroupRB>
-);
+}: InputGroupProps) => {
+  const validationClass = hasValidation === true ? 'has-feedback' : '';
+  return (
+    <InputGroupRB
+      size={size}
+      className={`${validationClass} ${className}`}
+      hasValidation={hasValidation}
+      {...rest}
+    >
+      {children}
+    </InputGroupRB>
+  );
+};
 
 InputGroup.displayName = 'InputGroup';
 
