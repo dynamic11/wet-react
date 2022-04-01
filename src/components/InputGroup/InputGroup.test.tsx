@@ -58,105 +58,10 @@ describe('InputGroup tests', () => {
       );
     });
   });
-  describe('InputGroup Feedback tests', () => {
-    test('Tooltip test', () => {
-      render(
-        <InputGroup hasValidation>
-          <InputGroup.Text id="test target">Username:</InputGroup.Text>
-          <Form.Control
-            type="text"
-            isInvalid
-            placeholder="Gonna be tested"
-            aria-describedby="test target"
-          />
-          <InputGroup.Feedback tooltip type="invalid">
-            Validation
-          </InputGroup.Feedback>
-        </InputGroup>
-      );
-      expect(screen.getByRole('textbox').parentElement?.lastChild).toHaveClass(
-        'tooltip'
-      );
-    });
-    test('Tooltip is false test', () => {
-      render(
-        <InputGroup hasValidation>
-          <InputGroup.Text id="test target">Username:</InputGroup.Text>
-          <Form.Control
-            type="text"
-            isInvalid
-            placeholder="Gonna be tested"
-            aria-describedby="test target"
-          />
-          <InputGroup.Feedback tooltip={false} type="invalid">
-            Validation
-          </InputGroup.Feedback>
-        </InputGroup>
-      );
-      expect(
-        screen.getByRole('textbox').parentElement?.lastChild
-      ).not.toHaveClass('tooltip');
-    });
-    test('Invalid type test', () => {
-      render(
-        <InputGroup hasValidation>
-          <InputGroup.Text id="test target">Username:</InputGroup.Text>
-          <Form.Control
-            type="text"
-            isInvalid
-            placeholder="Gonna be tested"
-            aria-describedby="test target"
-          />
-          <InputGroup.Feedback tooltip type="invalid">
-            Validation
-          </InputGroup.Feedback>
-        </InputGroup>
-      );
-      expect(screen.getByRole('textbox').parentElement?.lastChild).toHaveClass(
-        'invalid-tooltip'
-      );
-    });
-    test('Valid type test', () => {
-      render(
-        <InputGroup hasValidation>
-          <InputGroup.Text id="test target">Username:</InputGroup.Text>
-          <Form.Control
-            type="text"
-            isInvalid
-            placeholder="Gonna be tested"
-            aria-describedby="test target"
-          />
-          <InputGroup.Feedback tooltip type="valid">
-            Validation
-          </InputGroup.Feedback>
-        </InputGroup>
-      );
-      expect(screen.getByRole('textbox').parentElement?.lastChild).toHaveClass(
-        'valid-tooltip'
-      );
-    });
-    test('Default type test', () => {
-      render(
-        <InputGroup hasValidation>
-          <InputGroup.Text id="test target">Username:</InputGroup.Text>
-          <Form.Control
-            type="text"
-            isInvalid
-            placeholder="Gonna be tested"
-            aria-describedby="test target"
-          />
-          <InputGroup.Feedback tooltip>Validation</InputGroup.Feedback>
-        </InputGroup>
-      );
-      expect(screen.getByRole('textbox').parentElement?.lastChild).toHaveClass(
-        'valid-tooltip'
-      );
-    });
-  });
   describe('InputGroup text tests', () => {
     test('id value test', () => {
       render(
-        <InputGroup hasValidation>
+        <InputGroup>
           <InputGroup.Text id="test target">Username:</InputGroup.Text>
           <Form.Control
             type="text"
@@ -164,9 +69,6 @@ describe('InputGroup tests', () => {
             placeholder="Gonna be tested"
             aria-describedby="test target"
           />
-          <InputGroup.Feedback tooltip={false} type="invalid">
-            Validation
-          </InputGroup.Feedback>
         </InputGroup>
       );
       expect(
