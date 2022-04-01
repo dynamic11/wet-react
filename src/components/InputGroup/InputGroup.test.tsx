@@ -2,6 +2,7 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import InputGroup from '@components/InputGroup';
+import { Form } from '..';
 
 describe('InputGroup tests', () => {
   describe('InputGroup size tests', () => {
@@ -9,7 +10,7 @@ describe('InputGroup tests', () => {
       render(
         <InputGroup size="lg">
           <InputGroup.Text id="test target">Username:</InputGroup.Text>
-          <InputGroup.Control
+          <Form.Control
             type="text"
             isRequired
             placeholder="Gonna be tested"
@@ -25,7 +26,7 @@ describe('InputGroup tests', () => {
       render(
         <InputGroup size="sm">
           <InputGroup.Text id="test target">Username:</InputGroup.Text>
-          <InputGroup.Control
+          <Form.Control
             type="text"
             isRequired
             placeholder="Gonna be tested"
@@ -41,7 +42,7 @@ describe('InputGroup tests', () => {
       render(
         <InputGroup>
           <InputGroup.Text id="test target">Username:</InputGroup.Text>
-          <InputGroup.Control
+          <Form.Control
             type="text"
             isRequired
             placeholder="Gonna be tested"
@@ -57,49 +58,12 @@ describe('InputGroup tests', () => {
       );
     });
   });
-  describe('InputGroup Validation Tests', () => {
-    test('Has no validation test', () => {
-      render(
-        <InputGroup>
-          <InputGroup.Text id="test target">Username:</InputGroup.Text>
-          <InputGroup.Control
-            type="text"
-            isRequired
-            placeholder="Gonna be tested"
-            aria-describedby="test target"
-          />
-        </InputGroup>
-      );
-      expect(screen.getByRole('textbox').parentElement).not.toHaveClass(
-        'has-validation'
-      );
-    });
-    test('Has validation test', () => {
-      render(
-        <InputGroup hasValidation>
-          <InputGroup.Text id="test target">Username:</InputGroup.Text>
-          <InputGroup.Control
-            type="text"
-            isInvalid
-            placeholder="Gonna be tested"
-            aria-describedby="test target"
-          />
-          <InputGroup.Feedback tooltip type="invalid">
-            Validation
-          </InputGroup.Feedback>
-        </InputGroup>
-      );
-      expect(screen.getByRole('textbox').parentElement).toHaveClass(
-        'has-validation'
-      );
-    });
-  });
   describe('InputGroup Feedback tests', () => {
     test('Tooltip test', () => {
       render(
         <InputGroup hasValidation>
           <InputGroup.Text id="test target">Username:</InputGroup.Text>
-          <InputGroup.Control
+          <Form.Control
             type="text"
             isInvalid
             placeholder="Gonna be tested"
@@ -118,7 +82,7 @@ describe('InputGroup tests', () => {
       render(
         <InputGroup hasValidation>
           <InputGroup.Text id="test target">Username:</InputGroup.Text>
-          <InputGroup.Control
+          <Form.Control
             type="text"
             isInvalid
             placeholder="Gonna be tested"
@@ -137,7 +101,7 @@ describe('InputGroup tests', () => {
       render(
         <InputGroup hasValidation>
           <InputGroup.Text id="test target">Username:</InputGroup.Text>
-          <InputGroup.Control
+          <Form.Control
             type="text"
             isInvalid
             placeholder="Gonna be tested"
@@ -156,7 +120,7 @@ describe('InputGroup tests', () => {
       render(
         <InputGroup hasValidation>
           <InputGroup.Text id="test target">Username:</InputGroup.Text>
-          <InputGroup.Control
+          <Form.Control
             type="text"
             isInvalid
             placeholder="Gonna be tested"
@@ -175,7 +139,7 @@ describe('InputGroup tests', () => {
       render(
         <InputGroup hasValidation>
           <InputGroup.Text id="test target">Username:</InputGroup.Text>
-          <InputGroup.Control
+          <Form.Control
             type="text"
             isInvalid
             placeholder="Gonna be tested"
@@ -194,7 +158,7 @@ describe('InputGroup tests', () => {
       render(
         <InputGroup hasValidation>
           <InputGroup.Text id="test target">Username:</InputGroup.Text>
-          <InputGroup.Control
+          <Form.Control
             type="text"
             isInvalid
             placeholder="Gonna be tested"
