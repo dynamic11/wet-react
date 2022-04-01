@@ -55,4 +55,6 @@ const Table = ({
   </TableRB>
 );
 
+Table.displayName = 'Table';
+
 export default Table;
