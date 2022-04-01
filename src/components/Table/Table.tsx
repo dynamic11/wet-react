@@ -22,6 +22,8 @@ export interface TableProps extends React.HTMLAttributes<HTMLDivElement> {
   size?: string;
   /** Adds zebra-striping to any table row within the <tbody>. */
   striped?: boolean;
+  /** Narrows the height of rows */
+  condensed?: boolean;
   /** Invert the colors of the table — with light text on dark backgrounds by setting variant as dark. */
   variant?: string;
   /** Set additional classnames for the table */
@@ -31,6 +33,7 @@ export interface TableProps extends React.HTMLAttributes<HTMLDivElement> {
 const Table = ({
   bordered,
   borderless,
+  condensed,
   children,
   responsive,
   size,
@@ -39,21 +42,24 @@ const Table = ({
   hover,
   className,
   ...rest
-}: TableProps) => (
-  <TableRB
-    bordered={bordered}
-    borderless={borderless}
-    responsive={responsive}
-    size={size}
-    striped={striped}
-    variant={variant}
-    className={className}
-    hover={hover}
-    {...rest}
-  >
-    {children}
-  </TableRB>
-);
+}: TableProps) => {
+  const condensedClass = condensed === true ? 'table-condensed' : '';
+  return (
+    <TableRB
+      bordered={bordered}
+      borderless={borderless}
+      responsive={responsive}
+      size={size}
+      striped={striped}
+      variant={variant}
+      className={`${className} ${condensedClass}`}
+      hover={hover}
+      {...rest}
+    >
+      {children}
+    </TableRB>
+  );
+};
 
 Table.displayName = 'Table';
 
