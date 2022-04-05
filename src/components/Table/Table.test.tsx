@@ -1,10 +1,10 @@
 import React from 'react';
-import { render, screen, fireEvent } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 
 import Table from '@components/Table';
 
 describe('Table tests', () => {
-  describe('Test Table styling', () => {
+  describe('Variant styling', () => {
     test('Default Style', () => {
       render(
         <Table>
@@ -65,6 +65,8 @@ describe('Table tests', () => {
       );
       expect(screen.getByText('Stuff')).toHaveClass('success');
     });
+  });
+  describe('Test Table styling', () => {
     test('Striped Style', () => {
       render(
         <Table striped>
@@ -135,6 +137,56 @@ describe('Table tests', () => {
       expect(
         screen.getByText('Stuff').parentElement?.parentElement?.parentElement
       ).toHaveClass('table-hover');
+    });
+  });
+  describe('Row variants', () => {
+    test('Active row style', () => {
+      render(
+        <Table>
+          <Table.Header>
+            <Table.Row variant="active">
+              <Table.Cell>Stuff</Table.Cell>
+            </Table.Row>
+          </Table.Header>
+        </Table>
+      );
+      expect(screen.getByText('Stuff').parentElement).toHaveClass('active');
+    });
+    test('Success row style', () => {
+      render(
+        <Table>
+          <Table.Header>
+            <Table.Row variant="success">
+              <Table.Cell>Stuff</Table.Cell>
+            </Table.Row>
+          </Table.Header>
+        </Table>
+      );
+      expect(screen.getByText('Stuff').parentElement).toHaveClass('success');
+    });
+    test('Warning row style', () => {
+      render(
+        <Table>
+          <Table.Header>
+            <Table.Row variant="warning">
+              <Table.Cell>Stuff</Table.Cell>
+            </Table.Row>
+          </Table.Header>
+        </Table>
+      );
+      expect(screen.getByText('Stuff').parentElement).toHaveClass('warning');
+    });
+    test('Danger row style', () => {
+      render(
+        <Table>
+          <Table.Header>
+            <Table.Row variant="danger">
+              <Table.Cell>Stuff</Table.Cell>
+            </Table.Row>
+          </Table.Header>
+        </Table>
+      );
+      expect(screen.getByText('Stuff').parentElement).toHaveClass('danger');
     });
   });
 });
