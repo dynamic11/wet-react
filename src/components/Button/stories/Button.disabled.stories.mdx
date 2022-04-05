@@ -41,7 +41,11 @@ All styling variations in the `disabled` state:
   </Story>
   <Story
     name="Success"
-    args={{ variant: 'success', children: 'Disabled success button' }}
+    args={{
+      disabled: true,
+      variant: 'success',
+      children: 'Disabled success button',
+    }}
   >
     {Template.bind({})}
   </Story>

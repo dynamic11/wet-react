@@ -52,7 +52,7 @@ const FormCheck = React.forwardRef(
   ) => {
     const { isRequiredCon, isInvalidCon } = useContext(FormGroupContext);
     const isRequiredResult = isRequired || isRequiredCon;
-    const isInvalidResult = isRequired || isInvalidCon;
+    const isInvalidResult = isRequired || isInvalidCon || isInvalid;
 
     const requiredClassName =
       isRequiredResult && showRequiredStyling && type === 'checkbox'
