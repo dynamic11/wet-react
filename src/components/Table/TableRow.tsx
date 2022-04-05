@@ -2,7 +2,13 @@ import React from 'react';
 import '../../style.css';
 
 /** Types */
-type variantType = 'success' | 'warning' | 'danger' | 'active' | undefined;
+type variantType =
+  | 'default'
+  | 'success'
+  | 'warning'
+  | 'danger'
+  | 'active'
+  | undefined;
 
 export interface TableRowProps
   extends React.HTMLAttributes<HTMLTableRowElement> {
@@ -14,7 +20,12 @@ export interface TableRowProps
   className?: string;
 }
 
-const TableRow = ({ children, variant, className, ...rest }: TableRowProps) => (
+const TableRow = ({
+  children,
+  variant = 'default',
+  className,
+  ...rest
+}: TableRowProps) => (
   <tr className={`${className} ${variant}`} {...rest}>
     {children}
   </tr>

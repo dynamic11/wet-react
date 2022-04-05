@@ -7,8 +7,6 @@ export interface TableProps extends React.HTMLAttributes<HTMLTableElement> {
   bordered?: boolean;
   /** The content of the table */
   children?: React.ReactNode;
-  /** Removes all borders on the table and cells, including table header. */
-  borderless?: boolean;
   /** Enable a hover state on table rows within a <tbody>. */
   hover?: boolean;
   /** Responsive tables allow tables to be scrolled horizontally with ease.
@@ -18,27 +16,20 @@ export interface TableProps extends React.HTMLAttributes<HTMLTableElement> {
    * responsive tables up to a particular breakpoint. From that breakpoint and
    *  up, the table will behave normally and not scroll horizontally. */
   responsive?: string | boolean;
-  /** Make tables more compact by cutting cell padding in half by setting size as sm. */
-  size?: string;
   /** Adds zebra-striping to any table row within the <tbody>. Makes it easier to read large tables */
   striped?: boolean;
   /** Narrows the height of rows */
   condensed?: boolean;
-  /** Invert the colors of the table — with light text on dark backgrounds by setting variant as dark. */
-  variant?: string;
   /** Set additional classnames for the table */
   className?: string;
 }
 
 const Table = ({
   bordered,
-  borderless,
   condensed,
   children,
   responsive,
-  size,
   striped,
-  variant,
   hover,
   className,
   ...rest
@@ -47,11 +38,8 @@ const Table = ({
   return (
     <TableRB
       bordered={bordered}
-      borderless={borderless}
       responsive={responsive}
-      size={size}
       striped={striped}
-      variant={variant}
       className={`${className} ${condensedClass}`}
       hover={hover}
       {...rest}

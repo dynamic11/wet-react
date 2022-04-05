@@ -22,7 +22,7 @@ export interface TableCellProps
 
 const TableCell = ({
   children,
-  variant,
+  variant = 'default',
   className,
   ...rest
 }: TableCellProps) => (

@@ -2,7 +2,13 @@ import React from 'react';
 import '../../style.css';
 
 /** Types */
-type variantType = 'success' | 'warning' | 'danger' | 'active' | undefined;
+type variantType =
+  | 'default'
+  | 'success'
+  | 'warning'
+  | 'danger'
+  | 'active'
+  | undefined;
 
 export interface TableHeaderProps
   extends React.HTMLAttributes<HTMLTableSectionElement> {
@@ -16,7 +22,7 @@ export interface TableHeaderProps
 
 const TableHeader = ({
   children,
-  variant,
+  variant = 'default',
   className,
   ...rest
 }: TableHeaderProps) => (
