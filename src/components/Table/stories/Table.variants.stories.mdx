@@ -1,0 +1,49 @@
+import { Canvas, Meta, Story } from '@storybook/addon-docs';
+
+import { Table } from '../..';
+
+<Meta title="Components/Table/Variants" component={Table} />
+
+export const Template = (args) => (
+  <Table>
+    <Table.Header>
+      <Table.Row>
+        <th>#</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Username</th>
+      </Table.Row>
+    </Table.Header>
+    <tbody>
+      <Table.Row>
+        <Table.Cell {...args}>1</Table.Cell>
+        <Table.Cell {...args}>Mark</Table.Cell>
+        <Table.Cell {...args}>Otto</Table.Cell>
+        <Table.Cell {...args}>@mdo</Table.Cell>
+      </Table.Row>
+    </tbody>
+  </Table>
+);
+
+# Table Variants
+
+There are several ways to change a Table's appearance and make it more readable for users.
+
+## Variants
+
+Use the `variants` to highlight rows, columns or cells with a particular style.
+
+<Canvas>
+  <Story name="Success" args={{ variant: 'success' }}>
+    {Template.bind({})}
+  </Story>
+  <Story name="Warning" args={{ variant: 'warning' }}>
+    {Template.bind({})}
+  </Story>
+  <Story name="Danger" args={{ variant: 'danger' }}>
+    {Template.bind({})}
+  </Story>
+  <Story name="Active" args={{ variant: 'active' }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>

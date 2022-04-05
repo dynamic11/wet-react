@@ -2,7 +2,7 @@ import React from 'react';
 import TableRB from 'react-bootstrap/Table';
 import '../../style.css';
 
-export interface TableProps extends React.HTMLAttributes<HTMLDivElement> {
+export interface TableProps extends React.HTMLAttributes<HTMLTableElement> {
   /** Adds borders on all sides of the table and cells. */
   bordered?: boolean;
   /** The content of the table */
@@ -20,7 +20,7 @@ export interface TableProps extends React.HTMLAttributes<HTMLDivElement> {
   responsive?: string | boolean;
   /** Make tables more compact by cutting cell padding in half by setting size as sm. */
   size?: string;
-  /** Adds zebra-striping to any table row within the <tbody>. */
+  /** Adds zebra-striping to any table row within the <tbody>. Makes it easier to read large tables */
   striped?: boolean;
   /** Narrows the height of rows */
   condensed?: boolean;
