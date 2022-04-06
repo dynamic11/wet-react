@@ -4,7 +4,7 @@ import InputGroupRB from 'react-bootstrap/InputGroup';
 import '../../style.css';
 
 /** Types */
-type sizeType = 'sm' | 'lg';
+type sizeType = 'sm' | 'lg' | undefined;
 
 export interface InputGroupProps
   extends React.HTMLAttributes<HTMLInputElement> {

@@ -1,6 +1,7 @@
 import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs';
 
 import InputGroup from '../InputGroup';
+import Form from 'src/components/Form/index.ts';
 
 <Meta title="Components/InputGroup/Intro" component={InputGroup} />
 
@@ -9,9 +10,9 @@ import InputGroup from '../InputGroup';
 ## Example
 
 <Canvas>
-  <InputGroup hasValidation={false}>
+  <InputGroup>
     <InputGroup.Text id="intro username">Username:</InputGroup.Text>
-    <InputGroup.Control
+    <Form.Control
       placeholder="Username"
       aria-label="Username"
       aria-describedby="intro username"

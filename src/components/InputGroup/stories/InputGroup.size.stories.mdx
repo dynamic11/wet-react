@@ -1,6 +1,7 @@
 import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs';
 
 import InputGroup from '../InputGroup';
+import Form from 'src/components/Form/index.ts';
 
 <Meta title="Components/InputGroup/Sizes" component={InputGroup} />
 
@@ -12,7 +13,7 @@ import InputGroup from '../InputGroup';
   <Story name="Small">
     <InputGroup size="sm">
       <InputGroup.Text id="small username">Username:</InputGroup.Text>
-      <InputGroup.Control
+      <Form.Control
         placeholder="Small"
         aria-label="Username"
         aria-describedby="small username"
@@ -22,7 +23,7 @@ import InputGroup from '../InputGroup';
   <Story name="Default">
     <InputGroup>
       <InputGroup.Text id="default username">Username:</InputGroup.Text>
-      <InputGroup.Control
+      <Form.Control
         placeholder="Default"
         aria-label="Username"
         aria-describedby="default username"
@@ -32,7 +33,7 @@ import InputGroup from '../InputGroup';
   <Story name="Large">
     <InputGroup size="lg">
       <InputGroup.Text id="large username">Username:</InputGroup.Text>
-      <InputGroup.Control
+      <Form.Control
         placeholder="Large"
         aria-label="Username"
         aria-describedby="large username"
@@ -40,7 +41,3 @@ import InputGroup from '../InputGroup';
     </InputGroup>
   </Story>
 </Canvas>
-
-## Available Props
-
-<ArgsTable />
