@@ -15,5 +15,6 @@ export { default as Details } from './Details';
 export { default as Form } from './Form';
 export { default as Meter } from './Meter';
 export { default as Jumbotron } from './Jumbotron';
+export { default as Table } from './Table';
 export { default as Modal } from './Modal';
 export { default as InputGroup } from './InputGroup';

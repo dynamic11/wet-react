@@ -1,0 +1,124 @@
+import { Canvas, Meta, Story } from '@storybook/addon-docs';
+
+import { Table } from '../..';
+
+<Meta title="Components/Table/Styling" component={Table} />
+
+export const Template = (args) => (
+  <Table {...args}>
+    <Table.Header>
+      <Table.Row>
+        <th>#</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Username</th>
+      </Table.Row>
+    </Table.Header>
+    <tbody>
+      <Table.Row>
+        <Table.Cell>1</Table.Cell>
+        <Table.Cell>Mark</Table.Cell>
+        <Table.Cell>Otto</Table.Cell>
+        <Table.Cell>@mdo</Table.Cell>
+      </Table.Row>
+      <Table.Row>
+        <Table.Cell>2</Table.Cell>
+        <Table.Cell>Jacob</Table.Cell>
+        <Table.Cell>Thornton</Table.Cell>
+        <Table.Cell>@fat</Table.Cell>
+      </Table.Row>
+      <Table.Row>
+        <Table.Cell>3</Table.Cell>
+        <Table.Cell colSpan={2}>Larry the Bird</Table.Cell>
+        <Table.Cell>@twitter</Table.Cell>
+      </Table.Row>
+    </tbody>
+  </Table>
+);
+
+export const LargeTemplate = (args) => (
+  <Table {...args}>
+    <Table.Header>
+      <Table.Row>
+        <Table.Cell>#</Table.Cell>
+        {Array.from({ length: 30 }).map((_, index) => (
+          <Table.Cell key={index}>Table heading</Table.Cell>
+        ))}
+      </Table.Row>
+    </Table.Header>
+    <tbody>
+      <Table.Row>
+        <Table.Cell>1</Table.Cell>
+        {Array.from({ length: 30 }).map((_, index) => (
+          <Table.Cell key={index}>Table cell {index}</Table.Cell>
+        ))}
+      </Table.Row>
+      <Table.Row>
+        <Table.Cell>2</Table.Cell>
+        {Array.from({ length: 30 }).map((_, index) => (
+          <Table.Cell key={index}>Table cell {index}</Table.Cell>
+        ))}
+      </Table.Row>
+      <Table.Row>
+        <Table.Cell>3</Table.Cell>
+        {Array.from({ length: 30 }).map((_, index) => (
+          <Table.Cell key={index}>Table cell {index}</Table.Cell>
+        ))}
+      </Table.Row>
+    </tbody>
+  </Table>
+);
+
+# Table Styling
+
+There are several ways to change a Table's appearance and make it more readable for users.
+
+## Striped
+
+Set the `striped` prop to true to give the table stripes.
+
+<Canvas>
+  <Story name="Striped" args={{ striped: true }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Hover
+
+Use the `hover` prop so the row the user has their mouse on is highlighted.
+
+<Canvas>
+  <Story name="Hover" args={{ hover: true }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Responsive
+
+The `responsive` prop makes wide tables more manageable by enabling horizontal scrolling of the table.
+
+<Canvas>
+  <Story name="Responsive" args={{ responsive: true }}>
+    {LargeTemplate.bind({})}
+  </Story>
+</Canvas>
+
+## Bordered
+
+Use the `bordered` prop to better seperate data in different cells.
+
+<Canvas>
+  <Story name="Bordered" args={{ bordered: true }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Condensed
+
+Use the `condensed` prop to reduce the height of rows.
+
+<Canvas>
+  <Story name="Condensed" args={{ condensed: true }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
