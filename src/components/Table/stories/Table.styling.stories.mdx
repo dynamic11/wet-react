@@ -2,7 +2,11 @@ import { Canvas, Meta, Story } from '@storybook/addon-docs';
 
 import { Table } from '../..';
 
-<Meta title="Components/Table/Styling" component={Table} />
+<Meta
+  title="Components/Table/Styling"
+  component={Table}
+  parameters={{ docs: { source: { type: 'code' } } }}
+/>
 
 export const Template = (args) => (
   <Table {...args}>
@@ -14,7 +18,7 @@ export const Template = (args) => (
         <th>Username</th>
       </Table.Row>
     </Table.Header>
-    <tbody>
+    <Table.Body>
       <Table.Row>
         <Table.Cell>1</Table.Cell>
         <Table.Cell>Mark</Table.Cell>
@@ -32,7 +36,7 @@ export const Template = (args) => (
         <Table.Cell colSpan={2}>Larry the Bird</Table.Cell>
         <Table.Cell>@twitter</Table.Cell>
       </Table.Row>
-    </tbody>
+    </Table.Body>
   </Table>
 );
 

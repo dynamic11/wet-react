@@ -5,7 +5,7 @@ import Table from '@components/Table';
 
 describe('Table tests', () => {
   describe('Variant styling', () => {
-    test('Default Style', () => {
+    test('Default Style With Body', () => {
       render(
         <Table>
           <Table.Header>
@@ -17,6 +17,20 @@ describe('Table tests', () => {
       );
       expect(screen.getByText('Stuff')).toHaveClass('default');
     });
+
+    test('Default Style With Body', () => {
+      render(
+        <Table>
+          <Table.Body>
+            <Table.Row>
+              <Table.Cell>Stuff</Table.Cell>
+            </Table.Row>
+          </Table.Body>
+        </Table>
+      );
+      expect(screen.getByText('Stuff')).toHaveClass('default');
+    });
+
     test('Active Style', () => {
       render(
         <Table>
@@ -29,6 +43,7 @@ describe('Table tests', () => {
       );
       expect(screen.getByText('Stuff')).toHaveClass('active');
     });
+
     test('Danger Style', () => {
       render(
         <Table>
@@ -41,6 +56,7 @@ describe('Table tests', () => {
       );
       expect(screen.getByText('Stuff')).toHaveClass('danger');
     });
+
     test('Warning Style', () => {
       render(
         <Table>
@@ -53,6 +69,7 @@ describe('Table tests', () => {
       );
       expect(screen.getByText('Stuff')).toHaveClass('warning');
     });
+
     test('Success Style', () => {
       render(
         <Table>
@@ -66,6 +83,7 @@ describe('Table tests', () => {
       expect(screen.getByText('Stuff')).toHaveClass('success');
     });
   });
+
   describe('Test Table styling', () => {
     test('Striped Style', () => {
       render(
@@ -81,6 +99,7 @@ describe('Table tests', () => {
         screen.getByText('Stuff').parentElement?.parentElement?.parentElement
       ).toHaveClass('table-striped');
     });
+
     test('Bordered Style', () => {
       render(
         <Table bordered>
@@ -95,6 +114,7 @@ describe('Table tests', () => {
         screen.getByText('Stuff').parentElement?.parentElement?.parentElement
       ).toHaveClass('table-bordered');
     });
+
     test('Responsive Style', () => {
       render(
         <Table responsive>
@@ -110,6 +130,7 @@ describe('Table tests', () => {
           ?.parentElement
       ).toHaveClass('table-responsive');
     });
+
     test('Condensed Style', () => {
       render(
         <Table condensed>
@@ -124,6 +145,7 @@ describe('Table tests', () => {
         screen.getByText('Stuff').parentElement?.parentElement?.parentElement
       ).toHaveClass('table-condensed');
     });
+
     test('Hover Style', () => {
       render(
         <Table hover>
@@ -139,6 +161,7 @@ describe('Table tests', () => {
       ).toHaveClass('table-hover');
     });
   });
+
   describe('Row variants', () => {
     test('Active row style', () => {
       render(
@@ -152,6 +175,7 @@ describe('Table tests', () => {
       );
       expect(screen.getByText('Stuff').parentElement).toHaveClass('active');
     });
+
     test('Success row style', () => {
       render(
         <Table>
@@ -164,6 +188,7 @@ describe('Table tests', () => {
       );
       expect(screen.getByText('Stuff').parentElement).toHaveClass('success');
     });
+
     test('Warning row style', () => {
       render(
         <Table>
@@ -176,6 +201,7 @@ describe('Table tests', () => {
       );
       expect(screen.getByText('Stuff').parentElement).toHaveClass('warning');
     });
+
     test('Danger row style', () => {
       render(
         <Table>

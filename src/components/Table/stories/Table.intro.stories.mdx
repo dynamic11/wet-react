@@ -12,33 +12,33 @@ Use to organize data into rows and columns in order to create data cells.
 
 <Canvas>
   <Table>
-    <thead>
-      <tr>
+    <Table.Header>
+      <Table.Row>
         <th>#</th>
         <th>First Name</th>
         <th>Last Name</th>
         <th>Username</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>1</td>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td>@mdo</td>
-      </tr>
-      <tr>
-        <td>2</td>
-        <td>Jacob</td>
-        <td>Thornton</td>
-        <td>@fat</td>
-      </tr>
-      <tr>
-        <td>3</td>
-        <td colSpan={2}>Larry the Bird</td>
-        <td>@twitter</td>
-      </tr>
-    </tbody>
+      </Table.Row>
+    </Table.Header>
+    <Table.Body>
+      <Table.Row>
+        <Table.Cell>1</Table.Cell>
+        <Table.Cell>Mark</Table.Cell>
+        <Table.Cell>Otto</Table.Cell>
+        <Table.Cell>@mdo</Table.Cell>
+      </Table.Row>
+      <Table.Row>
+        <Table.Cell>2</Table.Cell>
+        <Table.Cell>Jacob</Table.Cell>
+        <Table.Cell>Thornton</Table.Cell>
+        <Table.Cell>@fat</Table.Cell>
+      </Table.Row>
+      <Table.Row>
+        <Table.Cell>3</Table.Cell>
+        <Table.Cell colSpan={2}>Larry the Bird</Table.Cell>
+        <Table.Cell>@twitter</Table.Cell>
+      </Table.Row>
+    </Table.Body>
   </Table>
 </Canvas>
 
