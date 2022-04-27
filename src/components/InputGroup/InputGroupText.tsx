@@ -18,9 +18,9 @@ const InputGroupText = ({
   className = '',
   ...rest
 }: InputGroupTextProps) => (
-  <InputGroupRB.Text id={id} className={className} {...rest}>
+  <span className="input-group-addon" id={id}>
     {children}
-  </InputGroupRB.Text>
+  </span>
 );
 
 InputGroupText.displayName = 'InputGroup.Text';

@@ -1,0 +1,43 @@
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs';
+
+import InputGroup from '../InputGroup';
+import Form from 'src/components/Form/index.ts';
+
+<Meta title="Components/InputGroup/Arrangement" component={InputGroup} />
+
+# Input Group
+
+## Input Group Arrangements
+
+<Canvas>
+  <Story name="Beginning Text">
+    <InputGroup>
+      <InputGroup.Text id="website-prefix">https://</InputGroup.Text>
+      <Form.Control
+        placeholder="website"
+        aria-label="website"
+        aria-describedby="website-prefix"
+      />
+    </InputGroup>
+  </Story>
+  <Story name="End Text">
+    <InputGroup>
+      <Form.Control
+        placeholder="email"
+        aria-label="email"
+        aria-describedby="email-address"
+      />
+      <InputGroup.Text id="email-address">@gmail.com</InputGroup.Text>
+    </InputGroup>
+  </Story>
+  <Story name="Beginning And End">
+    <InputGroup>
+      <InputGroup.Text id="large-username">$</InputGroup.Text>
+      <Form.Control
+        placeholder="amount"
+        aria-label="Amount (to the nearest dollar)"
+      />
+      <InputGroup.Text id="default-username">.00</InputGroup.Text>
+    </InputGroup>
+  </Story>
+</Canvas>
