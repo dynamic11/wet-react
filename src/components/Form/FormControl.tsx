@@ -32,10 +32,7 @@ type typeType =
   | 'week'
   | undefined;
 
-type FormControlElement =
-  | HTMLInputElement
-  | HTMLTextAreaElement
-  | Pick<HTMLInputElement, 'min'>;
+type FormControlElement = HTMLInputElement | HTMLTextAreaElement;
 
 export interface FormControlProps
   extends React.HTMLAttributes<FormControlElement> {
