@@ -64,6 +64,10 @@ export interface FormControlProps
   id?: string;
   /** Additional custom classNames */
   className?: string;
+  /** Minimum value in a number type field */
+  min?: number;
+  /** Maximum value in a number type field */
+  max?: number;
 }
 
 const FormControl = React.forwardRef(
@@ -83,6 +87,8 @@ const FormControl = React.forwardRef(
       onChange,
       id,
       className = '',
+      min = undefined,
+      max = undefined,
       ...rest
     }: FormControlProps,
     ref: React.ForwardedRef<HTMLTextAreaElement>
@@ -108,6 +114,9 @@ const FormControl = React.forwardRef(
         ref={ref}
         id={id}
         className={`${sizeClassName} ${className}`}
+        // @ts-expect-error React-bootstrap is actually expecting it
+        min={min}
+        max={max}
         {...rest}
       />
     );
