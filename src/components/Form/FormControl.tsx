@@ -64,10 +64,10 @@ export interface FormControlProps
   id?: string;
   /** Additional custom classNames */
   className?: string;
-  /** Minimum value in a number type field */
-  min?: number;
-  /** Maximum value in a number type field */
-  max?: number;
+  /** Minimum value in a number or date type field */
+  min?: number | string;
+  /** Maximum value in a number or date type field */
+  max?: number | string;
 }
 
 const FormControl = React.forwardRef(
