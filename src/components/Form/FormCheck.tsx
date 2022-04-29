@@ -81,6 +81,8 @@ const FormCheck = React.forwardRef(
             showRequiredStyling={
               isRequiredResult && showRequiredStyling && type === 'checkbox'
             }
+            isRequired={isRequired}
+            requiredText={requiredText}
           >
             {label}
           </FormLabel>

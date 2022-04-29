@@ -94,6 +94,34 @@ describe('Form Tests', () => {
         screen.getAllByRole('checkbox').at(1)?.parentElement?.parentElement
       ).not.toHaveClass('required');
     });
+    test('Test required message', () => {
+      render(
+        <Form>
+          <Form.Check
+            isRequired
+            type="checkbox"
+            showRequiredStyling
+            label="target1"
+          />
+        </Form>
+      );
+      expect(screen.getByText('(required)')).toHaveClass('required');
+    });
+
+    test('Test custom required message', () => {
+      render(
+        <Form>
+          <Form.Check
+            isRequired
+            requiredText="custom message"
+            type="checkbox"
+            showRequiredStyling
+            label="target1"
+          />
+        </Form>
+      );
+      expect(screen.getByText('(custom message)')).toHaveClass('required');
+    });
   });
   describe('FormGroup Tests', () => {
     test('Form Group is required test', () => {
