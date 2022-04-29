@@ -242,6 +242,27 @@ describe('Form Tests', () => {
           'datetime-local'
         );
       });
+      test('number type', () => {
+        const target = render(
+          <Form>
+            <Form.Group>
+              <Form.Control type="number" min={2} max={10} />
+            </Form.Group>
+          </Form>
+        );
+        expect(target.container.querySelector('input')).toHaveAttribute(
+          'type',
+          'number'
+        );
+        expect(target.container.querySelector('input')).toHaveAttribute(
+          'min',
+          '2'
+        );
+        expect(target.container.querySelector('input')).toHaveAttribute(
+          'max',
+          '10'
+        );
+      });
       test('file type', () => {
         const target = render(
           <Form>

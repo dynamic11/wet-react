@@ -185,6 +185,21 @@ The `file` input allows you to upload files.
   </Story>
 </Canvas>
 
+### Number Input
+
+The `min` and `max` props can be used to restrict numbers in a number field.
+
+<Canvas>
+  <Story name="Number input">
+    <Form>
+      <Form.Group controlId="formNumber" className="mb-3">
+        <Form.Label>Default min and max example</Form.Label>
+        <Form.Control type="number" min={2} max={5} />
+      </Form.Group>
+    </Form>
+  </Story>
+</Canvas>
+
 ### Form.Control Props
 
 **We are working to display the props in a table. Until then, you can find the props below:**
