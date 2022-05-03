@@ -15,6 +15,8 @@ export interface ProgressBarProps extends React.HTMLAttributes<HTMLDivElement> {
   now?: number;
   /** Additional custom classNames */
   className?: string;
+  /** Indicates whether the element is a child member or not */
+  isChild?: boolean;
 }
 
 const ProgressBar = ({
@@ -24,6 +26,7 @@ const ProgressBar = ({
   min = 0,
   now = 0,
   className,
+  isChild = false,
   ...rest
 }: ProgressBarProps) => {
   const sterilizedMin = min > max ? max : min;
@@ -38,6 +41,7 @@ const ProgressBar = ({
       min={sterilizedMin}
       now={sterilizedNow}
       className={className}
+      isChild={isChild}
       {...rest}
     />
   );
