@@ -33,7 +33,13 @@ The label is optional and can be omitted
 <Canvas>
   <Story
     name="Screenreader only label"
-    args={{ now: 60, label: '60%', visuallyHidden: true }}
+    args={{
+      now: 60,
+      label: '60%',
+      visuallyHidden: true,
+      isChild: true,
+      'aria-label': '60%',
+    }}
   >
     {Template.bind({})}
   </Story>

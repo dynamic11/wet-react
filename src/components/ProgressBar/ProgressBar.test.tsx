@@ -201,4 +201,78 @@ describe('ProgressBar Tests', () => {
       expect(screen.getByText(labelPlaceholder)).toHaveClass('visually-hidden');
     });
   });
+
+  describe('ProgressBar isChild Tests', () => {
+    const labelPlaceholder = 'test 1234';
+
+    test('test isChild enabled', () => {
+      const result = render(
+        <ProgressBar
+          now={30}
+          min={20}
+          max={40}
+          label={labelPlaceholder}
+          isChild
+        />
+      );
+
+      expect(result.container.querySelector('.progress')).toBeNull();
+      expect(
+        result.container.querySelector('.progress-bar')
+      ).toBeInTheDocument();
+      expect(screen.getByRole('progressbar')).toHaveAttribute(
+        'aria-valuemin',
+        '20'
+      );
+      expect(screen.getByRole('progressbar')).toHaveAttribute(
+        'aria-valuemax',
+        '40'
+      );
+      expect(screen.getByRole('progressbar')).toHaveAttribute(
+        'aria-valuenow',
+        '30'
+      );
+      expect(screen.getByRole('progressbar')).toHaveAttribute(
+        'style',
+        'width: 50%;'
+      );
+      expect(screen.getByText(labelPlaceholder)).not.toHaveClass(
+        'visually-hidden'
+      );
+    });
+
+    test('test isChild disabled', () => {
+      const result = render(
+        <ProgressBar
+          now={30}
+          min={20}
+          max={40}
+          label={labelPlaceholder}
+          isLabelHidden
+          isChild={false}
+        />
+      );
+
+      expect(result.container.querySelector('.progress')).toBeInTheDocument();
+      expect(screen.getByRole('progressbar')).toBeInTheDocument();
+      expect(screen.getByRole('progressbar')).toHaveClass('progress-bar');
+      expect(screen.getByRole('progressbar')).toHaveAttribute(
+        'aria-valuemin',
+        '20'
+      );
+      expect(screen.getByRole('progressbar')).toHaveAttribute(
+        'aria-valuemax',
+        '40'
+      );
+      expect(screen.getByRole('progressbar')).toHaveAttribute(
+        'aria-valuenow',
+        '30'
+      );
+      expect(screen.getByRole('progressbar')).toHaveAttribute(
+        'style',
+        'width: 50%;'
+      );
+      expect(screen.getByText(labelPlaceholder)).toHaveClass('visually-hidden');
+    });
+  });
 });
