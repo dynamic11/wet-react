@@ -1,0 +1,52 @@
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs';
+import { Quotation } from '../../';
+
+<Meta title="Components/Quotation/Source" component={Quotation} />
+
+export const QuoteTemplate = (args) => (
+  <Quotation {...args} />
+);
+
+# Quotation
+
+Using the `footer` and `cite` props it is possible to add, alter and omit footers (author) and citations
+
+## Omitting Both
+
+If both the `footer` and `cite` attributes are left empty, they will be omitted
+
+<Canvas>
+  <Story name="NoSource" args={{ children: 'Yeah, I said it, and you can quote me on that!', reversequote: false, reversesource: false, footer: '', cite: '' }}>
+    {QuoteTemplate.bind({})}
+  </Story>
+</Canvas>
+
+## Omitting Citation
+
+If the `cite` attribute is left empty, it will be omitted
+
+<Canvas>
+  <Story name="NoCite" args={{ children: 'Yeah, I said it, and you can quote me on that!', reversequote: false, reversesource: false, footer: 'quote from man quoted', cite: '' }}>
+    {QuoteTemplate.bind({})}
+  </Story>
+</Canvas>
+
+## Omitting Footer
+
+If the `footer` attribute is left empty, it will be omitted
+
+<Canvas>
+  <Story name="NoFooter" args={{ children: 'Yeah, I said it, and you can quote me on that!', reversequote: false, reversesource: false, footer: '', cite: 'journal' }}>
+    {QuoteTemplate.bind({})}
+  </Story>
+</Canvas>
+
+## Adding both
+
+If both the `footer` and `cite` attributes are provided, they will both be added
+
+<Canvas>
+  <Story name="Source" args={{ children: 'Yeah, I said it, and you can quote me on that!', reversequote: false, reversesource: false, footer: 'quote from man quoted', cite: 'journal' }}>
+    {QuoteTemplate.bind({})}
+  </Story>
+</Canvas>

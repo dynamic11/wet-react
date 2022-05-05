@@ -1,0 +1,42 @@
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs';
+import { Quotation } from '../../';
+
+<Meta title="Components/Quotation/Justification" component={Quotation} />
+
+export const QuoteTemplate = (args) => (
+  <Quotation {...args} />
+);
+
+# Quotation
+
+Using the `reversesource` and `reversequote` props it is possible to right-justify the source or the entire block quote, respectively
+
+## Default
+
+default quote format
+
+<Canvas>
+  <Story name="Default" args={{ children: 'Yeah, I said it, and you can quote me on that!', reversequote: false, reversesource: false, footer: 'quote from man quoted', cite: 'journal' }}>
+    {QuoteTemplate.bind({})}
+  </Story>
+</Canvas>
+
+## reversesource
+
+If this boolean is set to true, the footer and citation will be right-justified
+
+<Canvas>
+  <Story name="ReverseQuote" args={{ children: 'Yeah, I said it, and you can quote me on that!', reversequote: false, reversesource: true, footer: 'quote from man quoted', cite: 'journal' }}>
+    {QuoteTemplate.bind({})}
+  </Story>
+</Canvas>
+
+## reversequote
+
+If this boolean is set to true, the entire block quote (quote, footer, citation) will be right-justified
+
+<Canvas>
+  <Story name="ReverseSource" args={{ children: 'Yeah, I said it, and you can quote me on that!', reversequote: true, reversesource: false, footer: 'quote from man quoted', cite: 'journal' }}>
+    {QuoteTemplate.bind({})}
+  </Story>
+</Canvas>
