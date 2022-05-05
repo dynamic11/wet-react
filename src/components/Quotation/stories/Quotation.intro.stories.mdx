@@ -1,0 +1,34 @@
+import { ArgsTable, Canvas, Meta } from '@storybook/addon-docs';
+
+import { Quotation } from '../..';
+
+<Meta title="Components/Quotation/Intro" component={Quotation} />
+
+# Quotation
+
+Use quotations to cite a group of words by someone other than the original author or speaker.
+
+-Use block quotations to indicate a large quotation of text that comes from another source.
+
+-Use inline quotes for snippets of content that are quoted from another source. They appear within a sentence.
+
+## Example block quotation
+
+<Canvas>
+  <blockquote>
+	<p>
+		Quote: I hereby state, that I did indeed state the above statement!
+	</p>
+	<footer>
+		Footer: Jonathan Burger
+		<br/>
+		<cite>
+			citation: CNN++
+		</cite>
+	</footer>
+  </blockquote>
+</Canvas>
+
+## Available Props
+
+<ArgsTable />
